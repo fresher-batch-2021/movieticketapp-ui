@@ -1,0 +1,8 @@
+ul{
+    float: left;
+    color: chartreuse;
+}
+li:hover{
+    color:blueviolet;
+    font: size 75px;
+}
