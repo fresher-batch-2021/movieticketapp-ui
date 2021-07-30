@@ -1,0 +1,50 @@
+<html>
+<head>
+   
+</head>
+<body>
+
+
+    <header id="header">
+        <button class ="lo" type="button">
+            <a href="login.html">login</a>
+        </button>
+    </header>
+
+    
+
+    <form action="/action_page.php" style="border:1px solid #ccc">
+     <div class="continer">
+     <div class="box">
+    <h1>SignUp</h1><br>
+    <p>Please fill in this form to create an account</p><br>
+    <hr>
+    <label for ="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Mail" name="email" required><br>
+    
+    <label for ="password"><b>password</b></label>
+    <input type="password" placeholder="Enter password" name="password" required><br>
+
+    <label for ="password-repeat"><b>repeat password</b></label>
+    <input type="password" placeholder="repeat password" name="password-repeat" required><br>
+
+    <label>
+    <input type="checkbox" checked="checked" name="remember" 
+    style="margin-bottom:15px">Remember Me </label><hr>
+
+    <p>By creating an account you agree to out <a
+        href="#" style="color: dodgerblue;">Terms & Privacy</a></p>
+    <div class="clearfix"><br>
+        <button type="reset" class="cancelbtn">Cancel</button>
+        <button type="button" class="SignUpbtn">SignUp</button>
+    </div>
+    </div>
+</div>
+</form>
+
+<script src="assets/jquery.min.js"></script>
+<script>
+    $("#header").load("header.html")
+</script>
+</body>
+</html>
