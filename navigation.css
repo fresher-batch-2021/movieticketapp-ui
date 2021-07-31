@@ -30,7 +30,101 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border: 1px solid rgb(202, 25, 25);
 }
-/* index page text button colors */
+/* sigup button in 1 div*/
+
+.si{
+    margin-left: 400px;
+    text-align: center;
+    padding-right: 10px;
+    margin-bottom: 500px;
+    padding-top: 0px;
+    font-style: italic;
+    }
+    /* form buttons */
+    /* form div class  */
+    .container{
+        padding: 16px;
+        width: 30%;
+        height: auto;
+        background-origin: padding-box;
+        background-color: bisque;
+        border: black;
+    }
+    /* container in signup form */
+    .box{
+        width: 30%;
+        height: 10px;
+    }
+    /* cancel insign form button class*/
+    .cancelbtn{ 
+        background-color:red; 
+         padding: 14px 20px; 
+     } 
+    /* sign button class  in signup form*/
+    .SignUpbtn{
+        background-color: green;
+        padding: 14px 20px;
+    }
+    /* buttons in sign up form */
+    .cancelbtn, .SignUpbtn {
+       float: left;
+       width: 30%;
+    }
+    /* To fix content in correct place  */
+    .clearfix::after{
+        content: "";
+        clear: both;
+display: table;
+    /* overflow:auto; */
+    }
+    .lo{
+    
+    text-align: center;
+    padding-right: 10px;
+    margin-bottom: 500px;
+    padding-top: 0px;
+    font-style: italic;
+    }
+    form {border: 3px solid #f1f1f1;}
+    img.avatar {
+        /* width: 20%; */
+        /* border-radius: 50%; */
+        height: 80px;
+      }
+      /* button */
+input[type=text], input[type=password]  
+{
+    width: 100%;
+    padding:15px;
+    margin:5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+ button 
+input[type=text]:focus, input[type=password]:focus{
+    background-color: #ddd;
+    outline: none;
+}
+hr{
+    border: 1px solid #f1f1f1;
+}/
+button:hover{ 
+opacity: 1;
+}
+.
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width:300px) {
+    .cancelbtn, .SignUpbtn{
+        width: 100%;
+    }
+}
+/* @media screen and (max-width: 300px) { */
+    span.psw {
+       /* display: block; */
+       float: none;
+    }
+/* index page text button colors 2 div */
 a{
     text-decoration: none; 
     color:red;
@@ -65,99 +159,66 @@ li a:hover{
     text-decoration: none;
     
 }
-
-
-
-
-/* sigin button */
-
-.si{
-margin-left: 400px;
-text-align: center;
-padding-right: 15px;
-margin-bottom: 500px;
-padding-top: 6px;
-font-style: italic;
-}
-
-.lo{
-
-text-align: center;
-padding-right: 15px;
-margin-bottom: 500px;
-padding-top: 6px;
-font-style: italic;
-
-}
-/* form buttons */
-/* form div class  */
-.container{
-    padding: 16px;
-    width: 30%;
-    height: auto;
-    background-origin: padding-box;
-    background-color: bisque;
-    border: black;
-}
-/* container in signup form */
-.box{
-    width: 30%;
-    height: 10px;
-}
-/* cancel insign form button class*/
-.cancelbtn{ 
-    background-color:red; 
-     padding: 14px 20px; 
- } 
-/* sign button class  in signup form*/
-.SignUpbtn{
-    background-color: green;
-    padding: 14px 20px;
-}
-/* buttons in sign up form */
-.cancelbtn, .SignUpbtn {
-   float: left;
-   width: 30%;
-}
-/* To fix content in correct place  */
-.clearfix::after{
-    /* content: ""; */
-    /* clear: both; */
-    /* display: table; */
-overflow:auto;
-}
-
-
-
-
-/* button */
-input[type=text], input[type=password]
-{
-    width: 100%;
-    padding:15px;
-    margin:5px 0 22px 0;
-    display: inline-block;
+.dropdown {
+    float: left;
+    /* overflow: hidden; */
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
     border: none;
-    background: #f1f1f1;
-}
-/* button */
-input[type=text]:focus, input[type=password]:focus{
-    background-color: #ddd;
     outline: none;
-}
-hr{
-    border: 1px solid #f1f1f1;
-}
-button:hover{ 
-opacity: 1;
-}
-.
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width:300px) {
-    .cancelbtn, .SignUpbtn{
-        width: 100%;
-    }
-}
+    color:red;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin:0;
+  }
+  
+.dropdown:hover .dropbtn {
+    background-color:white;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* button{  
     background-color: #040404;
@@ -165,13 +226,13 @@ opacity: 1;
     /* padding: 14px 20px; */
     /* margin: 8px 0; */
     /* border: none; */
-    cursor: pointer;
+    /* cursor: pointer; */
     
-    opacity: 0.9;
+    /* opacity: 0.9; */
 /* } */
 
 /* slider */
-
+/*  
 .carousel-inner{
 height:450px;
 width: 100%;
@@ -183,23 +244,16 @@ width: 100%;
     /* width=50px; */
 /* } */
 /* login */
-.imgcontainer{
-    text-align: left;
-    margin: 24px 0 12px 0;
-width: 50px;
-}
-img.avatar {
-    width: 200%;
-    border-radius: 50%;
-  }
+
+
   /* .container2{ */
       /* padding: 16px; }*/
-  @media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
+  /* @media screen and (max-width: 300px) { */
+    /* span.psw { */
+       /* display: block; */
+       /* float: none; */
     }
-  .cancelbtn{
+  /*.cancelbtn{
       width: 100%;
   }
   .cancelbtn {
@@ -211,11 +265,7 @@ img.avatar {
     width: 30%;
     height: 10px;
 }
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
+
     .cancelbtn {
        width: 100%;
     }
