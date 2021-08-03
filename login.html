@@ -5,37 +5,66 @@
 <body>
 
     <header id="header"></header>
-      <script src="assets/jquery.min.js"></script>
-      <script>
-          $("#header").load("header.html")
-      </script>
+     
+      <div class="m">
       
-    <form action="/action_page.php" style="border:1px solid #ccc">
-        <div class="box">
+    <form onsubmit="Login()" style="border:1px solid #ccc">
+        <div class="container">
+            <div class="box1">
         <div class="imgcontainer">
             <img src="images/logo.jpg" alt="Avatar" class="avatar">
           </div><hr>
         
-    <div class="container">
-        <label for="unname"><b>username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+    
+        <label for="username"><b>username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
-        <label for="psw"><b>password</b></label>
-        <input type="password" placeholder="Enter password" name="psw" required>
+        <label for="password"><b>password</b></label>
+        <input type="password" placeholder="Enter password" name="password" id="password1"required>
         
         <button class="login" type="submit">login</button>
-        <label>
+        <label><br>
         <input type="checkbox" checked="checked" name="remember" 
         style="margin-bottom: 15px;">Remember Me 
         </label>
     
     <div class="clearfix" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
+        <button type="reset" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="password.html">Password?</a></span>
       </div>
     
     </div>
+    </div>
     </form>
+      </div>
+      <script src="assets/jquery.min.js"></script>
+      <script>
+          $("#header").load("header.html")
+          function Login(){
+              event.preventDefault();
+              const username =document.querySelector("#username").value;
+              const password =document.querySelector("#password1").value;
+              console.log(username+"-"+password);
+              if(password.length<8){
+               alert("password contains 8 characters");
+              }
+              else{
+              const userobj={
+                "username":username,
+                "password":password
+              };
+              
+            
+              
+              console.log(userobj);
+              alert("login successful");
+              window.location.href="movies.html";
+              }
+            
+
+          }
+
+      </script>
 </body>
 </html>
 </html>
