@@ -7,13 +7,14 @@
     <header id="header"></header>
      
       <div class="m">
+        <section>
       
     <form onsubmit="Login()" style="border:1px solid #ccc">
         <div class="container">
             <div class="box1">
         <div class="imgcontainer">
-            <img src="images/logo.jpg" alt="Avatar" class="avatar">
-          </div><hr>
+            <img src="images/login.jpg" alt="Avatar" class="avatar">
+          </div>
         
     
         <label for="username"><b>username</b></label>
@@ -36,6 +37,7 @@
     </div>
     </div>
     </form>
+        </section>
       </div>
       <script src="assets/jquery.min.js"></script>
       <script>
@@ -53,9 +55,6 @@
                 "username":username,
                 "password":password
               };
-              
-            
-              
               console.log(userobj);
               alert("login successful");
               window.location.href="movies.html";

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="navigation.css">
+
+</head>
+
+<body>
+
+  <div class="m">
+    <header id="header"></header>
+    <section>
+      <form action="submit.html">
+        <div class="container">
+
+          <div class="box1">
+
+
+            <p>Pay using Credit or Debit card</p>
+
+
+            <label> Card Number </label>
+            <input required type="text" class="card-number-field" placeholder="###-###-###" />
+
+            <br />
+
+            <label> Expiry Date </label>
+            <input required type="text" class="date-number-field" placeholder="DD-MM-YY" /><br>
+
+
+
+            <label> CVV number </label>
+            <input required type="text" class="cvv-number-field" placeholder="xxx" />
+
+            <label> Card Holder name </label>
+            <input type="text" class="card-name-field" placeholder="Enter your Name" required>
+
+            <button type="submit" class="submit-now-btn">
+            submit
+            </button>
+            <button type="" class="submit-now-btn">
+              <a href="book.html">Back</a>
+            </button>
+
+
+          </div>
+        </div>
+      </form>
+      <script src="assets/jquery.min.js"></script>
+      <script>
+        $("#header").load("header.html")
+
+      </script>
+  </div>
+</body>
+
+</html>

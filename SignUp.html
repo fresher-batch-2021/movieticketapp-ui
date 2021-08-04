@@ -12,8 +12,8 @@
     
 
     <form action="login.html" onsubmit="Register()" style="border:1px solid #ccc">
-     <div class="continer">
-     <div class="box">
+     <div class="container">
+     <div class="box1">
     <h1>SignUp</h1><br>
     <p>Please fill in this form to create an account</p><br>
     <hr>
@@ -54,9 +54,15 @@
             "password":password,
             "password-repeat":passwordR
         }
+    if(password==passwordR){
+
         console.log(userobj);
         alert("registration successful");
         window.location.href="login.html";
+    }
+    else{
+        alert("password does not match");
+    }
 
         }
     
