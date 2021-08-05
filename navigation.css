@@ -21,13 +21,14 @@ label{
     
 }
 
-.top input{
-    position: relative;
+.top input{  
+    /* position: relative; */
     width: 500px;
-    height: 30px;
-    margin-bottom: 3px;
+    /* height: 30px; */
+    margin-bottom: 100px;
     margin-left: 200px;
-    padding-top: 15px;
+    /* margin-top: px; */
+    padding-top: 10px;
     padding-right: 100px;
     padding-bottom: 2px;
     text-align: left;
@@ -101,7 +102,7 @@ display: table;
       }
       /* button */
       
-input[type=text], input[type=password]  
+input[type=text], input[type=password]   
 {
     width: 100%;
     padding:15px;
@@ -114,7 +115,7 @@ input[type=text], input[type=password]
 input[type=text]:focus, input[type=password]:focus{
     background-color: #ddd;
     outline: none;
-}
+ } 
 hr{
     border: 1px solid #f1f1f1;
 }
@@ -178,6 +179,9 @@ li a:hover{
     text-decoration: none;
     
 }
+.slideImage{
+    height: 500px;
+}
 /* .dropdown { 
     float: left;
     overflow: hidden;
@@ -226,37 +230,95 @@ li a:hover{
 /* index 3 div */
   
  .carousel-inner{ 
-    height:450px;
+    height:350px;
     width: 100%;
         }
         /* movies tab*/
-   .mo{
+   .moviesPage{
        /* float:none; */
        /* margin-left: 40%; */
        padding: 20px;
        text-align: center;
    }
-  
-   .now{
-       height: 5%;
-       padding: 20px;
-       margin-left: 300px;
-       float: left;
-   }
-   .com{
-       height: 5%;
-       padding: 20px;
-       margin-right: 200px;
-       float: left;
-   }
+         */
+         .movieContainer>div
+         {
+             padding: 10px 0;
+             /* text-align: center; */
+             margin:5px 0;
+             position: relative;
+             
+         }
+         .firstMovie{
+             position: absolute;
+             top: 200px;
+             left: 200px;
+             height: 200px;
+             /* width:25%; */
+         }
+         .secondMovie{
+            /* float: right; */
+            height: 200px;
+            position: absolute;
+            top: 200px;
+            left: 600px;
+            /* width:25%; */
+        }
+        .thirdMovie{
+            /* float: right; */
+            height: 200px;
+            position: absolute;
+            top: 200px;
+            left: 1000px;
+            /* width:25%; */
+        }
+        .firstMovie1{
+            /* float: right; */
+            height: 200px;
+            position: absolute;
+             top: 400px;
+             left: 200px;
+            /* width:25%; */
+        }
+
+        .secondMovie1{
+        
+            height: 200px;
+            position: absolute;
+             top: 400px;
+             left: 600px;
+            
+        }
+        .thirdMovie1{
+        
+            height: 200px;
+            position: absolute;
+             top: 400px;
+             left: 1000px;
+            
+        }
+
+
+
+        /* .movieRow2>div 
+        {
+            padding: 20px 0;
+            text-align: center;
+            margin:5px 0
+
+
+
         
 
 
 /* filter tab in movies */
 /* .m represents background color for all tab*/
-.m{
-    background-color:#2f2f2f;
-    height: 150%;
+.pageColor{
+    background-color:rgb(15, 14, 14);
+    height: 100%;
+}
+.pageColor h1{
+    color: blanchedalmond;
 }
 .fil{
     width: 20%;
@@ -280,13 +342,17 @@ li a:hover{
     .container3{
         
         
-        padding: 16px;
-        width: 50%;
+        padding: 30px;
+        width: 30%;
         border: 2px solid red;
         margin : 100px auto;
         display: block;
        
     }
+    
+   
+       
+    
     .movielogo1{
         padding-left: 5px;
         padding-top: 6px;
@@ -298,6 +364,17 @@ li a:hover{
 
 
     }
+
+    #date, #nooftickets, #time
+    {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+    }
+
 
     .movielogo2{
         height: 150px;
@@ -361,7 +438,7 @@ li a:hover{
     /* span.psw { */
        /* display: block; */
        /* float: none; */
-    }
+    
   /*.cancelbtn{
       width: 100%;
   }
