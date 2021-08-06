@@ -1,5 +1,11 @@
-<html>
+<!-- <!DOCTYPE html> -->
+<html >
+
+
     <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="navigation.css">
     </head>
 <body>
@@ -17,8 +23,8 @@
           </div>
         
     
-        <label for="username"><b>username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" id="username" required>
+        <label for="Email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="username" id="username" required>
 
         <label for="password"><b>password</b></label>
         <input type="password" placeholder="Enter password" name="password" id="password1"required>
@@ -31,7 +37,7 @@
     
     <div class="clearfix" style="background-color:#f1f1f1">
         <button type="reset" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="password.html">Password?</a></span>
+        <span class="psw">Forgot <a href="forgetpassword.html">Password?</a></span>
       </div>
     
     </div>
@@ -47,8 +53,8 @@
               const username =document.querySelector("#username").value;
               const password =document.querySelector("#password1").value;
               console.log(username+"-"+password);
-              if(password.length<8){
-               alert("password contains 8 characters");
+              if(password == null || password.trim()=="" ){
+               alert("password cannot be blank");
               }
               else{
               const userobj={

@@ -1,5 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
 </head>
 <body>
@@ -8,7 +12,6 @@
     <header id="header"></header>
         
     
-<div class="pagecolor">
     
 
     <form action="login.html" onsubmit="Register()" style="border:1px solid #ccc">
@@ -18,7 +21,7 @@
     <p>Please fill in this form to create an account</p><br>
     <hr>
     <label for ="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Mail" name="email" id="email" required><br>
+    <input type="email" placeholder="Enter Mail" name="email" id="email" required><br>
     
     <label for ="password"><b>password</b></label>
     <input type="password" placeholder="Enter password" name="password" id="password"required><br>
@@ -38,7 +41,6 @@
     </div>
 </div>
 </form>
-</div>
 
 <script src="assets/jquery.min.js"></script>
 <script>
@@ -54,18 +56,27 @@
             "password":password,
             "password-repeat":passwordR
         }
-    if(password==passwordR){
-
         console.log(userobj);
-        alert("registration successful");
-        window.location.href="login.html";
+    if(password == null  || password.trim()==""){
+        alert("password cannot be empty");
     }
-    else{
-        alert("password does not match");
+        else if(password != passwordR){
+       alert("password incorrect");
     }
-
-        }
-    
+    else if(password.length < 8)
+ {
+    alert("password must be greater than 8 characters");
+   
+      }
+      else{
+          alert("registration successfully");
+          window.location.href="login.html";
+      }
+    }
+      
+   
+        
+     
 </script>
 </body>
 </html>
