@@ -10,37 +10,14 @@
     </head>
     <body>
         <header id="header"></header>
-<script src="assets/jquery.min.js"></script>
-<script>
-    $("#header").load("header.html")
-</script>
-
+        <h1>
+            <u class="moviesHead">Movies</u>
+        </h1><br>
+       
     <div class="moviesPage">
 
-<h1>
-    <u>Movies</u>
-</h1><br>
+       
 
- <div class="movieContainer">
-    <div class="firstMovie"><a href="theatres.html"><img class = "movielogo2" src="images/3036057.jpg" alt="no image"></a> 
-    <br></div>
-    <div class="secondMovie"><a href="theatres.html"><img class = "movielogo2" src="images/karnan.jpg" alt="no image"></a> 
-    <br></div>
-    <div class="thirdMovie"><a href="theatres.html"><img class = "movielogo2" src="images/jagame.jpg" alt="no image"></a> 
-    <br></div>
-</div><br>
-
-<div class="movieRow2"> 
-    <div class="firstMovie1"><a href="theatres.html"><img class = "movielogo2" src="images/sor.png" alt="no image"></a>  
-    <br></div> 
-    <div class="secondMovie1"><a href="theatres.html"><img class = "movielogo2" src="images/valimai.jfif" alt="no image"></a> 
-    <br></div>
-    <div class="thirdMovie1"><a href="theatres.html"><img class = "movielogo2" src="images/doctor.jfif" alt="no image"></a> 
-    <br></div>
-</div>
-
-    <!-- <a href="theatres.html"><img class = "movielogo2" src="images/sarpatta.jpg" alt="no image"></a>  -->
-    <!-- <br> -->
 
 </div>
 <div class="fil">
@@ -68,12 +45,32 @@
         </label>
 
 </div>
+<script src="assets/jquery.min.js"></script>
+<script>
+    $("#header").load("header.html")
+    var images = [{ imageUrl: "sarpatta.jpg" }, { imageUrl: "valimai.jfif"}, { imageUrl: "3036057.jpg"},
+    { imageUrl: "jagame.jpg" }, { imageUrl: "doctor.jfif"}, { imageUrl: "karnan.jpg"}];
+// displaying images 
+        let content = "";
+        var count = 0;
+        for (let img of images) {
 
+            content = content +
+             `
+            <div class="product">
+                
+                  <a href="theatres.html">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+             
+            </div>`;
+            count = count + 1;
+            if (count == 2) {
+                content = content + `<br>`;
+                count = 0;
+            }
+        }
 
-<section class="movieContainer">
-
-
-</section>
+        document.querySelector(".moviesPage").innerHTML = content;
+</script>
 
     </body>
 </html>

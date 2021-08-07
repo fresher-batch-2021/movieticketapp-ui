@@ -185,51 +185,7 @@ li a:hover{
 .slideImage{
     height: 500px;
 }
-/* .dropdown { 
-    float: left;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color:red;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin:0;
-  }
-  
-.dropdown:hover .dropbtn {
-    background-color:white;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  } */
+
 /* index 3 div */
   
  /* Slideshow container */
@@ -269,72 +225,32 @@ li a:hover{
        padding: 20px;
        text-align: center;
    }
-         */
+         
          .movieContainer>div
          {
              padding: 10px 0;
-             /* text-align: center; */
+           
              margin:5px 0;
              position: relative;
              
          }
-         .firstMovie{
-             position: absolute;
-             top: 200px;
-             left: 200px;
-             height: 200px;
-             /* width:25%; */
+         .moviesHead{
+             float: right;
+             margin-right: 950px;
+             
          }
-         .secondMovie{
-            /* float: right; */
-            height: 200px;
-            position: absolute;
-            top: 200px;
-            left: 600px;
-            /* width:25%; */
-        }
-        .thirdMovie{
-            /* float: right; */
-            height: 200px;
-            position: absolute;
-            top: 200px;
-            left: 1000px;
-            /* width:25%; */
-        }
-        .firstMovie1{
-            /* float: right; */
-            height: 200px;
-            position: absolute;
-             top: 400px;
-             left: 200px;
-            /* width:25%; */
-        }
-
-        .secondMovie1{
-        
-            height: 200px;
-            position: absolute;
-             top: 400px;
-             left: 600px;
-            
-        }
-        .thirdMovie1{
-        
-            height: 200px;
-            position: absolute;
-             top: 400px;
-             left: 1000px;
-            
+    
+ 
+        .productImg{
+            width: 300px;
+            height: 150px;
+            float: right;
+            margin-right: 50px;
+            margin-top: 10px;
         }
 
 
-
-        /* .movieRow2>div 
-        {
-            padding: 20px 0;
-            text-align: center;
-            margin:5px 0
-
+    
 
 
         
@@ -395,7 +311,7 @@ li a:hover{
 
     }
 
-    #date, #nooftickets, #time, #username, #email, #password, #password-repeat
+    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1
     {
         width: 100%;
         padding: 10px;
@@ -443,50 +359,7 @@ li a:hover{
 
 
 
- /* button{  
-    background-color: #040404;
-    color: red;
-    /* padding: 14px 20px; */
-    /* margin: 8px 0; */
-    /* border: none; */
-    /* cursor: pointer; */
-    
-    /* opacity: 0.9; */
-/* } */
-
-/* slider */
-
-
-
-/* .cancelbtn1{ */
-    /* width=50px; */
-/* } */
-/* login */
-
-
-  /* .container2{ */
-      /* padding: 16px; }*/
-  /* @media screen and (max-width: 300px) { */
-    /* span.psw { */
-       /* display: block; */
-       /* float: none; */
-    
-  /*.cancelbtn{
-      width: 100%;
-  }
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
-
-
-    .cancelbtn {
-       width: 100%;
-    }
-    .login{
-        width: 100%;
-    }
+ 
     /* slider by yesh */
     /* Slideshow container */
 .slideshow-container {
@@ -514,3 +387,6 @@ li a:hover{
     width: 100%;
   border: 2px solid red;
   }
+
+
+  /*  */
