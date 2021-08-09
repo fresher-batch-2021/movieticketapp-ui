@@ -68,17 +68,17 @@ label{
         height: 10px;
     }
     /* cancel insign form button class*/
-    .cancelbtn{ 
+    .cancelButton{ 
         background-color:red; 
          padding: 14px 20px; 
      } 
     /* sign button class  in signup form*/
-    .SignUpbtn{
+    .SignUpButton{
         background-color:green;
         padding: 14px 20px;
     }
     /* buttons in sign up form */
-    .cancelbtn, .SignUpbtn {
+    .cancelButton, .SignUpButton {
        float: left;
        width: 30%;
     }
@@ -86,8 +86,7 @@ label{
     .clearfix::after{
         content: "";
         clear: both;
-display: table;
-    /* overflow:auto; */
+        display: table;
     }
     .lo{
     
@@ -133,7 +132,7 @@ opacity: 1;
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width:300px) {
-    .cancelbtn, .SignUpbtn {
+    .cancelButton, .SignUpButton {
         width: 100%;
     }
 }
@@ -225,6 +224,8 @@ li a:hover{
        padding: 20px;
        text-align: center;
    }
+
+  
          
          .movieContainer>div
          {
@@ -248,23 +249,8 @@ li a:hover{
             margin-right: 50px;
             margin-top: 10px;
         }
-
-
-    
-
-
-        
-
-
 /* filter tab in movies */
 /* .m represents background color for all tab*/
-.pageColor{
-    background-color:rgb(87, 82, 82);
-    height: 100%;
-}
-.pageColor h1{
-    color: blanchedalmond;
-}
 .fil{
     width: 20%;
     position: absolute;
@@ -274,9 +260,7 @@ li a:hover{
     
     
 }
-.feed{
-    margin-left: 90px;
-    }
+
 
     .box1{
         margin-top: 20px;
@@ -285,7 +269,7 @@ li a:hover{
         border: 2px solid red;
 
     }
-    .container3{
+    /* .container3{
         
         
         padding: 30px;
@@ -294,22 +278,13 @@ li a:hover{
         margin : 100px auto;
         display: block;
        
-    }
-    
-   
-       
-    
+    } */
     .movielogo1{
         padding-left: 5px;
         padding-top: 6px;
         height: 60px;
         image-resolution: 100px;
-             
-        
-
-
-
-    }
+             }
 
     #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1
     {
@@ -332,35 +307,29 @@ li a:hover{
         padding: 10px;
     }
 
+/* about page */
+ .aboutPage{
+    padding: 20px;
+    text-align: center;
+
+   }
+   .feedBack{
+    margin-left: 90px;
+   }
+
+   /* bookPage */
+.bookPage{
+    padding: 16px;
+    width: 30%;
+    height: auto;
+    background-origin: padding-box;
+    background-color:gainsboro;
+    margin : 0 auto;
+    display: block;
+  
+} 
+
     
-    .movieContainer{
-
-    }
-    /* .u{ 
-        width: 50%;
-        height: 20px;
-
-    }
-.i{
-    width: 50%;
-    height: 20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-    /* slider by yesh */
     /* Slideshow container */
 .slideshow-container {
     width: 100%;

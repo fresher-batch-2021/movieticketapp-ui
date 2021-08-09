@@ -12,7 +12,8 @@
     <body>
         <header id="header"></header>
         <form onsubmit="Book()" style="border:1px solid #ccc">
-        <div class="container3">
+        <div class="bookPage">
+            <div class="box1">
         
         
         <label for="no of tickets">No of Tickets </label>
@@ -38,16 +39,19 @@
                         </select><br>
                         <div class="clearfix"><br>
                             
-                            <button type="reset" class="cancelbtn">Cancel</button>
-                            <button type="submit    " class="SignUpbtn">
+                            <button type="reset" >
+                             <a href="theatres.html">  Back</a></button>
+                            <button type="submit" >
                                 <a href="payment.html">payment</a>
                             </button>
                         </div>
                     
                     
-                
+                </div>
+            </div>
             </form>
-        </div>
+        
+        
             <script src="assets/jquery.min.js"></script>
             <script>
                 $("#header").load("header.html")

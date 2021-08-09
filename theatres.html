@@ -11,15 +11,12 @@
     </head>
     <body>
         <header id="header"></header>
-<script src="assets/jquery.min.js"></script>
-<script>
-    $("#header").load("header.html")
-</script>
+
 
 
 
 <div class="moviesPage">
-    <h1>
+    <!-- <h1>
         <u>Theatres</u>
     </h1><br>
     <a href="book.html"><img class = "movielogo1" src="images/s.jpg" alt="no image"></a>
@@ -34,7 +31,7 @@ Kasi Threatre 4K RGB Laser Dolby Atmos
 Chennai<br>
 <a href="book.html"><img class = "movielogo1" src="images/vettri.jfif" alt="no image"></a>
 Kasi Threatre 4K RGB Laser Dolby Atmos
-Chennai<br>
+Chennai<br> --> -->
 
         
     
@@ -66,6 +63,32 @@ Chennai<br>
     
         
     </div>
+    <script src="assets/jquery.min.js"></script>
+<script>
+    $("#header").load("header.html")
+    var images = [{ imageUrl: "s.jpg" }, { imageUrl: "d.jfif"}, { imageUrl: "kasi.jpg"},
+    { imageUrl: "vettri.jfif" }, { imageUrl: "sathyam.jpg"}, { imageUrl: "pvr.jpg"}];
+// displaying images 
+        let content = "";
+        var count = 0;
+        for (let img of images) {
+
+            content = content +
+             `
+            <div class="product">
+                
+                  <a href="book.html">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+             
+            </div>`;
+            count = count + 1;
+            if (count == 2) {
+                content = content + `<br>`;
+                count = 0;
+            }
+        }
+
+        document.querySelector(".moviesPage").innerHTML = content;
+</script>
 
     </body>
 </html>
