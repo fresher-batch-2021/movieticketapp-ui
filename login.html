@@ -12,7 +12,8 @@
 <body>
 
     <header id="header"></header>
-     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+    
       <div class="pagecolor">
         <section>
       
@@ -59,12 +60,19 @@
               }
               else{
               const userobj={
-                "username":username,
+                "email":username,
                 "password":password
               };
-              console.log(userobj);
-              alert("login successful");
-              window.location.href="movies.html";
+
+              const url="https://product-mock-api.herokuapp.com/movieapp/api/v1/auth/login";
+        axios.post(url,userobj).then(res =>{
+            alert("login successful");
+            window.location.href ="movies.html";
+
+        }).catch(err =>{
+            console.error(err);
+            alert("unable to login");
+        });
               }
             
 

@@ -11,7 +11,7 @@
 
 
     <header id="header"></header>
-        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     
     
 
@@ -70,9 +70,17 @@
    
       }
       else{
-          alert("registration successfully");
-          window.location.href="login.html";
+        const url="https://product-mock-api.herokuapp.com/movieapp/api/v1/auth/register";
+        axios.post(url,userobj).then(res =>{
+            alert("registration successful");
+            window.location.href ="login.html";
+
+        }).catch(err =>{
+            console.error(err);
+            alert("unable to register");
+        });
       }
+
     }
       
    
