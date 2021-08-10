@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="navigation.css"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
        
     </head>
     <body>
@@ -23,7 +24,9 @@
 <div class="fil">
     <h1 class="fil1">Filter By</h1>
      <a href="#">Clear</a>
+    
     <h3>Language</h3>
+    <!-- <form onsubmit="tamil()"> -->
     <label><br>
         <input type="checkbox"  name="Language" 
         style="margin-bottom: 15px;">Tamil
@@ -32,7 +35,7 @@
         <input type="checkbox"  name="Language" 
         style="margin-bottom: 15px;">English
         </label>
-        <h3>Experience</h3>
+        <!-- <h3>Experience</h3>
         <input type="checkbox"  name="type" 
         style="margin-top: 15px;">2D
         </label>
@@ -42,24 +45,34 @@
         </label><br>
         <input type="checkbox"  name="type" 
         style="margin-top: 15px;">Thriller
-        </label>
+        </label> -->
 
 </div>
 <script src="assets/jquery.min.js"></script>
 <script>
     $("#header").load("header.html")
-    var images = [{ imageUrl: "sarpatta.jpg" }, { imageUrl: "valimai.jfif"}, { imageUrl: "3036057.jpg"},
-    { imageUrl: "jagame.jpg" }, { imageUrl: "doctor.jfif"}, { imageUrl: "karnan.jpg"}];
-// displaying images 
-        let content = "";
+//     var images = [{ imageUrl: "sarpatta.jpg",language:"tamil",title:"sarpatta"}, { imageUrl: "valimai.jfif",language:"tamil",title:"valimai" }, { imageUrl: "3036057.jpg",language:"tamil", title:"Master"},
+//     { imageUrl: "joker.jpg", language:"english",title:"joker" }, { imageUrl: "doctor.jfif",language:"tamil",title:"doctor"}, { imageUrl: "karnan.jpg",language:"tamil",title:"karnan"}];
+// // displaying images 
+       
+        const url ="https://product-mock-api.herokuapp.com/movieapp/api/v1/movies";
+        axios.get(url).then(res=>{
+            // const title=res.title;
+            // const image_url=res.image_url;
+            // const language=res.language;
+            // alert(title);
+            const datas=res.data;
+            // alert(datas);
+            for(let la of datas){
+                let content = "";
         var count = 0;
-        for (let img of images) {
+        for (let img of datas) {
 
-            content = content +
+            content = content + 
              `
             <div class="product">
                 
-                  <a href="theatres.html">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+                  <a href="theatres.html">  <img class="productImg" src="images/${img.image_url}" id="productImg" alt=""></a>
              
             </div>`;
             count = count + 1;
@@ -67,9 +80,24 @@
                 content = content + `<br>`;
                 count = 0;
             }
-        }
 
+        }
         document.querySelector(".moviesPage").innerHTML = content;
+
+    //             <img class="productImg" src="Assets/Images/${img.image_url}" onClick=specOpen(${img.id}) id="productImg" alt="">    
+    // <p class="movieName" id="movieName">${img.name}</p>
+    // <p class="moviePrice" id="moviePrice" >${img.price}</p>
+    // <p>${img.id}</p>
+    
+    //         
+}
+
+        }).catch(err=>{
+
+        });
+        // let filteredMovies = images.filter(obj=>obj.language=="tamil"|| obj.language=='english');
+        // let filteredMovies = images.filter(obj=> selectedLanguages.includes(obj.language));
+        
 </script>
 
     </body>
