@@ -38,7 +38,7 @@ Chennai<br> --> -->
     </div>
     <div class="filter">
         <h1>Filter By</h1>
-        <a> <a href="#">Clear</a>
+        <a href="#">Clear</a>
         <!-- <h3>AMENITIES</h3>
         <label><br>
             <input type="checkbox"  name="Language" 
@@ -49,35 +49,57 @@ Chennai<br> --> -->
             style="margin-bottom: 15px;">Social Seating
             </label> -->
             <h3>Experience</h3>
-            <input type="checkbox"  name="type" 
+            <input type="checkbox"  name="type" id="experience"  value="Dolby Atmos"
             style="margin-top: 15px;">Dolby Atmos
             </label>
             <br>
-            <input type="checkbox"  name="type" 
+            <input type="checkbox"  name="type" id="experience" value="2k"
             style="margin-top: 15px;">2K<br>
 
             </label>
-            <input type="checkbox"  name="type" 
+            <input type="checkbox"  name="type" id="experience" value="4k"
             style="margin-top: 15px;">4K
-            </label>
+            </label><br>
+            <button type="button" onclick="filterExperience()">Apply
+            </button>
+            <button type="reset">
+                reset
+            </button>
     
         
     </div>
+    <script src="theatre.js"></script>
     <script src="assets/jquery.min.js"></script>
 <script>
     $("#header").load("header.html")
-    var images = [{ imageUrl: "sangam.jpg",name:"Sangam Cinemas",experience:"4k",location:"chennai" }, { imageUrl: "devi.jfif",name:"Devi Cineplex",experience:"Dolby Atmos",location:"madurai"}, { imageUrl: "kasi.jpg",name:"Kasi Theatre",experience:"4k",location:"coimbatore"},
+    function getTheatres() {
+
+        
+    var Theatres = [{ imageUrl: "sangam.jpg",name:"Sangam Cinemas",experience:"4k",location:"chennai" }, { imageUrl: "devi.jfif",name:"Devi Cineplex",experience:"Dolby Atmos",location:"madurai"}, { imageUrl: "kasi.jpg",name:"Kasi Theatre",experience:"4k",location:"coimbatore"},
     { imageUrl: "vettri.jfif",name:"Vettri Theatre",experience:"Dolby Atmos",location:"chennai"}, { imageUrl: "sathyam.jpg",name:"Sathyam Cinemas",experience:"4k",location:"chennai"}, { imageUrl: "pvr.jpg",name:"PVR",experience:"4k",location:"coimbatore"}];
-// displaying images 
+                
+
+
+                // const Theatres = res.data;
+                displayTheatres(Theatres)
+    }
+                   
+        
+            
+                getTheatres();
+    // displaying images 
+
+function displayTheatres(Theatres){
+    for(let experience of Theatres){
         let content = "";
         var count = 0;
-        for (let img of images) {
+        for (let img of Theatres) {
 
             content = content +
              `
             <div class="product">
                 
-                  <a href="book.html">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+                  <a onClick="showTheatre('${img.name}')"  href="book.html">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
              
             </div>`;
             count = count + 1;
@@ -88,6 +110,8 @@ Chennai<br> --> -->
         }
 
         document.querySelector(".moviesPage").innerHTML = content;
+    }
+}
 </script>
 
     </body>

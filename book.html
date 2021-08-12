@@ -1,68 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            Book
-        </title>
-        <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="navigation.css">
-    </head>
-    <body>
-        <header id="header"></header>
-        <form onsubmit="Book()" style="border:1px solid #ccc">
-        <div class="bookPage">
-            <div class="box1">
-        
-        
-        <label for="no of tickets">No of Tickets </label>
-    <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets" min="1" max="10" required><br>
-        <label for="date">Date</label>
-            <input type="date" id="date" name="date"  required><br>
-            <label for="time">Time</label>
-            
-                        <select id="time"> 
-                            <option>
-                                10.30AM
-            
-                            </option>
-                            <option>
-            1.30PM
-                            </option>
-                            <option>
-                                4.30PM
-                            </option>
-                            <option>
-                                10.30PM
-                            </option>
-                        </select><br>
-                        <div class="clearfix"><br>
-                            
-                            <button type="reset" >
-                             <a href="theatres.html">  Back</a></button>
-                            <button type="submit" >
-                                <a href="payment.html">payment</a>
-                            </button>
-                        </div>
-                    
-                    
+
+<head>
+    <title>
+        Book
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+</head>
+
+<body>
+    <header id="header"></header><div class="tablePage1">
+        <div class="tablePage">  </div>
+    <form onsubmit="Book()" style="border:1px solid #ccc">
+       
+            <div class="bookPage">
+                <!-- <div class="box2"> -->
+
+
+
+                    <label for="no of tickets">No of Tickets </label>
+                    <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets" min="1"
+                        max="10" required><br>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required><br>
+                    <label for="time">Time</label>
+
+                    <select id="time">
+                        <option>
+                            10.30AM
+
+                        </option>
+                        <option>
+                            1.30PM
+                        </option>
+                        <option>
+                            4.30PM
+                        </option>
+                        <option>
+                            10.30PM
+                        </option>
+                    </select><br>
+                    <div class="clearfix"><br>
+
+                        <button type="reset">
+                            <a href="theatres.html"> Back</a></button>
+                        <button type="submit">
+                            <a href="payment.html">payment</a>
+                        </button>
+                    </div>
+
+
                 </div>
-            </div>
-            </form>
-        
-        
-            <script src="assets/jquery.min.js"></script>
-            <script>
-                $("#header").load("header.html")
-                // function Book(){
-                //     event.preventDefault();
-                //     const nooftickets = document.querySelector("#nooftickets").value;
-                //     const password = document.querySelector("#date").value;
-                //     const passwordR = document.querySelector("#password-repeat").value;
-                // }
-                </script>
-                
-    </body>
+            <!-- </div> -->
+           
+    </form>
+   
+</div>
+    <script src="book.js"></script>
+
+    <script src="assets/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html")
+    //    function displayMovieTable(MovieTable){
+    //        alert("hi");
+    //        let content=`
+    //        <table>
+    //         <tr>
+    //             <th>Movie</th>
+    //             <th>Theatre</th>
+    //             </tr>
+    //             `;
+    //             for(let img of MovieTable ){
+    //                 content+=`<tr>
+    //                     <td><${img.title}</td>
+    //                     <td><${img.name}</td>
+    //                     `;
+    //             }
+    //             content+=`</table>`;
+    //             document.querySelector(".movieData").innerHTML=content;
+
+    //    }
+    </script>
+
+</body>
 
 </html>

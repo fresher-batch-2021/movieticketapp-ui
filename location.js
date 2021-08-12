@@ -1,17 +1,16 @@
 
-// this function gets language check box value and store it in array
-function filterLanguages(){
+ function filterLocation(){
     // alert("Filter ");
-    var allLanguages=document.querySelectorAll("#language");
-    let selectedLanguages = [];
-    for(let language of allLanguages){
-        if (language.checked){
-            selectedLanguages.push(language.value);
+    var allLocation=document.querySelectorAll("#location");
+    let selectedLocation = [];
+    for(let location of allLocation){
+        if (location.checked){
+            selectedLocation.push(location.value);
         }
     }
-    console.log(selectedLanguages);
+    console.log(selectedLocation);
 
-    if (selectedLanguages.length == 0){
+    if (selectedLocation.length == 0){
         document.getElementById("error").innerHTML="please mark only one checkbox either tamil or english";
 
     }
@@ -22,7 +21,8 @@ function filterLanguages(){
         { imageUrl: "joker.jpg", language:"english",title:"joker" }, { imageUrl: "doctor.jfif",language:"tamil",title:"doctor"}, { imageUrl: "karnan.jpg",language:"tamil",title:"karnan"}];
     // displaying images 
         //  let filteredMovies = images.filter(obj=>obj.language=="tamil"|| obj.language=='english');
-       let filteredMovies = images.filter(obj=> selectedLanguages.includes(obj.language));
+       let filteredMovies = images.filter(obj=> selectedLocation.includes(obj.location));
        displayMovies(filteredMovies);
    }
    }
+
