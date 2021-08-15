@@ -1,5 +1,5 @@
 let selectedMovie= localStorage.getItem("SELECTED_MOVIE");
-
+let selectedTheatre = localStorage.getItem("SELECTED_THEATRE");
 function showMovies(title){
 
 
@@ -10,14 +10,15 @@ localStorage.setItem("SELECTED_MOVIE",title);
 
 function showTheatre(name){
     localStorage.setItem("SELECTED_THEATRE",name);
-
+    
 }
+
 
 
 
 // booking.html
 
-let selectedTheatre = localStorage.getItem("SELECTED_THEATRE");
+// let selectedTheatre = localStorage.getItem("SELECTED_THEATRE");
 
 
 let content=`

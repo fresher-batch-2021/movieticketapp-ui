@@ -16,6 +16,26 @@
 
 
 <div class="moviesPage">
+    <ul class="ul">
+    <li><a href="location.html"><select>
+        <option>
+          Chennai
+        </option>
+      
+    
+      <option>
+        Madurai
+      </option>
+      <option>
+        Coimbatore
+      </option>
+    </select>
+    </a>
+    
+    
+  </li>
+        
+   </ul>
     <!-- <h1>
         <u>Theatres</u>
     </h1><br>
@@ -39,15 +59,6 @@ Chennai<br> --> -->
     <div class="filter">
         <h1>Filter By</h1>
         <a href="#">Clear</a>
-        <!-- <h3>AMENITIES</h3>
-        <label><br>
-            <input type="checkbox"  name="Language" 
-            style="margin-bottom: 15px;">Metro Train
-            </label>
-        <label><br>
-            <input type="checkbox"  name="Language" 
-            style="margin-bottom: 15px;">Social Seating
-            </label> -->
             <h3>Experience</h3>
             <input type="checkbox"  name="type" id="experience"  value="Dolby Atmos"
             style="margin-top: 15px;">Dolby Atmos
@@ -102,13 +113,13 @@ function displayTheatres(Theatres){
                   <a onClick="showTheatre('${img.name}')"  href="book.html">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
              
             </div>`;
+            
             count = count + 1;
             if (count == 2) {
                 content = content + `<br>`;
                 count = 0;
             }
         }
-
         document.querySelector(".moviesPage").innerHTML = content;
     }
 }

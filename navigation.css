@@ -42,7 +42,7 @@ label{
 /* sigup button in 1 div*/
 
 .si{
-    margin-left: 400px;
+    margin-left: 1100px;
     text-align: center;
     padding-right: 10px;
     margin-bottom: 500px;
@@ -260,12 +260,8 @@ li a:hover{
     
     
 }
- /* .tablepage{
-  position: absolute;
-  top: 50px;
- }  */
+ 
  .tablePage1{
-     /* display: inline-block; */
      height: 50%;
      width: 500px;
  }
@@ -276,16 +272,6 @@ li a:hover{
         border: 2px solid red; 
 
      }
-    /* .container3{
-        
-        
-        padding: 30px;
-        width: 30%;
-        border: 2px solid red;
-        margin : 100px auto;
-        display: block;
-       
-    } */
     .movielogo1{
         padding-left: 5px;
         padding-top: 6px;
@@ -293,7 +279,7 @@ li a:hover{
         image-resolution: 100px;
              }
 
-    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1
+    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1, #Email, #passwordS
     {
         width: 100%;
         padding: 10px;
