@@ -40,9 +40,34 @@
               
               
             </li>
-                  </div> 
-             </ul>
-           
+                  
+             <div id="loggedIn">
+
+
+
+            </div>
+
+            <script>
+                    function checkLogin() {
+                    let userStr = localStorage.getItem("LOGGED_IN_USER");
+                    let user = userStr != null ? JSON.parse(userStr):null;
+                    if (user != null){
+                       document.querySelector("#loggedIn").innerHTML = "Welcome &nbsp   " + user.email  + "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+                    }
+                    // else{
+                                           
+                    // }
+
+                    }
+                    checkLogin();
+                    function logout(){
+                            localStorage.removeItem("LOGGED_IN_USER");
+                            window.location.href="login.html";
+                    }
+            </script>
+            </div> 
+          </ul>
+
        
 
   
