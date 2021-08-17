@@ -1,5 +1,14 @@
-let selectedMovie= localStorage.getItem("SELECTED_MOVIE");
-let selectedTheatre = localStorage.getItem("SELECTED_THEATRE");
+// function ticket(){
+//     let x=logincheck();
+//     if(x==false)return;
+// }
+// ticket();
+
+const param = new URLSearchParams(window.location.search.substr(1));
+let movie=param.get("movie");
+let theatre=param.get("theatre");
+let selectedMovie= movie
+let selectedTheatre = theatre;
 function showMovies(title){
 
 
@@ -34,5 +43,4 @@ let content=`
 </table>
 `;
 document.querySelector(".tablePage").innerHTML=content;
-
 

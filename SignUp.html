@@ -22,10 +22,10 @@
     <p>Please fill in this form to create an account</p><br>
     <hr>
     <label for ="email"><strong>Email</strong></label>
-    <input type="email" placeholder="Enter Mail" name="email" id="email" required><br>
+    <input type="email" placeholder="Enter Mail" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com"><br>
     
     <label for ="password"><strong>password</strong></label>
-    <input type="password" placeholder="Enter password" name="password" id="password"required><br>
+    <input type="password" placeholder="Enter password" name="password" id="password"required pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
 
     <label for ="password-repeat"><strong>repeat password</strong></label>
     <input type="text" placeholder="repeat password" name="password-repeat" id="password-repeat"required><br>
@@ -70,11 +70,8 @@
    
       }
       else{
-          const dbUsername='apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
-          const dbPassword='e455d34a303110b468819fbc14388b5e';
-          const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
-        const url="https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_user";
-        axios.post(url,userobj, {headers:{'Authorization':basicAuth}}).then(res =>{
+         
+          UserService.register(userobj) .then(res =>{
             alert("registration successful");
             window.location.href ="login.html";
 
@@ -85,10 +82,11 @@
       }
 
     }
-      
+  
    
         
      
 </script>
+<script src="service.js"></script>
 </body>
 </html>

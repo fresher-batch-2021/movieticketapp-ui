@@ -52,6 +52,7 @@
         </section>
     
       <script src="assets/jquery.min.js"></script>
+      
       <script>
           $("#header").load("header.html")
           function Login(){
@@ -67,28 +68,7 @@
                 "email":username,
                 "password":password
               };
-              const dbUsername='apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
-          const dbPassword='e455d34a303110b468819fbc14388b5e';
-          const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
-
-          console.log(basicAuth);
-              const url="https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_user/_find";
-        
-              const requestData = {
-                  "selector": {
-                      "email": username,
-                      "password": password,
-                  },
-                  "fields":["_id", "name", "email"],
-              };
-
-
-
-
-
-
-
-        axios.post(url,requestData,{headers:{Authorization:basicAuth}}).then(res =>{
+              UserService.login(username, password).then(res =>{
             let data = res.data.docs;
 
             alert("login successful");
@@ -105,6 +85,7 @@
           }
 
       </script>
+      <script src="service.js"></script>
 </body>
 </html>
 </html>
