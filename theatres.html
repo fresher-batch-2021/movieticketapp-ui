@@ -1,58 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            theatres
-        </title>
-        <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="navigation.css"> 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+
+<head>
+    <title>
+        theatres
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navigation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-   
-    </head>
-    <body>
-        <header id="header"></header>
 
-<script src="theatre.js"></script>
+</head>
 
-<div class="moviesPage">
-   
-     <h1>
-        <u class="moviesHead">Theatres</u>
-    </h1><br>
-  <div class="filter">
-        <h1>Filter By</h1>
-        <a href="#">Clear</a>
+<body>
+    <header id="header"></header>
+
+    <script src="theatre.js"></script>
+
+    <div class="moviesPage">
+
+        <h1>
+            <u class="moviesHead">Theatres</u>
+        </h1><br>
+        <div class="filter">
+            <h1>Filter By</h1>
+            <a href="#">Clear</a>
             <h3>Experience</h3>
-            <input type="checkbox"  name="type" id="experience"  value="Dolby Atmos"
-            style="margin-top: 15px;">Dolby Atmos
+            <input type="checkbox" name="type" id="experience" value="Dolby Atmos" style="margin-top: 15px;">Dolby Atmos
             </label>
             <br>
-            <input type="checkbox"  name="type" id="experience" value="2k"
-            style="margin-top: 15px;">2K<br>
+            <input type="checkbox" name="type" id="experience" value="2k" style="margin-top: 15px;">2K<br>
 
             </label>
-            <input type="checkbox"  name="type" id="experience" value="4k"
-            style="margin-top: 15px;">4K
+            <input type="checkbox" name="type" id="experience" value="4k" style="margin-top: 15px;">4K
             </label><br>
             <h3>location</h3>
-            <input type="checkbox"  name="type" id="experience"  value="Chennai"
-            style="margin-top: 15px;">Chennai
+            <input type="checkbox" name="type" id="experience" value="Chennai" style="margin-top: 15px;">Chennai
             </label>
             <br>
-            <input type="checkbox"  name="type" id="experience" value="madurai"
-            style="margin-top: 15px;">madurai<br>
+            <input type="checkbox" name="type" id="experience" value="madurai" style="margin-top: 15px;">madurai<br>
 
             </label>
-            <input type="checkbox"  name="type" id="experience" value="coimbatore"
-            style="margin-top: 15px;">coimbatore
+            <input type="checkbox" name="type" id="experience" value="coimbatore" style="margin-top: 15px;">coimbatore
             </label><br>
-              
+
 
             <button type="button" onclick="filterExperience()">Apply
             </button>
@@ -60,79 +56,86 @@
                 reset
             </button>
 
-          
-    
-       </div>
+
+
+        </div>
     </div>
     <script src="theatre.js"></script>
     <script src="assets/jquery.min.js"></script>
-<script>
-    $("#header").load("header.html")
-    function getTheatres() {
-        // const dbUsername='apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
-        //   const dbPassword='e455d34a303110b468819fbc14388b5e';
-        //   const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
-        //     const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_theatredetails/_all_docs?include_docs=true";
-        //     axios.get(url,{headers:{Authorization:basicAuth}}).then(res => {
+    <script>
+        $("#header").load("header.html")
+        function getTheatres() {
+            const param = new URLSearchParams(window.location.search.substr(1));
+let movie=param.get("movie");
+let selectedMovie= movie
+console.log(selectedMovie)
+            // const dbUsername='apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
+            //   const dbPassword='e455d34a303110b468819fbc14388b5e';
+            //   const basicAuth= 'Basic ' + btoa(dbUsername+':'+dbPassword);
+            //     const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_theatredetails/_all_docs?include_docs=true";
+            //     axios.get(url,{headers:{Authorization:basicAuth}}).then(res => {
 
-        //         let movies = res.data.rows;
-        //         movies=movies.map((obj)=>obj.doc);
-        
-    var Theatres = [{ imageUrl: "sangam.jpg",name:"Sangam Cinemas",experience:"4k",location:"chennai" }, { imageUrl: "devi.jfif",name:"Devi Cineplex",experience:"Dolby Atmos",location:"madurai"}, { imageUrl: "kasi.jpg",name:"Kasi Theatre",experience:"4k",location:"coimbatore"},
-    { imageUrl: "vettri.jfif",name:"Vettri Theatre",experience:"Dolby Atmos",location:"chennai"}, { imageUrl: "sathyam.jpg",name:"Sathyam Cinemas",experience:"4k",location:"chennai"}, { imageUrl: "pvr.jpg",name:"PVR",experience:"4k",location:"coimbatore"}];
-                // const Theatres = res.data.rows;
-                displayTheatres(Theatres)
-        let content = "";
-                for(let img of Theatres){
-                    console.log(img);
-                    content = content +
-             `
+            //         let movies = res.data.rows;
+            //         movies=movies.map((obj)=>obj.doc);
+
+            var Theatres = [{ imageUrl: "sangam.jpg", name: "Sangam Cinemas", experience: "4k", location: "chennai" }, { imageUrl: "devi.jfif", name: "Devi Cineplex", experience: "Dolby Atmos", location: "madurai" }, { imageUrl: "kasi.jpg", name: "Kasi Theatre", experience: "4k", location: "coimbatore" },
+            { imageUrl: "vettri.jfif", name: "Vettri Theatre", experience: "Dolby Atmos", location: "chennai" }, { imageUrl: "sathyam.jpg", name: "Sathyam Cinemas", experience: "4k", location: "chennai" }, { imageUrl: "pvr.jpg", name: "PVR", experience: "4k", location: "coimbatore" }];
+            // const Theatres = res.data.rows;
+            displayTheatres(Theatres)
+            let content = "";
+            for (let img of Theatres) {
+                console.log(img);
+console.log(selectedMovie)
+
+                content = content +
+                    `
             <div class="product">
                 
-                  <a href="book.html?id=('${img.name}')">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+                  <a href="book.html?theatre=${img.name}&movie=${selectedMovie}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
              
             </div>`;
 
-                }
-                document.querySelector(".moviesPage").innerHTML = content;
+            }
+            document.querySelector(".moviesPage").innerHTML = content;
 
-//                 .catch(err => {
+            //                 .catch(err => {
 
 
-// console.error(err.response);
-// });
+            // console.error(err.response);
+            // });
 
-}
-getTheatres();
-    // displaying images 
+        }
+        getTheatres();
+        // displaying images 
 
-function displayTheatres(Theatres){
-    const param = new URLSearchParams(window.location.search.substr(1));
-    let movieName=param.get("movie");
-    for(let experience of Theatres){
-        let content = "";
-        var count = 0;
-        for (let img of Theatres) {
-console.log(img)
-            content = content +
-             `
+        function displayTheatres(Theatres) {
+            const param = new URLSearchParams(window.location.search.substr(1));
+            let movieName = param.get("movie");
+            for (let experience of Theatres) {
+                let content = "";
+                var count = 0;
+                for (let img of Theatres) {
+                    console.log(img)
+                    content = content +
+                        `
             <div class="product">
                 
                   <a onClick="showTheatre('${img.name}')"  href="book.html?movie=${movieName}&theatre=${img.name}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
              
             </div>`;
-            
-            count = count + 1;
-            if (count == 2) {
-                content = content + `<br>`;
-                count = 0;
+
+                    count = count + 1;
+                    if (count == 2) {
+                        content = content + `<br>`;
+                        count = 0;
+                    }
+                }
+                document.querySelector(".moviesPage").innerHTML = content;
             }
         }
-        document.querySelector(".moviesPage").innerHTML = content;
-    }
-}
-    
-</script>
 
-    </body>
+    </script>
+
+</body>
+
 </html>
