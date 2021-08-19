@@ -17,7 +17,7 @@ function filterLanguages(){
     }
     // 
    else{
-    const url = "https://product-mock-api.herokuapp.com/movieapp/api/v1/movies";
+    const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_movies/_all_docs?include_docs=true";
     axios.get(url).then(res => {
 
         const movies = res.data;

@@ -23,21 +23,7 @@
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="theatres.html">Theatres</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="location.html"><select>
-                  <option>
-                    Chennai
-                  </option>
                 
-              
-                <option>
-                  Madurai
-                </option>
-                <option>
-                  Coimbatore
-                </option>
-              </select>
-              </a>
-              
               
             </li>
                   
@@ -46,17 +32,17 @@
 
 
             </div>
+            
 
             <script>
                     function checkLogin() {
                     let userStr = localStorage.getItem("LOGGED_IN_USER");
                     let user = userStr != null ? JSON.parse(userStr):null;
                     if (user != null){
-                       document.querySelector("#loggedIn").innerHTML = "Welcome &nbsp   " + user.email  + "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
+                       document.querySelector("#loggedIn").innerHTML = "Welcome &nbsp   " + user.email + "</a>  &nbsp;<a href='#' onclick='logout()'> Logout</a>";
                     }
-                    // else{
-                                           
-                    // }
+                    
+                  
 
                     }
                     checkLogin();
@@ -64,8 +50,10 @@
                             localStorage.removeItem("LOGGED_IN_USER");
                             window.location.href="login.html";
                     }
+
+
             </script>
-            </div> 
+            
           </ul>
 
        
