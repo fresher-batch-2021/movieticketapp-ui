@@ -62,8 +62,9 @@ document.querySelector(".tablePage").innerHTML=content;
 
 function setData(){
     let today = new Date().toJSON().substr(0,10);
-    let tomorrow = new Date().toJSON().substr(0,10);
+    let day =dayjs().add(8,'days').toDate().toJSON().substr(0,10);
+    console.log(day);
     document.querySelector("#date").setAttribute("min",today);
-    document.querySelector("#date").setAttribute("max", tomorrow);
+    document.querySelector("#date").setAttribute("max",day);
 }
 setData();
