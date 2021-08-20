@@ -16,16 +16,15 @@
         <div class="tablePage">  </div>
     <form onsubmit="Book()" style="border:1px solid #ccc">
        
-            <div class="bookPage">
+            <!-- <div class="bookPage"> -->
                 <!-- <div class="box2"> -->
 
 
 
                     <label for="no of tickets">No of Tickets </label>
-                    <input type="text" id="nooftickets" name="total_tickets" placeholder="enter tickets" min="1"
-                         max="10" required><br>
+                    <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets"  required><br>
                     <label for="date">Date</label>
-                    <input type="date" id="date" name="date" required><br>
+                    <input type="date" id="date" name="date" max="5" required ><br>
                     <label for="time">Time</label>
 
                     <select id="time">
@@ -38,21 +37,15 @@
                         <option>
                             4.30PM
                         </option>
-                        <option>
-                            10.30PM
-                        </option>
+                        <option>10.30PM</option>
                     </select><br>
                     <div class="clearfix"><br>
-
-                        <button type="reset">
-                            <a href="theatres.html"> Back</a></button>
-                        <button type="submit">
-                            payment
-                        </button>
+                        <button type="reset"><a href="theatres.html"> Back</a></button>
+                        <button type="submit">Booking status</button>
                     </div>
 
 
-                </div>
+                <!-- </div> -->
             <!-- </div> -->
            
     </form>
@@ -63,25 +56,6 @@
     <script src="assets/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
-    //    function displayMovieTable(MovieTable){
-    //        alert("hi");
-    //        let content=`
-    //        <table>
-    //         <tr>
-    //             <th>Movie</th>
-    //             <th>Theatre</th>
-    //             </tr>
-    //             `;
-    //             for(let img of MovieTable ){
-    //                 content+=`<tr>
-    //                     <td><${img.title}</td>
-    //                     <td><${img.name}</td>
-    //                     `;
-    //             }
-    //             content+=`</table>`;
-    //             document.querySelector(".movieData").innerHTML=content;
-
-    //    }
     </script>
 
 </body>

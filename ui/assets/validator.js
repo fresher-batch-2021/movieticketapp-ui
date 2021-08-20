@@ -1,4 +1,4 @@
-class Validator {
+static class Validator {
     static isValidString(input, message) {
       if (input == null || input.trim() == "") {
         //alert(message);
@@ -6,3 +6,4 @@ class Validator {
       }
     }
   }
+//  new Validator().isValidString();

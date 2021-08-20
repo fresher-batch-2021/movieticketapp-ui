@@ -22,3 +22,4 @@ function formMovieTableData(movies){
     }
     console.log(content);
 }
+listMovies();
