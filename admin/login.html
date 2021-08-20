@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+      <title>Login</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="navigation.css"> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   -->
+    
+    </head>
+<body>
+
+    <header id="header"></header>
+   
+      
+        <section>
+      
+    <form onsubmit="Login()" style="border:1px solid #ccc">
+        <div class="container">
+            <div class="box1">
+        <!-- <div>
+            <img src="images/login.jpg" alt="Avatar" class="avatar">
+          </div> -->
+        
+    
+        <label for="Email"><strong>Email</strong></label>
+        <input type="email" placeholder="Enter Email" name="username" id="username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com" autocomplete="off">
+
+        <label for="password"><strong>password</strong></label>
+        <input type="password" placeholder="Enter password" name="password" id="password1"required  autocomplete="off">
+        
+        <button class="login" type="submit"><a href="index2.html">login</a></button>
+        <label><br>
+        <input type="checkbox" checked="checked" name="remember" 
+        style="margin-bottom: 15px;">Remember Me <br>
+        </label>
+       
+    <div class="clearfix" style="background-color:#f1f1f1">
+        <button type="reset" class="cancelButton">Cancel</button>
+        <span class="psw">Forgot <a href="forgetpassword.html">Password?</a></span>
+      </div>
+    
+    </div>
+    </div>
+    </form>
+        </section>
+    
+      <!-- <script src="assets/jquery.min.js"></script> -->
+      
+      <!-- <script>
+          $("#header").load("header.html")
+          function Login(){
+            console.log("hi");
+              event.preventDefault();
+              const username =document.querySelector("#username").value;
+              const password =document.querySelector("#password1").value;
+              console.log(username+"-"+password);
+              if(password == null || password.trim()=="" ){
+               alert("password cannot be blank");
+              }
+              else{
+              
+              UserService.login(username, password).then(res =>{
+            let data = res.data.docs[0];
+
+            if(data!=null){
+            alert("login successful");
+            localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data));
+            window.location.href ="index2.html";
+            }
+            else{
+              alert("login failed");
+            }
+        }).catch(err =>{
+            console.error(err);
+            alert("unable to login");
+        });
+              }
+            
+
+          }
+
+      </script> -->
+      <script src="service.js"></script>
+</body>
+</html>
+</html>

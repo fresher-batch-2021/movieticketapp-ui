@@ -5,28 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://project-themes.netlify.app/movieapp/admin/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
+
+    <header>
+        <div class="brandName">MovieApp</div>
+        <nav>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+                
+            </ul>
+        </nav>
+
+    </header>
     
-    <h3>Movie App</h3>
-
-<table>
-    <tr>
-        <table>
-            <button>
-               <a href="add-movie.html">Add Movie</a>
-            </button>
-            <button>
-               <a href= "list-movie.html">list-movie</a>
-            </button>
-        </table>
-    </tr>
-</table>
-
-
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul>
+                <li><a href="add-movie.html">Add Movie</a></li>
+                <li><a href="list-movie.html">List Movie</a></li>
+            </ul>
+        </div>
+        <div class="page">
+            <h3>Movie App</h3>
+        </div>
+    </div>
     
-
     <script src="validator.js"></script>
     <script src="add-movie.js"></script>
     <script src="list-movie.js"></script>
