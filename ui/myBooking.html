@@ -1,28 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navigation.css">
+</head>
+<body>
+    <header id="header"></header>
+    <table id="table">
+      <thead>
 
- function filterLocation(){
-    // alert("Filter ");
-    var allLocation=document.querySelectorAll("#location");
-    let selectedLocation = [];
-    for(let location of allLocation){
-        if (location.checked){
-            selectedLocation.push(location.value);
-        }
-    }
-    console.log(selectedLocation);
+        <tr>
+          <!-- <th id="header">Theatre</th> -->
+          <th id="header">Movie</th>
+          <th id="header">Date</th>
+          <th id="header">Show timing</th>
+          <th id="header">Status</th>
+          <th id="header">Action</th>
+          </tr>
+      </thead>
+    </table>
+    <tbody id=list-movie>
 
-    if (selectedLocation.length == 0){
-        document.getElementById("error").innerHTML="please mark only one checkbox either tamil or english";
+      </tbody>
 
-    }
-    // 
-   else{
-    //    get movies from the back end and filter movies based on the selected languages
-    var images = [{ imageUrl: "sarpatta.jpg",language:"tamil",title:"sarpatta"}, { imageUrl: "valimai.jfif",language:"tamil",title:"valimai" }, { imageUrl: "3036057.jpg",language:"tamil", title:"Master"},
-        { imageUrl: "joker.jpg", language:"english",title:"joker" }, { imageUrl: "doctor.jfif",language:"tamil",title:"doctor"}, { imageUrl: "karnan.jpg",language:"tamil",title:"karnan"}];
-    // displaying images 
-        //  let filteredMovies = images.filter(obj=>obj.language=="tamil"|| obj.language=='english');
-       let filteredMovies = images.filter(obj=> selectedLocation.includes(obj.location));
-       displayMovies(filteredMovies);
-   }
-   }
+     
 
+</body>
+</html>

@@ -7,6 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="navigation.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -14,70 +17,54 @@
 
   
     <header id="header"></header>
+    <div class="tablePage">  </div>
+    
     <table id="table">
-      <tr>
-      <th id="header">Theatre</th>
-      <th id="header">Movie</th>
-      <th id="header">Date</th>
-      <th id="header">Show timing</th>
-      <th id="header">Status</th>
-      <th id="header">Action</th>
-      </tr>
-      <tr>
-        <td>devi Cineplex</td>
+      <thead>
+
+        <tr>
+          <th id="header">S.no</th>
+        
+          <th id="header">Movie</th>
+           <th id="header">no of tickets</th>
+          <th id="header">Date</th>
+          <th id="header">Show timing</th>
+          <th id="header">price</th>
+          
+          <th id="header">Status</th>
+          <th id="header">Action</th>
+          </tr>
+      </thead>
+    <tbody id=list-movie>
+
+      </tbody>
+      
+
+    
+        <!-- <td>devi Cineplex</td>
         <td>Valimai</td>
         <td>2021-08-10</td>
         <td>10.30AM</td>
-        <th id="header">Booked</th>
-        <td><button>cancel</button></td>
         
-      </tr>
+        <td><button>cancel</button></td> -->
+         
+      
 
     </table>
-    <!-- <section>
-      <form action="submit.html">
-        <div class="container">
+    
+    <script src="book.js"></script>
+    <script src="confirmed.js"></script>
+    <script src="delete.js"></script>
+   
+    <script src="assets/jquery.min.js"></script>
+    <script>
+      $("#header").load("header.html")
+</script>
 
-          <div class="box1">
-
-
-            <p>Pay using Credit or Debit card</p>
-
-
-            <label> Card Number </label>
-            <input required type="text" class="card-number-field" placeholder="###-###-###" />
-
-            <br />
-
-            <label> Expiry Date </label>
-            <input required type="text" class="date-number-field" placeholder="DD-MM-YY" /><br>
-
-
-
-            <label> CVV number </label>
-            <input required type="text" class="cvv-number-field" placeholder="xxx" />
-
-            <label> Card Holder name </label>
-            <input type="text" class="card-name-field" placeholder="Enter your Name" required>
-
-            <button type="submit" class="submit-now-btn">
-            submit
-            </button>
-            <button type="" class="submit-now-btn">
-              <a href="book.html">Back</a>
-            </button>
-
-
-          </div>
+    
       
-      </form> -->
-    </div>
-      <script src="assets/jquery.min.js"></script>
-      <script>
-        $("#header").load("header.html")
-
-      </script>
-  
+      
+    
 </body>
 
 </html>
