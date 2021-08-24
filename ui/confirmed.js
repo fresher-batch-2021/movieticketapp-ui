@@ -48,14 +48,15 @@ const abc = (Obj.ticket)*(Obj.price);
         <td>${abc}</td>
         <td>${new Date().toJSON().substr(0,10)}</td>
 
-        <td>${Obj.status}</td>`;
+        <td>${Obj.status}</td>
+        <td>`;
         if(Obj.status =='Booked'){
-        content+=`<td>${cancelBook}</td>`;
+        content+=`${cancelBook}`;
         }
         content+=`     
         
     
-         </tr>
+         </td></tr>
         `
     document.querySelector("#list-movie").innerHTML = content;
 
@@ -84,3 +85,24 @@ const abc = (Obj.ticket)*(Obj.price);
 }
 // listMovies();
 formMovieTableData();
+
+
+function cancel_booking(id,rev){
+    alert("Do you want to cancel this booking?");
+    console.log(id);
+    console.log(rev);
+    let url ="https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud"+movieId+"?rev="+revId;
+        const dbusername = "apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w";
+        const dbpassword = "e455d34a303110b468819fbc14388b5e";
+    const basicAuth = 'Basic '  + btoa(dbusername+ ":" +dbpassword);
+
+    axios.put(url+id+"?rev="+rev, { headers: {'Authorization': basicAuth}}).then(res => {
+    alert("Deleted succesfully");
+
+    bookList();
+    }).catch(err =>{
+        alert("error in deleting");
+
+    })
+    
+}
