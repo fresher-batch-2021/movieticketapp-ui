@@ -15,6 +15,8 @@ function deleteMovie(movieId,revId) {
           // const data = res.data;
           // console.log(data);
           console.log("Successfully Deleted");
+          alert("deleted successfully");
+          window.location.reload();
         })
         .catch((err) => {
           console.log(err.response.data);

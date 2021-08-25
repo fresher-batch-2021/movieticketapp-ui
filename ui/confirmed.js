@@ -1,3 +1,18 @@
+
+
+let userStr = localStorage.getItem("LOGGED_IN_USER");
+let user = userStr != null ? JSON.parse(userStr) : [];
+console.log("email validate", user.email);
+
+if(user.email != null)
+{
+   
+}
+else
+{
+    alert("need to login first");
+    window.location.href = "login.html";
+}
 function listMovies(){
     alert("hi");
     console.log("list Movies");
@@ -34,7 +49,7 @@ function formMovieTableData(){
     console.log(details)
     for(let Obj of details){
 
-let cancelBook =`<button type='button'  onclick = "cancel_booking('${Obj._id}','${Obj._rev}');"> Cancel </button>`;
+let cancelBook =`<button type='button'  onclick = "cancel_booking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.ticket}','${Obj.date}','${Obj.price}','${Obj.time}','cancel');"> Cancel </button>`;
 
 const abc = (Obj.ticket)*(Obj.price);
 
@@ -87,22 +102,32 @@ const abc = (Obj.ticket)*(Obj.price);
 formMovieTableData();
 
 
-function cancel_booking(id,rev){
+function cancel_booking(id, rev,movieId,movieName,ticket,date,time,price,status){
     alert("Do you want to cancel this booking?");
     console.log(id);
     console.log(rev);
-    let url ="https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud"+movieId+"?rev="+revId;
+    const cancel={
+        "movieId": movieId,
+        "movieName":movieName,
+        "ticket": ticket,
+        "date": date,
+        "time": time,
+        "price": price,
+        "status": status
+    }
+    let url ="https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking/"+id+"?rev="+rev;
         const dbusername = "apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w";
         const dbpassword = "e455d34a303110b468819fbc14388b5e";
     const basicAuth = 'Basic '  + btoa(dbusername+ ":" +dbpassword);
 
-    axios.put(url+id+"?rev="+rev, { headers: {'Authorization': basicAuth}}).then(res => {
+    axios.put(url,cancel, { headers: {'Authorization': basicAuth}}).then(res => {
     alert("Deleted succesfully");
-
-    bookList();
+window.location.reload();
+    
     }).catch(err =>{
         alert("error in deleting");
 
     })
     
 }
+

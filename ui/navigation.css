@@ -4,13 +4,15 @@
 }
 body{
     background-color:rgb(87, 82, 82);
+    /* overflow-x: hidden; */
 }
 label{
     /* color: ; */
     color: rgb(211, 203, 203);
 }
    /* first div background */
-   .top{
+   .navbar{
+   
     background-color: #000;
     height: 75px;
     }
@@ -24,7 +26,7 @@ label{
     
 }
 
-.top input{  
+.navbar input{  
     /* position: relative; */
     width: 500px;
     /* height: 30px; */
@@ -39,6 +41,11 @@ label{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border: 1px solid rgb(202, 25, 25);
 }
+/* .navreg {
+    
+    margin-top: -5%;
+    margin-left: 10%;
+} */
 /* sigup button in 1 div*/
 
 .si{
@@ -152,16 +159,18 @@ a{
     }
  
 /* 2 div tab  */
-.ul{
+.navcontent{
+ 
     float: left;
     list-style-type: none;
     padding: 0; 
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: #333;
     /* border: 1px solid black; */
     box-shadow:1px 1px 2px 2px black;
-    height:40px;
+    /* height:40px; */
     width: 100%;
+    /* margin-left: 8%; */
 }
 /* list hover */
 li a:hover{
@@ -279,7 +288,7 @@ li a:hover{
         image-resolution: 100px;
              }
 
-    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1, #Email, #passwordS,#price
+    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1, #Email, #passwordS,#price,#movieName
     {
         width: 100%;
         padding: 10px;

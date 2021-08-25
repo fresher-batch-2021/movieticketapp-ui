@@ -1,4 +1,4 @@
-
+log();
 function price(movieId) {
     const dbUsername = 'apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
     const dbPassword = 'e455d34a303110b468819fbc14388b5e';
@@ -70,8 +70,10 @@ function Book() {
 
 const param = new URLSearchParams(window.location.search.substr(1));
 let movie = param.get("movie");
+console.log("select movie +++", movie);
 let theatre = param.get("theatre");
-let selectedMovie = movie
+let selectedMovie = movie;
+console.log("select movie ----", selectedMovie);
 let selectedTheatre = theatre;
 let selectedMovieId = param.get("id");
 
@@ -86,7 +88,7 @@ let content = `
 
 </tr>
 <tr>
-<td>${selectedMovie}</td>
+// <td>${selectedMovie}</td>
 
 </tr>
 </table>
@@ -94,9 +96,9 @@ let content = `
 {/* <td>${selectedTheatre}</td> */ }
 {/* <th>theatre</th> */ }
 
-document.querySelector(".tablePage").innerHTML = content;
+// document.querySelector(".tablePage").innerHTML = content;
 
-
+console.log(content)
 // function showTheatre(name){
 //     localStorage.setItem("SELECTED_THEATRE",name);
 

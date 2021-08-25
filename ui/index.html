@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            moviesticket
-        </title>
-            <link rel="stylesheet" href="navigation.css">   
-            <!-- <link rel="stylesheet" href="slider.css"> -->
-            
-    </head>
-    <body>
-      <header id="header"></header>
-      <script src="assets/jquery.min.js"></script>
-      <script>
-          $("#header").load("header.html")
-      </script>
-       <!--slider-->
-       <div class="pagecolor">
-        
 
-      
-      
-          <div class="slideshow-container">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        moviesticket
+    </title>
+    <link rel="stylesheet" href="navigation.css">
+    <!-- <link rel="stylesheet" href="slider.css"> -->
+
+</head>
+
+<body>
+    <header id="header"></header>
+    <script src="assets/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html")
+    </script>
+    <!--slider-->
+    <div class="pagecolor">
+<div class="slideshow-container">
 
 
 
 
-       </div>
-       <!-- </div> -->
-       <br>
-       </div>
-       <script>
+        </div>
+    
+        <br>
+    </div>
+    <script>
         var slideIndex = 0;
-        
-        let slideData =["images/karnan.jpg","images/jagame.jpg","images/3036057.jpg"];
 
-        function addSliderImages(){
+        let slideData = ["images/karnan.jpg", "images/jagame.jpg", "images/3036057.jpg"];
 
-              
+        function addSliderImages() {
+
+
             const slider = document.querySelector('.slideshow-container');//to place the html code in container
-            
 
-            for(let slide of slideData){
-                let slideDiv = document.createElement('div');    
-                slideDiv.setAttribute('class','mySlides fade');      
+
+            for (let slide of slideData) {
+                let slideDiv = document.createElement('div');
+                slideDiv.setAttribute('class', 'mySlides fade');
 
                 slideDiv.innerHTML = `<img class="imgslide" src="${slide}"/>`;
-                
-                    
+
+
                 slider.appendChild(slideDiv);
 
             }
 
         }
-        
+
 
         function showSlides() {
 
             slideIndex++;
-        //    alert("showSlides"  + slideIndex);
-          
-            
+            //    alert("showSlides"  + slideIndex);
+
+
             let mySlidesDiv = document.querySelectorAll('.mySlides');
-            
+
             // Don't display images
-            mySlidesDiv.forEach( divObj=>{                                                  
+            mySlidesDiv.forEach(divObj => {
                 divObj.style.display = "none";
             });
-            
+
 
             //reset to 1st image
             if (slideIndex > mySlidesDiv.length) {
-                 slideIndex = 1 
+                slideIndex = 1
             }
 
             //display one image at at time
@@ -83,8 +81,8 @@
         }
         addSliderImages();
         showSlides();
-      
+
     </script>
-    </body>
+</body>
 
 </html>

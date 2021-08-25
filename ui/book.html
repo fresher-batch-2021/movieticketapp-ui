@@ -27,13 +27,14 @@
                 <!-- <div class="box2"> -->
 
                     <input type="hidden" id="movieId" readonly/>
-                    <input type="hidden" id="movieName" readonly/>
+                    <label for="movieName">movieName</label>
+                    <input type="text" id="movieName" readonly/>
 
                 <label for="no of tickets">No of Tickets </label>
                 <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets" required><br>
-                <label for="date">Date</label>
+                <label for="date">Show Date</label>
                 <input type="date" id="date" name="date" max="5" required><br>
-                <label for="time">Time</label>
+                <label for="time">Show Time</label>
 
                 <select id="time">
                     <option>
@@ -63,6 +64,7 @@
 
     </div>
     <script src="assets/jquery.min.js"></script>
+    <script src="assets/loginuser.js"></script>
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
