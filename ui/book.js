@@ -1,4 +1,4 @@
-log();
+// log();
 function price(movieId) {
     const dbUsername = 'apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
     const dbPassword = 'e455d34a303110b468819fbc14388b5e';
@@ -29,6 +29,8 @@ function Book() {
 
     let movieId = document.querySelector("#movieId").value;
     let movieName = document.querySelector("#movieName").value;
+    let email =JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
+    let theatreName = document.querySelector("#theatreName").value;
     //todo
     //get movie id and movie name
 
@@ -44,10 +46,12 @@ function Book() {
             "movieId" : movieId,
             "movieName": movieName,
             "ticket":noOfTickets,
+            "theatreName":theatreName,
             "date":date,
             "time":time,
             "price":price,
-            "status":"Booked"
+            "status":"Booked",
+            "email":email
         }
         console.log(Obj);
         
