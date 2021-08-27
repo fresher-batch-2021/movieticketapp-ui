@@ -11,7 +11,7 @@ label{
     color: rgb(211, 203, 203);
 }
    /* first div background */
-   .navbar{
+   .navBar{
    
     background-color: #000;
     height: 75px;
@@ -324,21 +324,14 @@ li a:hover{
     padding: 16px;
     width: 30%;
     height: 100%;
-    /* background-origin: padding-box; */
-    /* background-color:gainsboro; */
-    /* margin : 0 auto; */
-    margin-top: 10px;
-    /* margin-right: 200px; */
-    /* padding: 30px; */
+margin-top: 10px;
+   
     float: left;
     border: 2px solid red;
-     /* display:inline-block;  */
+   
   
 }  
-
-
-
-    /* index page */
+/* index page */
     /* Slideshow container */
 .slideshow-container {
     width: 100%;

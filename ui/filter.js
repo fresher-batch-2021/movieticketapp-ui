@@ -30,7 +30,7 @@ function filterLanguages() {
             console.log(res.data);
             console.log(res,data.docs);
             const movies = res.data.docs;
-            // let filteredMovies = movies.filter(obj => selectedLanguages.includes(obj.language));
+        
             displayMovies(movies);
         })
 

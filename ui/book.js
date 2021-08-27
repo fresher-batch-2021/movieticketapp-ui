@@ -1,4 +1,4 @@
-// log();
+log();
 function price(movieId) {
     const dbUsername = 'apikey-v2-ijzqz68xo4ar5nrlcenfueq1cy3mgg675nzk8td8x9w';
     const dbPassword = 'e455d34a303110b468819fbc14388b5e';

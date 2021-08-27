@@ -3,18 +3,6 @@
 let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
 const hari = (userStr)
 console.log("hari" + hari);
-// let user = userStr != null ? JSON.parse(userStr) : [];
-// console.log("email validate", user.email);
-
-// if(user.email != null)
-// {
-
-// }
-// else
-// {
-//     alert("need to login first");
-//     window.location.href = "login.html";
-// }
 
 function formMovieTableData() {
 
@@ -54,8 +42,7 @@ function formMovieTableData() {
             content += `<tr>
         <td>${i++}</td>
         <td>${Obj.movieName}</td>
-       
-        <td>${Obj.ticket}</td>
+       <td>${Obj.ticket}</td>
         <td>${Obj.theatreName}</td>
         <td>${Obj.date}</td>
         <td>${Obj.time}</td>

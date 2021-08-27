@@ -21,7 +21,7 @@ function LoggedIn() {
         `;
         // localStorage.setItem("LOGGED_IN_USER",JSON.stringify(false));
     }
-    let navReg = document.querySelector(".navreg");
+    let navReg = document.querySelector(".navRegister");
     if (navReg) {
 
         navReg.innerHTML = content;

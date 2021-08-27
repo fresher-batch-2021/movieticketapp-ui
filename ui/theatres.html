@@ -27,7 +27,7 @@
         <h1>
             <u class="moviesHead">Theatres</u>
         </h1><br>
-        <div class="filter">
+        <!-- <div class="filter">
             <h1>Filter By</h1>
             <a href="#">Clear</a>
             <h3>Experience</h3>
@@ -58,7 +58,7 @@
 
 
 
-        </div>
+        </div> -->
     </div>
     <script src="theatre.js"></script>
     <script src="assets/jquery.min.js"></script>
@@ -91,7 +91,7 @@ console.log(selectedMovie)
                     `
             <div class="product">
                 
-                  <a href="book.html?theatre=${img.name}&movie=${selectedMovie}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+                  <a href="movies.html?theatre=${img.name}&movie=${selectedMovie}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
              
             </div>`;
 
@@ -120,7 +120,7 @@ console.log(selectedMovie)
                         `
             <div class="product">
                 
-                  <a onClick="showTheatre('${img.name}')"  href="book.html?movie=${movieName}&theatre=${img.name}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
+                  <a onClick="showTheatre('${img.name}')"  href="movies.html?movie=${movieName}&theatre=${img.name}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
              
             </div>`;
 
