@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Booking</title>
-    <link rel="stylesheet" href="navigation.css">
-   
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Booking</title>
+  <link rel="stylesheet" href="navigation.css">
 </head>
+
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-  integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <header id="header"></header>
+<main>
+  <table id="table">
+    <thead>
 
-
-
-
-
-    <header id="header"></header>
-    
-    <table id="table">
-      <thead>
-
-        <tr>
-          <th id="header">S.no</th>
-        
-          <th id="header">Movie</th>
-         
-           <th id="header">no of tickets</th>
-           <th id="header">Theatre Name</th>
-          <th id="header">show Date</th>
-          <th id="header">Show timing</th>
-
-          <th id="header">price</th>
-          <th id="header">Booking date</th>
-          
-          <th id="header">Status</th>
-          <th id="header">Action</th>
-          </tr>
-      </thead>
+      <tr>
+        <th id="header">S.no</th>
+        <th id="header">Movie</th>
+        <th id="header">no of tickets</th>
+        <th id="header">Theatre Name</th>
+        <th id="header">show Date</th>
+        <th id="header">Show timing</th>
+        <th id="header">price</th>
+        <th id="header">Booking date</th>
+        <th id="header">Status</th>
+        <th id="header">Action</th>
+      </tr>
+    </thead>
     <tbody id=list-movie>
 
-      </tbody>
-      </table>
-      <script src="assets/jquery.min.js"></script>
-    
-    <script src="book.js"></script>
-    <script src="confirmed.js"></script>
-    <!-- <script src="assets/delete-movie.js"></script> -->
-    <!-- <script src="logout.js"></script> -->
-    <script src="assets/loginuser.js"></script>
-   
-    
-    <script>
-      $("#header").load("header.html")
-</script>
-     
+    </tbody>
+  </table>
+</main>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/book.js"></script>
+  <script src="assets/js/mybook-service.js"></script>
+  <script src="assets/js/mybooking.js"></script>
+  <script src="assets/js/loginuser.js"></script>
+
+
+  <script>
+    $("#header").load("header.html")
+  </script>
+
 
 </body>
+
 </html>

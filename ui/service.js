@@ -24,10 +24,7 @@ static register(userobj){
      return axios.post(url,userobj, {headers:{'Authorization':basicAuth}})
 }
  
-static movies(){
-    const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_movies/_all_docs?include_docs=true";
-    return axios.get(url,{headers:{Authorization:basicAuth}})
-}
+
 
 
 }

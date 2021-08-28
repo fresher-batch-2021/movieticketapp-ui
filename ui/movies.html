@@ -15,103 +15,45 @@
 
 <body>
     <header id="header"></header>
+    <main>
     <h1>
         <u class="moviesHead">Movies</u>
     </h1><br>
 
     <div class="moviesPage">
-
-
-
-
     </div>
     <div class="filter">
         <h1>Filter By</h1>
         <a href="#">Clear</a>
 
         <h3 id="Language">Language</h3>
-        <!-- <form onsubmit="tamil()"> -->
+
         <label><br>
             <input type="checkbox" name="language" id="language" value="tamil" style="margin-bottom: 15px;">Tamil
         </label>
         <label><br>
             <input type="checkbox" name="language" id="language" value="english" style="margin-bottom: 15px;">English
         </label><br>
-        <button type="button" onclick="filterLanguages()">
-            Apply
-        </button>
-        <button type="reset" >
-            reset
-        </button>
+        <button type="button" onclick="filterLanguages()">Apply</button>
+        <button type="reset"> reset</button>
     </div>
-    
-    
-    
-    
-    <script src="assets/jquery.min.js"></script>
-    <script src="service.js"></script>
-    <script src="book.js"></script>
-    <script src="filter.js"></script>
-    <script src="assets/loginuser.js"></script>
-    
-    
+
+    </main>
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/movie-service.js"></script>
+    <script src="assets/js/book.js"></script>
+    <script src="assets/js/moviefilter.js"></script>
+    <script src="assets/js/loginuser.js"></script>
+    <script src="assets/js/movies.js"></script>
+
+
     <script>
-        $("#header").load("header.html")
+        $("#header").load("header.html");
+    </script>
 
-
-       
-        // // displaying images 
-        function getMovies() {
-        // let usrService=new UserService();
-        UserService.movies().then(res=> {
-
-                let movies = res.data.rows;
-                movies=movies.map((obj)=>obj.doc);
-                displayMovies(movies)
-            })
-                    .catch((err) => {
-                      console.error(err);
-                    });
-        
-        }
-        getMovies();
-        // alert(datas);
-        function displayMovies(movies) {
-            // console.log(movies);
-            for (let la of movies) {
-                let content = "";
-                var count = 0;
-                for (let img of movies) {
-                    console.log(img);
-
-                    content = content +
-                        `
-            <div class="product">
-                
-                  <a onClick="showMovies('${img.title}')"   href="book.html?movie=${img.title}&id=${img._id}">  <img class="productImg" src="images/${img.imageUrl}" id="productImg" alt=""></a>
-                 
-            </div>`;
-                    count = count + 1;
-                    if (count == 2) {
-                        content = content + `<br>`;
-                        count = 0;
-                    }
-
-                }
-                document.querySelector(".moviesPage").innerHTML = content;
-            }
-        }
-
-  
-
-    function showMovies(title){
-
-
-//movies.html
-localStorage.setItem("SELECTED_MOVIE",title);}
-
-
-</script>
 
 </body>
 

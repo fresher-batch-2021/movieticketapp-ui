@@ -15,7 +15,8 @@
 
 <body>
     <header id="header"></header>
-    <script src="assets/jquery.min.js"></script>
+    
+    <script src="assets/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
     </script>
@@ -31,56 +32,56 @@
         <br>
     </div>
     <script>
-        var slideIndex = 0;
+      var slideIndex = 0;
 
-        let slideData = ["images/karnan.jpg", "images/jagame.jpg", "images/3036057.jpg"];
+let slideData = ["images/karnan.jpg", "images/jagame.jpg", "images/3036057.jpg"];
 
-        function addSliderImages() {
-
-
-            const slider = document.querySelector('.slideshow-container');//to place the html code in container
+function addSliderImages() {
 
 
-            for (let slide of slideData) {
-                let slideDiv = document.createElement('div');
-                slideDiv.setAttribute('class', 'mySlides fade');
-
-                slideDiv.innerHTML = `<img class="imgslide" src="${slide}"/>`;
+    const slider = document.querySelector('.slideshow-container');//to place the html code in container
 
 
-                slider.appendChild(slideDiv);
+    for (let slide of slideData) {
+        let slideDiv = document.createElement('div');
+        slideDiv.setAttribute('class', 'mySlides fade');
 
-            }
-
-        }
-
-
-        function showSlides() {
-
-            slideIndex++;
-            //    alert("showSlides"  + slideIndex);
+        slideDiv.innerHTML = `<img class="imgslide" src="${slide}"/>`;
 
 
-            let mySlidesDiv = document.querySelectorAll('.mySlides');
+        slider.appendChild(slideDiv);
 
-            // Don't display images
-            mySlidesDiv.forEach(divObj => {
-                divObj.style.display = "none";
-            });
+    }
+
+}
 
 
-            //reset to 1st image
-            if (slideIndex > mySlidesDiv.length) {
-                slideIndex = 1
-            }
+function showSlides() {
 
-            //display one image at at time
-            mySlidesDiv[slideIndex - 1].style.display = "block";
+    slideIndex++;
+    //    alert("showSlides"  + slideIndex);
 
-            setTimeout(showSlides, 1500); // Change image every 2 seconds  
-        }
-        addSliderImages();
-        showSlides();
+
+    let mySlidesDiv = document.querySelectorAll('.mySlides');
+
+    // Don't display images
+    mySlidesDiv.forEach(divObj => {
+        divObj.style.display = "none";
+    });
+
+
+    //reset to 1st image
+    if (slideIndex > mySlidesDiv.length) {
+        slideIndex = 1
+    }
+
+    //display one image at at time
+    mySlidesDiv[slideIndex - 1].style.display = "block";
+
+    setTimeout(showSlides, 1500); // Change image every 2 seconds  
+}
+addSliderImages();
+showSlides();
 
     </script>
 </body>
