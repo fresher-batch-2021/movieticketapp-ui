@@ -7,23 +7,23 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="navigation.css"> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   -->
+        <link rel="stylesheet" href="navigation.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     
     </head>
 <body>
 
     <header id="header"></header>
-   
+    
       
         <section>
       
     <form onsubmit="Login()" style="border:1px solid #ccc">
         <div class="container">
             <div class="box1">
-        <!-- <div>
+        <div>
             <img src="images/login.jpg" alt="Avatar" class="avatar">
-          </div> -->
+          </div>
         
     
         <label for="Email"><strong>Email</strong></label>
@@ -48,43 +48,15 @@
     </form>
         </section>
     
-      <!-- <script src="assets/jquery.min.js"></script> -->
+      <script src="assets/jquery.min.js"></script>
+      <script src="assets/login.js"></script>
+      <script src="assets/userservice.js"></script>
+      <script >
+        $("#header").load("header.html")
+      </script>
+     
       
-      <!-- <script>
-          $("#header").load("header.html")
-          function Login(){
-            console.log("hi");
-              event.preventDefault();
-              const username =document.querySelector("#username").value;
-              const password =document.querySelector("#password1").value;
-              console.log(username+"-"+password);
-              if(password == null || password.trim()=="" ){
-               alert("password cannot be blank");
-              }
-              else{
-              
-              UserService.login(username, password).then(res =>{
-            let data = res.data.docs[0];
-
-            if(data!=null){
-            alert("login successful");
-            localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data));
-            window.location.href ="index2.html";
-            }
-            else{
-              alert("login failed");
-            }
-        }).catch(err =>{
-            console.error(err);
-            alert("unable to login");
-        });
-              }
-            
-
-          }
-
-      </script> -->
-      <script src="service.js"></script>
+      
 </body>
 </html>
 </html>

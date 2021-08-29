@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <header id="header"></header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <h3>List All users</h3>
+    <input type="text " id="searchBox" class="searchBox" placeholder="Search by Email" onkeyup="searchEmail()"
+        autocomplete="off">
+    <table id="myTable">
+
+        <thead>
+            <tr>
+                <th id="sno">s.no</th>
+                <th>Email</th>
+                <th id="bookedMovies">BookedMovies</th>
+                <th id="showTime">Show Time</th>
+                <th id="showDate">Show Date</th>
+                <th>Status</th>
+                <th id="ticket">Ticket</th>
+                <th id="theatreName">Theatre Name</th>
+
+
+            </tr>
+
+        </thead>
+        <tbody id="list-user">
+        </tbody>
+
+
+    </table>
+    <script src="assets/jquery.min.js"></script>
+    <script src="/assets/userservice.js"></script>
+    <script src="assets/listuser.js"></script>
+    <script>
+        $("#header").load("header.html")
+    </script>
+
+</body>
+
+</html>

@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="admin.css">
+    <link rel="stylesheet" href="admin.css">
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
+    <header id="header"></header>
     <h3>Movie Admin</h3>
-    <input type="text " id="searchBox" class="searchBox" placeholder="Search For movieName" onkeyup="searchName()" autocomplete="off">
-    <table id="myTable" >
+    <input type="text " id="searchBox" class="searchBox" placeholder="Search For movieName" onkeyup="searchName()"
+        autocomplete="off">
+    <table id="myTable">
 
-<thead>
-    <tr>
-        <th>s.no</th>
-        <th>Movie Name</th>
-        <th>language</th>
+        <thead>
+            <tr>
+                <th>s.no</th>
+                <th>Movie Name</th>
+                <th>language</th>
 
-        <th>price</th>
-        <th>seats</th>
-        <th>Edit</th>
-        <th>status</th>
-        <th>delete</th>
-        
-    </tr>
-    
-</thead>    
+                <th>price</th>
+                <th>seats</th>
+                <th>Edit</th>
+                <th>status</th>
+                <th>delete</th>
+
+            </tr>
+
+        </thead>
         <tbody id="list-movie">
-         
-        
-            
-         
+
+
+
+
 
         </tbody>
-        
-        
+
+
     </table>
+    <li><a href="add-movie.html">Add Movie</a></li>
     <script src="assets/list-movie.js"></script>
-    
+
     <script src="assets/delete-movie.js"></script>
+    <script src="assets/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html")
+    </script>
 </body>
+
 </html>

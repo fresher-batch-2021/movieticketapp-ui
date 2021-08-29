@@ -22,6 +22,7 @@ function formMovieTableData() {
         <td>${Obj.theatreName}</td>
         <td>${Obj.date}</td>
         <td>${Obj.time}</td>
+        
         <td>${abc}</td>
         <td>${new Date().toJSON().substr(0, 10)}</td>
 
