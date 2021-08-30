@@ -17,6 +17,8 @@
     <h3>List All users</h3>
     <input type="text " id="searchBox" class="searchBox" placeholder="Search by Email" onkeyup="searchEmail()"
         autocomplete="off">
+    <input type="text " id="searchBox" class="searchBox" placeholder="Search by date" onkeyup="searchEmail()"
+        autocomplete="off">
     <table id="myTable">
 
         <thead>
@@ -39,9 +41,12 @@
 
 
     </table>
+    <script src="assets/login.js"></script>
+    <script src="assets/logout.js"></script>
     <script src="assets/jquery.min.js"></script>
     <script src="/assets/userservice.js"></script>
     <script src="assets/listuser.js"></script>
+
     <script>
         $("#header").load("header.html")
     </script>

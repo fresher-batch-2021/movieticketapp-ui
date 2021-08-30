@@ -11,6 +11,36 @@ function price(movieId) {
             console.error(err);
         });
 }
+function theatre(){
+    BookService.theatreService().then(res=>{
+        
+        let theatres=res.data.rows.map(obj=>obj.doc);
+        console.table(theatres);
+        localStorage.setItem("THEATRES", JSON.stringify(theatres));
+        let content = "<option disabled>--SELECT--</option>";
+        for(let theatre of theatres){
+            content+= `<option value="${theatre.theatreName}"> ${theatre.theatreName}</option>`;
+        }
+        document.querySelector("#theatreName").innerHTML=content;
+        getSeats();
+    })
+    .catch(err=>{
+        console.error(err);
+    })
+}theatre();
+
+function getSeats(){
+let theatres = JSON.parse(localStorage.getItem("THEATRES"));
+let selectedTheatreName = document.querySelector("#theatreName").value;
+let selectedTheatreObj = theatres.find(obj=> obj.theatreName== selectedTheatreName);
+console.log(selectedTheatreObj);
+let noOfSeats = 0;
+if(selectedTheatreObj != null){
+    noOfSeats = selectedTheatreObj.noOfTickets;
+} 
+document.querySelector("#availableSeats").value = noOfSeats;
+//return noOfSeats;
+}
 
 
 function Book() {
@@ -45,7 +75,7 @@ function Book() {
 const param = new URLSearchParams(window.location.search.substr(1));
 let movie = param.get("movie");
 console.log("select movie +++", movie);
-let theatre = param.get("theatre");
+// let theatre = param.get("theatre");
 let selectedMovie = movie;
 console.log("select movie ----", selectedMovie);
 let selectedTheatre = theatre;

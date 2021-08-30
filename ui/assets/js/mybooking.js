@@ -1,4 +1,4 @@
-// log();
+log();
 
 let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
 const hari = (userStr)
@@ -11,7 +11,7 @@ function formMovieTableData() {
         console.log(details);
         for (let Obj of details) {
 
-            let cancelBook = `<button type='button'  onclick = "cancelBooking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.ticket}','${Obj.theatreName}','${Obj.date}','${Obj.price}','${Obj.time}','cancel','${Obj.email}');"> Cancel </button>`;
+            let cancelBook = `<button type='button'  onclick = "cancelBooking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.theatreName}','${Obj.ticket}','${Obj.date}','${Obj.time}','${Obj.price}','cancel','${Obj.email}');"> Cancel </button>`;
 
             const abc = (Obj.ticket) * (Obj.price);
 

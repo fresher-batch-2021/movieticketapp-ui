@@ -96,4 +96,8 @@ class BookService {
         const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking"
         return axios.post(url, Obj, { headers: { Authorization: basicAuth } })
     }
+    static theatreService(){
+        const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_theatres/_all_docs?include_docs=true"
+        return axios.get(url,{headers:{Authorization:basicAuth}})
+    }
 }
