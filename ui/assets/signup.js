@@ -14,7 +14,7 @@ function Register(){
             alert("email already exist enter different email")
             window.location.reload();
         } 
-    console.log(userobj);
+    // console.log(userobj);
 if(password == null  || password.trim()==""){
     alert("password cannot be empty");
 }
