@@ -288,7 +288,7 @@ li a:hover{
         image-resolution: 100px;
              }
 
-    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1, #Email, #passwordS,#price,#movieName,#theatre
+    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1, #Email, #passwordS,#price,#movieName,#theatreName,#availableSeats,#noofticketsbooked
     {
         width: 100%;
         padding: 10px;

@@ -25,11 +25,12 @@
             <input type="hidden" id="movieId" readonly />
             <label for="movieName">MovieName</label>
             <input type="text" id="movieName" readonly />
-
-            <label for="no of tickets">No of Tickets </label>
-            <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets" required><br>
+            <label for="theatre"> Theatres</label><br>
+            <select id="theatreName" required onchange="getSeats()">
+             
+            </select><br>
             <label for="date">Show Date</label>
-            <input type="date" id="date" name="date" max="5" required><br>
+            <input type="date" id="date" name="date" max="5" required onchange="chooseDate()"><br>
             <label for="time">Show Time</label>
 
             <select id="time">
@@ -45,14 +46,20 @@
                 <option>10.30PM</option>
             </select><br>
 
+            <label for="no of tickets">No of Tickets </label>
+            <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets" required><br>
+           
+
+            <label for="seats"> Available Seats </label><br> 
+            <input type="number" id="availableSeats" name="availableSeats" placeholder="enter tickets" required readonly><br>
+            
+
+            <label for="no of tickets">No of Tickets Booked </label>
+            <input type="number" id="noofticketsbooked" name="noofticketsbooked" placeholder="enter tickets" required readonly><br>
+            
             <label for="price">Price per Ticket</label>
             <input type="number" id="price" name="price" required readonly><br>
-            <label for="theatre"> Theatres</label>
-            <select id="theatreName" required onchange="getSeats()">
-             
-            </select><br>
-            <label for="seats"> Available Seats </label> 
-                <input type="number" readonly id="availableSeats">
+           
             <br/>
             <div class="clearfix"><br>
                 <button type="reset"><a href="theatres.html"> Back</a></button>

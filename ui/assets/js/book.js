@@ -29,6 +29,7 @@ function theatre(){
     })
 }theatre();
 
+
 function getSeats(){
 let theatres = JSON.parse(localStorage.getItem("THEATRES"));
 let selectedTheatreName = document.querySelector("#theatreName").value;
@@ -38,8 +39,45 @@ let noOfSeats = 0;
 if(selectedTheatreObj != null){
     noOfSeats = selectedTheatreObj.noOfTickets;
 } 
+console.log("No of seats:" , noOfSeats);
 document.querySelector("#availableSeats").value = noOfSeats;
 //return noOfSeats;
+}
+
+function chooseDate(){
+    // alert("Date Selected");
+    let selectedTheatre = document.querySelector("#theatreName").value;
+    let selectedDate = document.querySelector("#date").value;
+    //alert(selectedDate +"-" + selectedTheatre);
+    seatsQuantity(selectedTheatre, selectedDate).then(res=>{
+        let totalBookedTickets = res;     
+        console.log("totalbooked tickets:" , totalBookedTickets);   
+        getSeats();
+        document.querySelector("#noofticketsbooked").value = totalBookedTickets;
+
+
+    })
+}
+
+async function seatsQuantity(theatreName, showDate){
+    let criteria = {
+        "selector": {
+            "theatreName": theatreName,
+            "date": showDate,
+            "status":"Booked"
+            },
+            "fields":["ticket"]
+    
+    }
+    let {data}  = await BookService.quantity(criteria);
+        let results = data.docs;
+        console.log(data);
+        let totalBookedTickets = 0;
+        for(let obj of results){
+            totalBookedTickets = totalBookedTickets + parseInt(obj.ticket);
+        }
+        console.log("TotalBookedTickets", totalBookedTickets);
+    return totalBookedTickets;
 }
 
 
@@ -57,12 +95,12 @@ function Book() {
     //todo
     //get movie id and movie name
 
-    if (noOfTickets > 10) {
-        alert("cant book more than 10");
-        alert(noOfTickets);
-        return;
-    }
-    else if (noOfTickets < 10) {
+    // if (noOfTickets > 10) {
+    //     alert("cant book more than 10");
+    //     alert(noOfTickets);
+    //     return;
+    // }
+    // else if (noOfTickets < 10) {
 
 
         
@@ -71,7 +109,7 @@ function Book() {
         window.location.href = "index.html";
     }
 
-}
+//}
 const param = new URLSearchParams(window.location.search.substr(1));
 let movie = param.get("movie");
 console.log("select movie +++", movie);
