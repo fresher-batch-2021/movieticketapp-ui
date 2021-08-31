@@ -1,4 +1,4 @@
-log();
+// log();
 function price(movieId) {
     BookService.priceService(movieId).then(res => {
         console.log(res.data)
@@ -78,6 +78,8 @@ async function seatsQuantity(theatreName, showDate){
         }
         console.log("TotalBookedTickets", totalBookedTickets);
     return totalBookedTickets;
+    // let noOfTickets=availableseats-totalBookedTickets;
+    
 }
 
 
@@ -95,12 +97,23 @@ function Book() {
     //todo
     //get movie id and movie name
 
-    // if (noOfTickets > 10) {
-    //     alert("cant book more than 10");
-    //     alert(noOfTickets);
-    //     return;
-    // }
-    // else if (noOfTickets < 10) {
+    if (noOfTickets > 100) {
+        alert("cant book more than 10");
+        alert(noOfTickets);
+        document.querySelector("#nooftickets").value;
+        return;
+    }
+    else {
+       let noofticketsbooked= document.querySelector("#noofticketsbooked").value;
+       let totalSeats= document.querySelector("#availableSeats").value;
+       let availableSeats = totalSeats-noofticketsbooked;
+       
+       console.log(availableSeats);
+       if(noOfTickets > availableSeats ){
+           alert("insuffient seats, No of seats available: " + availableSeats);
+           return ;
+       }
+
 
 
         
@@ -108,8 +121,9 @@ function Book() {
         alert("booked successfully")
         window.location.href = "index.html";
     }
+    
 
-//}
+}
 const param = new URLSearchParams(window.location.search.substr(1));
 let movie = param.get("movie");
 console.log("select movie +++", movie);

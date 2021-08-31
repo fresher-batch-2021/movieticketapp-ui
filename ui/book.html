@@ -50,12 +50,12 @@
             <input type="number" id="nooftickets" name="total_tickets" placeholder="enter tickets" required><br>
            
 
-            <label for="seats"> Available Seats </label><br> 
-            <input type="number" id="availableSeats" name="availableSeats" placeholder="enter tickets" required readonly><br>
+            <!-- <label for="seats"> Available Seats </label><br>  -->
+            <input type="hidden" id="availableSeats" name="availableSeats" placeholder="enter tickets" required readonly><br>
             
 
-            <label for="no of tickets">No of Tickets Booked </label>
-            <input type="number" id="noofticketsbooked" name="noofticketsbooked" placeholder="enter tickets" required readonly><br>
+            <!-- <label for="no of tickets">No of Tickets Booked </label> -->
+            <input type="hidden" id="noofticketsbooked" name="noofticketsbooked" placeholder="enter tickets" required readonly><br>
             
             <label for="price">Price per Ticket</label>
             <input type="number" id="price" name="price" required readonly><br>
@@ -74,17 +74,21 @@
 </main>
 
 <script src="assets/login.js"></script>
-<script src="assets/js/loginuser.js"></script>
+<script src="assets/js/mybook-service.js"></script>
+<!-- <script src="assets/js/loginuser.js"></script> -->
+
     <script src="assets/js/jquery.min.js"></script>
   
-    <script src="assets/js/mybook-service.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $("#header").load("header.html")
+        </script>
     <script src="assets/js/book.js"></script>
-    <script>
-        $("#header").load("header.html")
-    </script>
+    <script src="assets/js/routes.js"></script>
+   
 
 </body>
 

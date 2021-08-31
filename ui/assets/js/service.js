@@ -11,8 +11,9 @@ class UserService{
         selector: {
             email: username,
             password: password,
+
         },
-        fields:["_id", "name", "email"]
+        fields:["_id", "name", "email","role"]
     };
  return axios.post(url,requestData,{headers:{Authorization:basicAuth}});
 }

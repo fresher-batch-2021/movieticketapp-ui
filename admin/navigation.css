@@ -5,11 +5,8 @@
 /* body{
     background-color:rgb(87, 82, 82);
     /* overflow-x: hidden; */
-} */
-label{
-    /* color: ; */
-    color: rgb(211, 203, 203);
-}
+/* } */ 
+
    /* first div background */
    .navBar{
    
@@ -70,10 +67,7 @@ label{
     
     }
     /* container in signup form */
-    .box{
-        width: 30%;
-        height: 10px;
-    }
+   
     /* cancel insign form button class*/
     .cancelButton{ 
         background-color:red; 
@@ -90,11 +84,7 @@ label{
        width: 30%;
     }
     /* To fix content in correct place  */
-    .clearfix::after{
-        content: "";
-        clear: both;
-        display: table;
-    }
+  
     .lo{
     
     text-align: center;
@@ -104,11 +94,7 @@ label{
     font-style: italic;
     }
     /* form {border: 3px solid #f1f1f1;} */
-    img.avatar {
-        /* width: 20%; */
-        border-radius: 50%;
-        height: 90px;
-      }
+    
       /* button */
       
 input[type=text], input[type=password]   
@@ -131,11 +117,7 @@ hr{
 button:hover{ 
 opacity: 1;
 }
-.login{
-    width: 100%;
-    height: 5%;
-    background-color: green;
-}
+
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width:300px) {
@@ -274,13 +256,7 @@ li a:hover{
      height: 50%;
      width: 500px;
  }
- .box1{
-        margin-top: 20px;
-        padding: 30px;
-        float: left;
-        border: 2px solid red; 
 
-     }
     .movielogo1{
         padding-left: 5px;
         padding-top: 6px;
@@ -360,16 +336,4 @@ margin-top: 10px;
   }
 
   /* payment page */
-  table{
-      font-family: arial,sans-serif;
-      border-collapse: collapse;
-      width: 40%;
-  }
-  td,th{
-      border: 1px solid #ddd;
-      text-align: left;
-      padding: 8px;
-  }
-  #id{
-      margin-right: 500px;
-  }
+ 

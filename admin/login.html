@@ -7,7 +7,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="navigation.css">
+        <link rel="stylesheet" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     
     </head>
@@ -19,8 +19,8 @@
         <section>
       
     <form onsubmit="Login()" style="border:1px solid #ccc">
-        <div class="container">
-            <div class="box1">
+    
+            <div class="box">
         <div>
             <img src="images/login.jpg" alt="Avatar" class="avatar">
           </div>
@@ -32,7 +32,7 @@
         <label for="password"><strong>password</strong></label>
         <input type="password" placeholder="Enter password" name="password" id="password1"required  autocomplete="off">
         
-        <button class="login" type="submit">login</button>
+        <button class="loginButton" type="submit">login</button>
         <label><br>
         <input type="checkbox" checked="checked" name="remember" 
         style="margin-bottom: 15px;">Remember Me <br>
@@ -43,7 +43,7 @@
         <!-- <span class="psw">Forgot <a href="forgetpassword.html">Password?</a></span> -->
       </div>
     
-    </div>
+  
     </div>
     </form>
         </section>
@@ -51,7 +51,8 @@
       <script src="assets/jquery.min.js"></script>
       <script src="assets/login.js"></script>
       <script src="assets/userservice.js"></script>
-      <script src="assets/logout.js"></script>
+      <!-- <script src="assets/logout.js"></script> -->
+      <script src="assets/routes.js"></script>
       <script >
         $("#header").load("header.html")
       </script>

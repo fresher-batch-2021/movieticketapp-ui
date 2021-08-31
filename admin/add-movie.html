@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="navigation.css"> -->
+    <link rel="stylesheet" href="style.css">
     
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
@@ -16,7 +16,7 @@
 <body>
     <header id="header"></header>
   
-        <div class="box1">
+        <div class="box">
     <form onsubmit="addMovieForm()">
         <label for="title"><strong>Title</strong>
             <input type="text" placeholder="Enter Movie Name" name="title" id="title" required>
@@ -58,16 +58,17 @@
 
         </button>
 
-        <a href="list-movie.html">list-movie</a>
+       
    
 </div>
     </form>
     <script src="assets/login.js"></script>
-    <script src="assets/logout.js"></script>
+    <!-- <script src="assets/logout.js"></script> -->
     <script src="assets/validator.js"></script>
     <script src="assets/add-movie.js"></script>
     <script src="assets/jquery.min.js"></script>
     <script src="assets/movieservice.js"></script>
+    <script src="assets/routes.js"></script>
    
     <script>
         $("#header").load("header.html")

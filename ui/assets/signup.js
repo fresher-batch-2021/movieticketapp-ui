@@ -31,7 +31,8 @@ alert("password must be greater than 8 characters");
     let userobj={
         "email":email,
         "password":password,
-        "password-repeat":passwordR
+        "password-repeat":passwordR,
+        "role":"USER"
     };
      
       UserService.register(userobj) .then(res =>{

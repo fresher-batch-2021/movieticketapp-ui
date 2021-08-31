@@ -5,27 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header id="header"></header>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<div class="box1">
+<div class="box">
     <div>
     <input type="hidden" id="id" readonly />
     <input type="hidden" id="rev" readonly />
   
             <tr>
-                <th>title</th>
+                <th id="title">title</th>
                 <td><input type="text" id="title"></td><br>
              
-        <th>language</th>
+        <th id="language">language</th>
                 <td><input type="text" id="language"></td><br>
-                <th>imageUrl</th>
+                <th id="imageUrl">imageUrl</th>
         <td><input  type="file" id="imageUrl"><br></td><br>
 
-                <th>price</th><td><input type="text" id="price"></td><br>
-                <th>status</th>
-                <!-- <td><input type="text" id="status"></td><br> -->
+                <th id="price">price</th><td><input type="text" id="price"></td><br>
+                <th id="status">status</th>
+               
                 <select id="status" required>
                     <option>
                         Active
@@ -34,7 +35,7 @@
                         Inactive
                     </option>
                 </select><br>
-                <th>seats</th><td>
+                <th id="seats">seats</th><td>
                 <input type="text" id="seats"></td><br>
                 </tr>
              
@@ -44,6 +45,7 @@
     <script src="assets/movieservice.js"></script>
     <script src="assets/edit.js"></script>
     <script src="assets/jquery.min.js"></script>
+    <script src="assets/routes.js"></script>
     <script>
         $("#header").load("header.html")
     </script>

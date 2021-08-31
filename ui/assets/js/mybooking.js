@@ -1,4 +1,4 @@
-log();
+// log();
 
 let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
 const hari = (userStr)
