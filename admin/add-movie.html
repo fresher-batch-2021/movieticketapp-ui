@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -15,65 +15,59 @@
 
 <body>
     <header id="header"></header>
-  
-        <div class="box">
-    <form onsubmit="addMovieForm()">
-        <label for="title"><strong>Title</strong>
-            <input type="text" placeholder="Enter Movie Name" name="title" id="title" required>
-        </label><br>
-        <label for="lanugage"><strong>Movie Language</strong></label>
-        <select id="language" required>
-            <option>
-                tamil
-            </option>
-            <option>
-                english
-            </option>
-        </select>
-        <br>
 
-        <label for="image"><strong>imageUrl</strong>
+    <div class="box">
+        <form onsubmit="addMovieForm()">
+            <label for="title"><strong>Title</strong>
+                <input type="text" placeholder="Enter Movie Name" name="title" id="title" required>
+            </label><br>
+            <label for="lanugage"><strong>Movie Language</strong></label>
+            <select id="language" required>
+                <option>
+                    tamil
+                </option>
+                <option>
+                    english
+                </option>
+            </select>
+            <br>
 
-            <input type="file" required name="image" id="imageUrl">
-        </label><br>
-        <label for="price"><strong>price</strong>
-            <input type="text" placeholder="Enter price" name="price" id="price" required>
-        </label><br>
-       
-        <label for="seats availability"><strong>seats</strong>
-            <input type="text" placeholder="Enter seats" name="seats" id="seats" required>
-        </label><br>
-        <label for="status"><strong>status</strong></label>
-        <select id="status" required>
-            <option>
-                Active
-            </option>
-            <option>
-                Inactive
-            </option>
-        </select><br>
+            <label for="image"><strong>imageUrl</strong>
+
+                <input type="file" required name="image" id="imageUrl">
+            </label><br>
+
+            <label for="status"><strong>status</strong></label>
+            <select id="status" required>
+                <option>
+                    Active
+                </option>
+                <option>
+                    Inactive
+                </option>
+            </select><br>
 
 
-        <button>Apply
+            <button>Apply
 
-        </button>
+            </button>
 
-       
-   
-</div>
+
+
+    </div>
     </form>
-    <script src="assets/login.js"></script>
-    <!-- <script src="assets/logout.js"></script> -->
-    <script src="assets/validator.js"></script>
-    <script src="assets/add-movie.js"></script>
     <script src="assets/jquery.min.js"></script>
-    <script src="assets/movieservice.js"></script>
-    <script src="assets/routes.js"></script>
-   
     <script>
         $("#header").load("header.html")
 
     </script>
+    <script src="assets/login.js"></script>
+    <script src="assets/add-movie.js"></script>
+    <script src="assets/validator.js"></script>
+    <script src="assets/movieservice.js"></script>
+    <script src="assets/routes.js"></script>
+
+
 </body>
 
 </html>

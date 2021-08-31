@@ -1,14 +1,20 @@
+/* To align pages in proper */
 *{
     margin: 0;
     padding: 0;
 }
+/*Background color for pages  */
 body{
-    background-color:rgb(87, 82, 82);
-    /* overflow-x: hidden; */
+    background-color:rgb(71, 69, 69);
+   
 }
 label{
     /* color: ; */
     color: rgb(211, 203, 203);
+
+}
+.navRegister{
+    margin-left: 1000px;
 }
    /* first div background */
    .navBar{

@@ -2,7 +2,7 @@ function Login() {
     console.log("hi");
     event.preventDefault();
     const username = document.querySelector("#username").value;
-    const password = document.querySelector("#password1").value;
+    const password = document.querySelector("#password").value;
     console.log(username + "-" + password);
     if (password == null || password.trim() == "") {
       alert("password cannot be blank");

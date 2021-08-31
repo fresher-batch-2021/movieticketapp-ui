@@ -22,8 +22,7 @@ function formMovieTableData(movies) {
         content += `<tr><td>${i++}</td><td>
         <img src="${imageUrl}" alt="${imageUrl}" width="300px" height="150px" />${movieObj.title}</td>
         <td>${movieObj.language}</td>
-        <td>Rs.${movieObj.price}</td>
-        <td>${movieObj.seats}</td>
+       
         <td><a href='edit.html?id=${movieObj._id}'>Edit</a></td>
         <td>${movieObj.status}</td>
         <td><button onClick="deleteMovie('${movieObj._id}','${movieObj._rev}')">Delete</button></td></tr>`;
