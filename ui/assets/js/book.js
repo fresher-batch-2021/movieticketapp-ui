@@ -110,7 +110,7 @@ async function seatsQuantity(theatreName, showDate) {
     }
     console.log("TotalBookedTickets", totalBookedTickets);
     return totalBookedTickets;
-    // let noOfTickets=availableseats-totalBookedTickets;
+ 
 
 }
 
