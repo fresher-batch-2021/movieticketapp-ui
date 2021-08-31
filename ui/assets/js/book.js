@@ -1,91 +1,123 @@
-// log();
+/**
+ * This function in used to get the price from database
+ * @param {string} movieId 
+ */
 function price(movieId) {
     BookService.priceService(movieId).then(res => {
         console.log(res.data)
         let movie = res.data;
         document.querySelector("#movieId").value = movie._id;
         document.querySelector("#movieName").value = movie.title;
-        document.querySelector("#price").value = movie.price;
+
     })
         .catch(err => {
             console.error(err);
         });
 }
-function theatre(){
-    BookService.theatreService().then(res=>{
-        
-        let theatres=res.data.rows.map(obj=>obj.doc);
+/**
+ * This function is used to get theatre value from database
+ */
+function theatre() {
+    BookService.theatreService().then(res => {
+
+        let theatres = res.data.rows.map(obj => obj.doc);
         console.table(theatres);
         localStorage.setItem("THEATRES", JSON.stringify(theatres));
         let content = "<option disabled>--SELECT--</option>";
-        for(let theatre of theatres){
-            content+= `<option value="${theatre.theatreName}"> ${theatre.theatreName}</option>`;
+        for (let theatre of theatres) {
+            content += `<option value="${theatre.theatreName}"> ${theatre.theatreName}</option>`;
         }
-        document.querySelector("#theatreName").innerHTML=content;
+        document.querySelector("#theatreName").innerHTML = content;
         getSeats();
     })
-    .catch(err=>{
-        console.error(err);
-    })
-}theatre();
+        .catch(err => {
+            console.error(err);
+        })
+} theatre();
+
+/**
+ * This function is to get seat value and display from theatre values
+ */
+function getSeats() {
+    let theatres = JSON.parse(localStorage.getItem("THEATRES"));
+    let selectedTheatreName = document.querySelector("#theatreName").value;
+    let selectedTheatreObj = theatres.find(obj => obj.theatreName == selectedTheatreName);
+    console.log(selectedTheatreObj);
+    let noOfSeats = 0;
+    if (selectedTheatreObj != null) {
+        document.querySelector("#price").value = selectedTheatreObj.price;
+        document.querySelector("#time").value = selectedTheatreObj.time;
+        noOfSeats = selectedTheatreObj.noOfTickets;
+
+        //load timings
+        for (let theatre of theatres) {
+            console.log(selectedTheatreName,theatre.theatreName);
+            if (theatre.theatreName == selectedTheatreName) {
+                console.log(theatre.time)
+                content += `<option value="${theatre.time[0]}"> ${theatre.time[0]}</option>
+                <option value="${theatre.time[1]}"> ${theatre.time[1]}</option>`;
+            }
+        }
+        document.querySelector("#time").innerHTML = content;
+content='';
+    }
+    console.log("No of seats:", noOfSeats);
+    document.querySelector("#availableSeats").value = noOfSeats;
+
+    //load timimgs
 
 
-function getSeats(){
-let theatres = JSON.parse(localStorage.getItem("THEATRES"));
-let selectedTheatreName = document.querySelector("#theatreName").value;
-let selectedTheatreObj = theatres.find(obj=> obj.theatreName== selectedTheatreName);
-console.log(selectedTheatreObj);
-let noOfSeats = 0;
-if(selectedTheatreObj != null){
-    noOfSeats = selectedTheatreObj.noOfTickets;
-} 
-console.log("No of seats:" , noOfSeats);
-document.querySelector("#availableSeats").value = noOfSeats;
-//return noOfSeats;
+    //return noOfSeats;
 }
 
-function chooseDate(){
-    // alert("Date Selected");
+/**
+ * This function is used to choose date
+ */
+function chooseDate() {
+  
     let selectedTheatre = document.querySelector("#theatreName").value;
     let selectedDate = document.querySelector("#date").value;
-    //alert(selectedDate +"-" + selectedTheatre);
-    seatsQuantity(selectedTheatre, selectedDate).then(res=>{
-        let totalBookedTickets = res;     
-        console.log("totalbooked tickets:" , totalBookedTickets);   
+  
+    seatsQuantity(selectedTheatre, selectedDate).then(res => {
+        let totalBookedTickets = res;
+        console.log("totalbooked tickets:", totalBookedTickets);
         getSeats();
         document.querySelector("#noofticketsbooked").value = totalBookedTickets;
-
-
     })
 }
-
-async function seatsQuantity(theatreName, showDate){
+/**
+ * This function is used to 
+ * @param {} theatreName 
+ * @param {*} showDate 
+ * @returns 
+ */
+async function seatsQuantity(theatreName, showDate) {
     let criteria = {
         "selector": {
             "theatreName": theatreName,
             "date": showDate,
-            "status":"Booked"
-            },
-            "fields":["ticket"]
-    
+            "status": "Booked"
+        },
+        "fields": ["ticket"]
+
     }
-    let {data}  = await BookService.quantity(criteria);
-        let results = data.docs;
-        console.log(data);
-        let totalBookedTickets = 0;
-        for(let obj of results){
-            totalBookedTickets = totalBookedTickets + parseInt(obj.ticket);
-        }
-        console.log("TotalBookedTickets", totalBookedTickets);
+    let { data } = await BookService.quantity(criteria);
+    let results = data.docs;
+    console.log(data);
+    let totalBookedTickets = 0;
+    for (let obj of results) {
+        totalBookedTickets = totalBookedTickets + parseInt(obj.ticket);
+    }
+    console.log("TotalBookedTickets", totalBookedTickets);
     return totalBookedTickets;
     // let noOfTickets=availableseats-totalBookedTickets;
-    
+
 }
 
 
 function Book() {
     event.preventDefault();
-    
+
     let noOfTickets = document.querySelector("#nooftickets").value;
     let date = document.querySelector("#date").value;
     let time = document.querySelector("#time").value;
@@ -104,24 +136,24 @@ function Book() {
         return;
     }
     else {
-       let noofticketsbooked= document.querySelector("#noofticketsbooked").value;
-       let totalSeats= document.querySelector("#availableSeats").value;
-       let availableSeats = totalSeats-noofticketsbooked;
-       
-       console.log(availableSeats);
-       if(noOfTickets > availableSeats ){
-           alert("insuffient seats, No of seats available: " + availableSeats);
-           return ;
-       }
+        let noofticketsbooked = document.querySelector("#noofticketsbooked").value;
+        let totalSeats = document.querySelector("#availableSeats").value;
+        let availableSeats = totalSeats - noofticketsbooked;
+
+        console.log(availableSeats);
+        if (noOfTickets > availableSeats) {
+            alert("insuffient seats, No of seats available: " + availableSeats);
+            return;
+        }
 
 
 
-        
-  BookService.bookTable(movieId, movieName, noOfTickets, theatreName, date, time, price, email).then(res => console.log(res.data)).catch(err => console.error(err))
+
+        BookService.bookTable(movieId, movieName, noOfTickets, theatreName, date, time, price, email).then(res => console.log(res.data)).catch(err => console.error(err))
         alert("booked successfully")
         window.location.href = "index.html";
     }
-    
+
 
 }
 const param = new URLSearchParams(window.location.search.substr(1));

@@ -18,6 +18,7 @@
                 <a href="login.html"><img class="movielogo" src="images/movie1.jpg" alt="no image"></a>
                 <div class="navRegister" style="display: inline-block;">
                     <a class="navLog" href="login.html" data-loggedIn="false">Login |</a>
+                    <a class="navLog" href="login.html" data-loggedIn="true" onclick="logout()">Logout |</a>
                 </div>
             </figure>
             <ul class="navcontent">
@@ -36,7 +37,7 @@
 
 
 </section>
-<!-- <script>
+<script>
     let userStatus=JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
  
  if (userStatus!=null)
@@ -51,12 +52,12 @@
      $(".navLog[data-loggedIn='true']").hide();
      $(".navLog[data-loggedIn='false']").show();
  }
- function logout()
+  function logout()
  {
      localStorage.clear();
      window.location.href="login.html";
- }
+ } 
  
-     </script> -->
+     </script>
  
 <!-- <script src="assets/logout.js"></script> -->
