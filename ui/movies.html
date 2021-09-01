@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="navigation.css">
+    <link rel="icon" href="images/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -16,27 +17,28 @@
 <body>
     <header id="header"></header>
     <main>
-    <h1>
-        <u class="moviesHead">Movies</u>
-    </h1><br>
+        <h1>
+            <u class="moviesHead">Movies</u>
+        </h1><br>
 
-    <div class="moviesPage">
-    </div>
-    <div class="filter">
-        <h1>Filter By</h1>
-        <a href="#">Clear</a>
+        <div class="moviesPage">
+        </div>
+        <div class="filter">
+            <h1>Filter By</h1>
+            <!-- <a href="#">Clear</a> -->
 
-        <h3 id="Language">Language</h3>
+            <h3 id="Language">Language</h3>
 
-        <label><br>
-            <input type="checkbox" name="language" id="language" value="tamil" style="margin-bottom: 15px;">Tamil
-        </label>
-        <label><br>
-            <input type="checkbox" name="language" id="language" value="english" style="margin-bottom: 15px;">English
-        </label><br>
-        <button type="button" onclick="filterLanguages()">Apply</button>
-        <button type="reset"> reset</button>
-    </div>
+            <label><br>
+                <input type="checkbox" name="language" id="language" value="tamil" style="margin-bottom: 15px;">Tamil
+            </label>
+            <label><br>
+                <input type="checkbox" name="language" id="language" value="english"
+                    style="margin-bottom: 15px;">English
+            </label><br>
+            <button type="button" onclick="filterLanguages()">Apply</button>
+            <!-- <button type="reset" value="reset"> reset</button> -->
+        </div>
 
     </main>
 
@@ -46,8 +48,6 @@
     <script src="assets/js/movie-service.js"></script>
     <script src="assets/js/book.js"></script>
     <script src="assets/js/moviefilter.js"></script>
-    <!-- <script src="assets/js/loginuser.js"></script> -->
-    
     <script src="assets/js/movies.js"></script>
     <script src="assets/js/routes.js"></script>
 

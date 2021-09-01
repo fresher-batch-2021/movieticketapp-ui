@@ -1,4 +1,4 @@
-// loginCheck();
+
 function listUser() {
 
     UserService.getUsers().then(res => {

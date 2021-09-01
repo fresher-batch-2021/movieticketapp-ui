@@ -8,10 +8,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="navigation.css">
+  <link rel="icon" href="images/favicon.ico">
+ <!-- axios -->
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    
+    <!-- Toaster -->
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
 
 <body>
@@ -36,7 +44,7 @@
           <label for="password"><strong>password</strong></label>
           <input type="password" placeholder="Enter password" name="password" id="password1" required>
 
-          <button class="login" type="submit">login</button>
+          <button class="login" type="submit" onclick="CheckPassword(inputtxt)">login</button>
           <label><br>
             <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px;">Remember Me <br>
           </label>
@@ -44,7 +52,7 @@
           <!-- <div class="clearfix" style="background-color:#f1f1f1"> -->
           <button type="reset" class="cancelButton">Cancel</button>
 
-          <button class="SignUpButton"><a href="SignUp.html">signup</a></button>
+          <button class="signUpButton"><a href="SignUp.html">signup</a></button>
         </div>
 
       </div>

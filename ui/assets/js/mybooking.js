@@ -1,4 +1,4 @@
-// log();
+
 
 let userStr = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
 const hari = (userStr)
@@ -10,6 +10,8 @@ function formMovieTableData() {
         let details = res.data.docs;
         console.log(details);
         for (let Obj of details) {
+            let orderedDate = new Date(Obj.date).toJSON(); //.substr(0, 10);
+            let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
 
             let cancelBook = `<button type='button'  onclick = "cancelBooking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.theatreName}','${Obj.ticket}','${Obj.date}','${Obj.time}','${Obj.price}','cancel','${Obj.email}');"> Cancel </button>`;
 
@@ -20,7 +22,7 @@ function formMovieTableData() {
         <td>${Obj.movieName}</td>
         <td>${Obj.ticket}</td>
         <td>${Obj.theatreName}</td>
-        <td>${Obj.date}</td>
+        <td>${date}</td>
         <td>${Obj.time}</td>
         
         <td>${abc}</td>
@@ -48,17 +50,38 @@ function formMovieTableData() {
 formMovieTableData();
 
 
+
+
+
+
 function cancelBooking(id, rev, movieId, movieName, theatreName, ticket, date, time, price, status, email) {
-    alert("Do you want to cancel this booking?");
-
-    BookService.cancel(id, rev, movieId, movieName, theatreName, ticket, date, time, price, status, email).then(res => {
-        alert("Deleted succesfully");
-        window.location.reload();
-
-    }).catch(err => {
-        alert("error in deleting");
-
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "Do You want to cancel this booking",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Cancel it!',
     })
+        .then(result => {
+            if (result.isConfirmed) {
+                BookService.cancel(id, rev, movieId, movieName, theatreName, ticket, date, time, price, status, email)
+                    .then(res => {
+                        Swal.fire(
+                            'Cancelled!',
+                            'Your Movie has been Cancelled.',
+                            'success',
+                            window.location.reload()
+                        )
+                    })
+            }
+
+
+        }).catch(err => {
+            toastr.error("error in deleting");
+
+        })
 
 }
 function searchName() {

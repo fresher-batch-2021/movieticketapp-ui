@@ -7,54 +7,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Booking</title>
   <link rel="stylesheet" href="navigation.css">
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  
+<!-- Moment For Date -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
+  
+  <!-- axios -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <!-- Toaster -->
+    
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   <header id="header"></header>
-<main>
-  <input type="text " id="searchBox" class="searchBox" placeholder="Search For movieName" onkeyup="searchName()"
-  autocomplete="off">
-<table id="myTable">
+  <main>
+    <input type="text " id="searchBox" class="searchBox" placeholder="Search For movieName" onkeyup="searchName()"
+      autocomplete="off">
+    <table class="tab" id="myTable">
 
-  <!-- <table id="table"> -->
-    <thead>
+     
+      <thead>
 
-      <tr>
-        <th id="header">S.no</th>
-        <th id="header">Movie</th>
-        <th id="header">no of tickets</th>
-        <th id="header">Theatre Name</th>
-        <th id="header">show Date</th>
-        <th id="header">Show timing</th>
-        <th id="header">price</th>
-        <th id="header">Booking date</th>
-        <th id="header">Status</th>
-        <th id="header">Action</th>
-      </tr>
-    </thead>
-    <tbody id=list-movie>
+        <tr>
+          <th id="header">S.no</th>
+          <th id="header">Movie</th>
+          <th id="header">no of tickets</th>
+          <th id="header">Theatre Name</th>
+          <th id="header">show Date</th>
+          <th id="header">Show timing</th>
+          <th id="header">price</th>
+          <th id="header">Booking date</th>
+          <th id="header">Status</th>
+          <th id="header">Action</th>
+        </tr>
+      </thead>
+      <tbody id=list-movie>
 
-    </tbody>
-  </table>
-</main>
-<script src="assets/login.js"></script>
-<!-- <script src="assets/js/loginuser.js"></script> -->
+      </tbody>
+    </table>
+  </main>
+  <script src="assets/login.js"></script>
+
 
   <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/book.js"></script>
-  <script src="assets/js/mybook-service.js"></script>
-  <script src="assets/js/mybooking.js"></script>
-  <script src="assets/js/routes.js"></script>
- 
-
-
   <script>
     $("#header").load("header.html")
   </script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/book.js"></script>
+  <script src="assets/js/mybook-service.js"></script>
+  
+  <script src="assets/js/mybooking.js"></script>
+  <script src="assets/js/routes.js"></script>
 
+
+
+
+ 
 
 </body>
 

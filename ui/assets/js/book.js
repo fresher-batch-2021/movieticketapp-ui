@@ -130,8 +130,8 @@ function Book() {
     //get movie id and movie name
 
     if (noOfTickets > 100) {
-        alert("cant book more than 10");
-        alert(noOfTickets);
+        toastr.warning("cant book more than 100");
+      
         document.querySelector("#nooftickets").value;
         return;
     }
@@ -142,7 +142,7 @@ function Book() {
 
         console.log(availableSeats);
         if (noOfTickets > availableSeats) {
-            alert("insuffient seats, No of seats available: " + availableSeats);
+            toastr.warning("insuffient seats, No of seats available: " + availableSeats);
             return;
         }
 
@@ -150,12 +150,19 @@ function Book() {
 
 
         BookService.bookTable(movieId, movieName, noOfTickets, theatreName, date, time, price, email).then(res => console.log(res.data)).catch(err => console.error(err))
-        alert("booked successfully")
-        window.location.href = "index.html";
+        toastr.success("booked successfully");
+        setTimeout(function () {
+            window.location.href = "index.html";
+        },1000)
+       
     }
 
 
 }
+
+/**
+ * This variable is used to get the values from url
+ */
 const param = new URLSearchParams(window.location.search.substr(1));
 let movie = param.get("movie");
 console.log("select movie +++", movie);

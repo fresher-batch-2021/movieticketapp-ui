@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>List User</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/favicon.ico" />
+  </head>
 
-<body>
+  <body>
     <header id="header"></header>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <h3 class="head">List All users</h3>
-    <input type="text " id="searchBox" class="searchBox" placeholder="Search by Email" onkeyup="searchEmail()"
-        autocomplete="off">
-  
+    <input
+      type="text "
+      id="searchBox"
+      class="searchBox"
+      placeholder="Search by Email"
+      onkeyup="searchEmail()"
+      autocomplete="off"
+    />
+
     <table id="myTable">
-
-        <thead>
-            <tr>
-                <th id="userSno">s.no</th>
-                <th id="userEmail">Email</th>
-                <th id="userMovies">BookedMovies</th>
-                <th id="showTime">Show Time</th>
-                <th id="showDate">Show Date</th>
-                <th id="userStatus">Status</th>
-                <th id="ticket">Ticket</th>
-                <th id="theatreName">Theatre Name</th>
-
-
-            </tr>
-
-        </thead>
-        <tbody id="list-user">
-        </tbody>
-
-
+      <thead>
+        <tr>
+          <th id="userSno">s.no</th>
+          <th id="userEmail">Email</th>
+          <th id="userMovies">BookedMovies</th>
+          <th id="showTime">Show Time</th>
+          <th id="showDate">Show Date</th>
+          <th id="userStatus">Status</th>
+          <th id="ticket">Ticket</th>
+          <th id="theatreName">Theatre Name</th>
+        </tr>
+      </thead>
+      <tbody id="list-user"></tbody>
     </table>
-    <script src="assets/login.js"></script>
-    <!-- <script src="assets/logout.js"></script> -->
-    <script src="assets/jquery.min.js"></script>
-    <script src="/assets/userservice.js"></script>
-    <script src="assets/listuser.js"></script>
-<script src="assets/routes.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/userservice.js"></script>
+    <script src="assets/js/listuser.js"></script>
+    <script src="assets/js/routes.js"></script>
     <script>
-        $("#header").load("header.html")
+      $("#header").load("header.html");
     </script>
-
-</body>
-
+  </body>
 </html>

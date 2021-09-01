@@ -1,5 +1,5 @@
 const routes = [
-    {path: "index.html"},
+    {path: "index.html"},       
     { path: "login.html" },
     { path: "add-movie.html", roles:["ADMIN"] },
     { path: "edit.html"},
@@ -46,8 +46,9 @@ function checkAccess(pageName, role) {
 
 
     if (!allowedAccess) {
-        alert("You are not authorized to access this page,Redirecting to login page");
-        window.location.href = "login.html";
+        // alert("You are not authorized to access this page,Redirecting to login page");
+        window.location.href = "login.html?alert= you are not authorized";
+        
     }
 })
 ();

@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
     <title>SignUp</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- toaster -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 </head>
+
 <body>
 
 
     <header id="header"></header>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
-    
-   <main>
+<!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <form action="login.html" onsubmit="Register()" style="border:1px solid #ccc">
-     <div class="container">
-     <div class="box1">
-    <h1>SignUp</h1><br>
-    <p>Please fill in this form to create an account</p><br>
-    <hr>
-    <label for ="email"><strong>Email</strong></label>
-    <input type="email" placeholder="Enter Mail" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com"><br>
-    
-    <label for ="password"><strong>password</strong></label>
-    <input type="password" placeholder="Enter password" name="password" id="password"required  ><br>
+    <main>
 
-    <label for ="password-repeat"><strong>confirm password</strong></label>
-    <input type="text" placeholder="Enter confirm password" name="password-repeat" id="password-repeat"required  ><br>
+        <form action="login.html" onsubmit="Register()"  style="border:1px solid #ccc">
+            <div class="container">
+                <div class="box1">
+                    <h1>SignUp</h1><br>
+                    <p>Please fill in this form to create an account</p><br>
+                    <hr>
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" placeholder="Enter Mail" name="email" id="email" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com"><br>
 
-    <label>
-    <input type="checkbox" checked="checked" name="remember" 
-    style="margin-bottom:15px">Remember Me </label><hr>
+                    <label for="password"><strong>password</strong></label>
+                    <input type="password" placeholder="Enter password" name="password" id="password" required><br>
 
-    <p>By creating an account you agree to out <a href="#" style="color: dodgerblue;">Terms & Privacy</a></p>
-    <div class="clearfix"><br>
-        <button type="reset" class="cancelButton">Cancel</button>
-        <button type="submit" class="SignUpButton">SignUp</button>
-    </div>
-    </div>
-</div>
-</form>
-</main> 
-<script src="assets/js/jquery.min.js"></script>
-<script>
-    $("#header").load("header.html");
-</script>
-<script src="assets/js/businessValidation.js"></script>
-<script src="assets/js/signup.js"></script>
-<script src="assets/js/service.js"></script>
+                    <label for="password-repeat"><strong>confirm password</strong></label>
+                    <input type="text" placeholder="Enter confirm password" name="password-repeat" id="password-repeat"
+                        required><br>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Remember Me
+                    </label>
+                    <hr>
+
+                    <p>By creating an account you agree to out <a href="#" style="color: dodgerblue;">Terms &
+                            Privacy</a></p>
+                    <div class="clearfix"><br>
+                        <button type="reset" class="cancelButton">Cancel</button>
+                        <button type="submit" class="signUpButton " >SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html");
+    </script>
+    <script src="assets/js/businessValidation.js"></script>
+    <script src="assets/js/signup.js"></script>
+    <script src="assets/js/service.js"></script>
 </body>
+
 </html>

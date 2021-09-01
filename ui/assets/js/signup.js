@@ -11,21 +11,27 @@ function Register(){
         let data = res.data.docs;
         
         if (data != "") {
-            alert("email already exist enter different email")
-            window.location.reload();
+    toastr.warning("email already exist Please enter different email");
+    setTimeout(function () {
+        window.location.reload();
+        
+      }, 1000);
+           return
         } 
 
 if(password == null  || password.trim()==""){
-    alert("password cannot be empty");
+    toastr.error("password cannot be empty");
 }
     else if(password != passwordR){
-   alert("password incorrect");
+   toastr.error("password incorrect");
 }
 else if(password.length < 8)
 {
-alert("password must be greater than 8 characters");
+toastr.error("password must be greater than 8 characters");
 
   }
+  
+ 
 
   else{
     let userobj={
@@ -34,14 +40,18 @@ alert("password must be greater than 8 characters");
         "password-repeat":passwordR,
         "role":"USER"
     };
-     
+   
       UserService.register(userobj) .then(res =>{
-        alert("registration successful");
+       toastr.success("registration successful")
+       setTimeout(function () {
         window.location.href ="login.html";
+      }, 1000)
+       
+       
 
     }).catch(err =>{
         console.error(err.response.data);
-        alert("unable to register");
+      toastr.error("unable to login");
     });
   }
 
