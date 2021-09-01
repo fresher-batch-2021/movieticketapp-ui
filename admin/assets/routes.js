@@ -1,4 +1,5 @@
 const routes = [
+    {path: "index.html"},
     { path: "login.html" },
     { path: "add-movie.html", roles:["ADMIN"] },
     { path: "edit.html"},
