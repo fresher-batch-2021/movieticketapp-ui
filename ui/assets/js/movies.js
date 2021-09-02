@@ -17,7 +17,7 @@ console.log(res.data.rows)
 
 }
 getMovies();
-// alert(datas);
+
 function displayMovies(movies) {
 
     let content = "";

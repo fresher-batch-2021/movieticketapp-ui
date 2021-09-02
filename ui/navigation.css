@@ -152,41 +152,13 @@ li {
   padding: 14px 16px;
   text-decoration: none;
 }
-.slideImage {
+ .slideImage {
   height: 500px;
-}
+} 
 
 /* index 3 div */
 
-/* Slideshow container */
-.slideshow-container {
-  width: 100%;
-  top: 5px;
-  position: relative;
-  height: 475px;
-  z-index: -1;
-}
-.slideshow-container img {
-  height: 100px;
-  background-color: black;
-}
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-/* On smaller screens, decrease text size  */
-@media only screen and (max-width: 300px) {
-  .text {
-    font-size: 11px;
-  }
-}
-.imgslide {
-  width: 100%;
-  border: 2px solid red;
-}
+ 
 /* movies tab*/
 .moviesPage {
   padding: 20px;
@@ -272,10 +244,12 @@ li {
 /* index page */
 /* Slideshow container */
 .slideshow-container {
-  width: 100%;
-  position: relative;
-  height: 475px;
-}
+    width: 100%;
+    top: 5px;
+    position: relative;
+    height: 475px;
+    z-index: -1;
+}   
 .slideshow-container img {
   height: 450px;
   background-color: black;
@@ -298,7 +272,8 @@ li {
   border: 2px solid red;
 }
 
-* payment page */ table {
+/* mybooking table */
+ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 40%;

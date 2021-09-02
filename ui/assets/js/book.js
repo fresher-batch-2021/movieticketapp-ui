@@ -59,7 +59,7 @@ function getSeats() {
 
         noOfSeats = selectedTheatreObj.noOfTickets;
         //load timings
-        let content = '';
+       
 
 
     }
@@ -155,14 +155,14 @@ function Book() {
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
     let theatreName = document.querySelector("#theatreName").value;
     let today = new Date().toJSON().substr(0, 10);
-    //todo
+   
     //get movie id and movie name
 
     if (noOfTickets > 100) {
         toastr.warning("cant book more than 100");
 
         
-        return;
+       
     }
     else {
         let noofticketsbooked = document.querySelector("#noofticketsbooked").value;

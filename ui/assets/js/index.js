@@ -25,7 +25,7 @@ function addSliderImages() {
 function showSlides() {
 
     slideIndex++;
-    //    alert("showSlides"  + slideIndex);
+    
 
 
     let mySlidesDiv = document.querySelectorAll('.mySlides');

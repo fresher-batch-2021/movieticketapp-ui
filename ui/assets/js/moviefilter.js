@@ -2,7 +2,7 @@
  * his function gets language check box value and store it in array
  */
 function filterLanguages() {
-    // alert("Filter ");
+ 
     var allLanguages = document.querySelectorAll("#language");
     let selectedLanguages = [];
     for (let language of allLanguages) {
