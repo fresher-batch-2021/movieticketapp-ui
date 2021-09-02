@@ -161,4 +161,32 @@ img.avatar {
      float: left;
      width: 30%;
  } 
- 
+ .slideshow-container {
+    width: 100%;
+    top: 2px;
+    position: relative;
+    height: 475px;
+    z-index: -1;
+    
+}   
+.slideshow-container img {
+  height: 450px;
+  background-color: black;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+.imgslide {
+  width: 100%;
+  border: 2px solid red;
+}

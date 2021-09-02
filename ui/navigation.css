@@ -245,7 +245,7 @@ li {
 /* Slideshow container */
 .slideshow-container {
     width: 100%;
-    top: 5px;
+    top: 2px;
     position: relative;
     height: 475px;
     z-index: -1;
