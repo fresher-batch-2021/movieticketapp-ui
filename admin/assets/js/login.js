@@ -13,12 +13,16 @@ function Login() {
         let data = res.data.docs[0];
 
         if (data != null) {
-          alert("login successful");
+        
           localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data));
-          window.location.href = "add-movie.html";
+          toastr.success("login succesfully");
+          setTimeout(function () {
+            window.location.href = "add-movie.html";
+          }, 1000)
+         
         }
         else {
-          alert("login failed");
+          toastr.error("login failed");
         }
       }).catch(err => {
         console.error(err);

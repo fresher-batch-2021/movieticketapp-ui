@@ -1,4 +1,6 @@
-
+/**
+ * This function displays the list registered user from database
+ */
 function listUser() {
 
     UserService.getUsers().then(res => {
@@ -10,7 +12,10 @@ function listUser() {
         console.log(err.response.data);
         console.log("Unable to fetch data");
     });
-
+/**
+ * This function is used to display the data in table format
+ * @param {*} users 
+ */
 
     function formRegisterTableData(users) {
 
@@ -43,6 +48,9 @@ function listUser() {
     }
 }
 listUser();
+/**
+ * This function is used to search by email
+ */
 function searchEmail() {
     let searchEmail = document.getElementById("searchBox").value;
     let myTable = document.getElementById("myTable");

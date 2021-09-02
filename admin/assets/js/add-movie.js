@@ -1,4 +1,6 @@
-loginCheck();
+/**
+ * This function is used to get the values from admin
+ */
 
 function addMovieForm(){
     event.preventDefault();
@@ -11,6 +13,13 @@ function addMovieForm(){
 
 
 }
+/**
+ * This Function is used to move the data to database
+ * @param {*} title 
+ * @param {*} language 
+ * @param {*} imageUrl 
+ * @param {*} status 
+ */
 
 function addMovie(title,language, imageUrl,status){
     console.log("Add Movie" , title, language, imageUrl, status);

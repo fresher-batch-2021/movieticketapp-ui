@@ -3,7 +3,9 @@ console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('id');
 console.log(id);
-
+/**
+ * This function is used to get the data from database to edit
+ */
 function editDetails(id) {
     console.log(id);
    
@@ -22,7 +24,9 @@ function editDetails(id) {
     .catch(err => console.error(err));
 }
 editDetails(id);
-
+/**
+ * This function is used to modify the details and return to the database
+ */
 function modifyDetails(){
 
     let id = document.querySelector("#id").value;
@@ -50,8 +54,11 @@ function modifyDetails(){
    
    MovieService.editMovie(modifyDetails).then(res=>{
             console.log(modifyDetails)
-        alert("successfull");
-        window.location.href="list-movie.html";
+            toastr.success("Edited succesfully");
+          setTimeout(function () {
+            window.location.href = "list-movie.html";
+          }, 1000)
+      
     }).catch(err => alert("error "))
 
 }

@@ -1,3 +1,6 @@
+/**
+ * This function displays the list movies from database
+ */
 function listMovies() {
     console.log("list Movies");
    
@@ -11,7 +14,10 @@ function listMovies() {
         console.log("Unable to fetch Movies");
     })
 }
-
+/**
+ * This Function display the data in table
+ * @param {*} movies 
+ */
 function formMovieTableData(movies) {
 
     let content = "";
@@ -31,6 +37,9 @@ function formMovieTableData(movies) {
     document.querySelector("#list-movie").innerHTML = content;
 }
 listMovies();
+/**
+ * This function search by movie name
+ */
 function searchName() {
     let searchName = document.getElementById("searchBox").value;
     let myTable = document.getElementById("myTable");
