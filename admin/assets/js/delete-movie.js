@@ -1,7 +1,7 @@
 function deleteMovie(movieId,revId) {
     console.log("delete movie", movieId, revId);
     if (movieId == null) {
-      
+      console.error();
     } else {
      
      
