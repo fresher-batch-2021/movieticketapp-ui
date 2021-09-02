@@ -72,7 +72,10 @@ function cancelBooking(id, rev, movieId, movieName, theatreName, ticket, date, t
                             'Cancelled!',
                             'Your Movie has been Cancelled.',
                             'success',
-                            window.location.reload()
+                            setTimeout (function(){
+                                window.location.reload()
+                            },1000)
+                          
                         )
                     })
             }
