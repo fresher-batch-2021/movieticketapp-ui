@@ -161,7 +161,7 @@ function Book() {
     if (noOfTickets > 100) {
         toastr.warning("cant book more than 100");
 
-        document.querySelector("#nooftickets").value;
+        
         return;
     }
     else {
