@@ -1,341 +1,325 @@
 /* To align pages in proper */
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 /*Background color for pages  */
-/* body{
-    background-color:rgb(71, 69, 69);
-   
-} */
-
+body {
+  background-color: rgb(71, 69, 69);
+}
 
 /* sign and login link in header */
-.navRegister{
-    margin-left: 1000px;
+.navRegister {
+  margin-left: 1000px;
 }
-   /* first div background */
-   .navBar{
-   
-    background-color: #000;
-    height: 75px;
-    }
-    /* 1 div */
-    /* logo */
-.movieLogo{
-    padding-left: 5px;
-    padding-top: 6px;
-    height: 60px;
-    image-resolution: 100px;
-    
+/* first div background */
+.navBar {
+  background-color: #000;
+  height: 110px;
 }
-
-.navbar input{  
-   
-    width: 500px;
-    margin-bottom: 100px;
-    margin-left: 200px;
-    padding-top: 10px;
-    padding-right: 100px;
-    padding-bottom: 2px;
-    text-align: left;
-    font-size: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: 1px solid rgb(202, 25, 25);
+/* 1 div */
+/* logo */
+.movieLogo {
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  height: 70px;
+  image-resolution: 100px;
 }
 
-
-
-
-    /* form buttons */
-    /* form div class in signup form  */
-    .container{
-        padding: 16px;
-        width: 30%;
-        height: auto;
-        background-origin: padding-box;
-        background-color:gainsboro;
-        margin : 0 auto;
-        display: block;
-    
-    }
-    /* container in signup form */
-    .box{
-        width: 30%;
-        height: 10px;
-    }
-    /* cancel insign form button class*/
-    .cancelButton{ 
-        background-color:red; 
-         padding: 14px 20px; 
-     } 
-    /* sign button class  in signup form*/
-    .signUpButton{
-        background-color:green;
-        padding: 14px 20px;
-    }
-    /* buttons in sign up form */
-    .cancelButton, .signUpButton {
-       float: left;
-       width: 30%;
-    }
-    /* To fix content in correct place  */
-    .clearfix::after{
-        content: "";
-        clear: both;
-        display: table;
-    }
-    
-    form {border: 3px solid #f1f1f1;}
-    img.avatar {
-       border-radius: 50%;
-       height: 90px;
-      }
-      /* button */
-      
-input[type=text], input[type=password]   
-{
-    width: 100%;
-    padding:15px;
-    margin:5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
+.navbar input {
+  width: 500px;
+  margin-bottom: 100px;
+  margin-left: 200px;
+  padding-top: 10px;
+  padding-right: 100px;
+  padding-bottom: 2px;
+  text-align: left;
+  font-size: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 1px solid rgb(202, 25, 25);
 }
- button 
-input[type=text]:focus, input[type=password]:focus{
-    background-color: #ddd;
-    outline: none;
- } 
-hr{
-    border: 1px solid #f1f1f1;
+
+/* form buttons */
+/* form div class in signup form  */
+.container {
+  padding: 16px;
+  width: 30%;
+  height: auto;
+  background-origin: padding-box;
+  background-color: gainsboro;
+  margin: 0 auto;
+  display: block;
 }
-button:hover{ 
-opacity: 1;
+/* container in signup form */
+.box {
+  width: 30%;
+  height: 10px;
 }
-.login{
-    width: 100%;
-    height: 5%;
-    background-color: green;
+/* cancel insign form button class*/
+.cancelButton {
+  background-color: red;
+  padding: 14px 20px;
+}
+/* sign button class  in signup form*/
+.signUpButton {
+  background-color: green;
+  padding: 14px 20px;
+}
+/* buttons in sign up form */
+.cancelButton,
+.signUpButton {
+  float: left;
+  width: 30%;
+}
+/* To fix content in correct place  */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+form {
+  border: 3px solid #f1f1f1;
+}
+img.avatar {
+  border-radius: 50%;
+  height: 90px;
+}
+/* button */
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+button input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+hr {
+  border: 1px solid #f1f1f1;
+}
+button:hover {
+  opacity: 1;
+}
+.login {
+  width: 100%;
+  height: 5%;
+  background-color: green;
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width:300px) {
-    .cancelButton, .SignUpButton {
-        width: 100%;
-    }
+@media screen and (max-width: 300px) {
+  .cancelButton,
+  .SignUpButton {
+    width: 100%;
+  }
 }
 
-  
-    
 /* index page text button colors 2 div */
-a{
-    text-decoration: none; 
-    color:red;
-    
-    }
- 
-/* 2 div tab  */
-.navcontent{
- 
-    float: left;
-    list-style-type: none;
-    padding: 0; 
-    background-color: #333;
-    box-shadow:1px 1px 2px 2px black;
-    width: 100%;
+a {
+  text-decoration: none;
+  color: red;
+}
 
+/* 2 div tab  */
+.navcontent {
+  float: left;
+  list-style-type: none;
+  padding: 0;
+  background-color: #333;
+  box-shadow: 1px 1px 2px 2px black;
+  width: 100%;
 }
 /* list hover */
-li a:hover{
-    
-    color:white;
-    font-size:  20px;
-    box-shadow:12px -12px 12px 2px crimson;
-
+li a:hover {
+  color: white;
+  font-size: 20px;
+  box-shadow: 12px -12px 12px 2px crimson;
 }
 /* list div arrangements */
- li{ 
-    float: left;
-    display: block;
-    color:red;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    
+li {
+  float: left;
+  display: block;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
-.slideImage{
-    height: 500px;
+.slideImage {
+  height: 500px;
 }
 
 /* index 3 div */
-  
- /* Slideshow container */
-.slideshow-container {
-  
-      width: 100%;
-      top: 5px;
-       position: relative;
-      height: 475px;
-      z-index: -1;
-    }
-    .slideshow-container img{
-    
-        height: 100px;
-        background-color: black;
-    } 
-    /* Fading animation */
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-     /* On smaller screens, decrease text size  */
-    @media only screen and (max-width: 300px) { 
-      .text {font-size: 11px}
-     }
-    .imgslide{
-      width: 100%;
-    border: 2px solid red;
-    
-    }
-        /* movies tab*/
-   .moviesPage{
-     
-       padding: 20px;
-       text-align: center;
-   }
 
-  
-         
-         
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  top: 5px;
+  position: relative;
+  height: 475px;
+  z-index: -1;
+}
+.slideshow-container img {
+  height: 100px;
+  background-color: black;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/* On smaller screens, decrease text size  */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+.imgslide {
+  width: 100%;
+  border: 2px solid red;
+}
+/* movies tab*/
+.moviesPage {
+  padding: 20px;
+  text-align: center;
+}
+
 /* This topic head of the movie tab */
-         .moviesHead{
-             float: right;
-             margin-right: 950px;
-             
-         }
-    /* this class arranges the movies image in proper format */
- 
-        .productImg{
-            width: 300px;
-            height: 150px;
-            float: right;
-            margin-right: 50px;
-            margin-top: 10px;
-        }
+.moviesHead {
+  float: right;
+  margin-right: 900px;
+  margin-top: 10px;
+}
+/* this class arranges the movies image in proper format */
+
+.productImg {
+  width: 300px;
+  height: 150px;
+  float: right;
+  margin-right: 50px;
+  margin-top: 10px;
+}
 /* filter tab in movies */
 /* .m represents background color for all tab*/
-.filter{
-    width: 20%;
-    position: absolute;
-    top: 130px;
-    /* color: rgb(211, 203, 203); */
-    left: 10px;
-    
-    
+.filter {
+  width: 20%;
+  position: absolute;
+  top: 160px;
+  /* color: rgb(211, 203, 203); */
+  left: 10px;
 }
 /*  This class for login and sign up box*/
- .box1{
-        margin-top: 20px;
-        padding: 30px;
-        float: left;
-        border: 2px solid red; 
-       
-
-     }
-  
-
-    #date, #nooftickets, #time, #username, #email, #password, #password-repeat, #password1, #Email, #passwordS,#price,#movieName,#theatreName,#availableSeats,#noofticketsbooked
-    {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0 22px 0;
-        display: inline-block;
-        border: none;
-        background: #f1f1f1;
-        box-sizing:border-box;
-
-    }
-
-
-   
-/* about page */
- .aboutPage{
-    padding: 20px;
-    text-align: center;
-
-   }
-   .feedBack{
-    margin-left: 90px;
-   }
-
-   /* bookPage */
- .bookPage{
-    padding: 16px;
-    width: 30%;
-    height: 100%;
-    margin-top: 20px;
-    margin-left: 400px;
-   
-    float: left;
-    border: 2px solid red;
-   
-  
-}  
-/* index page */
-    /* Slideshow container */
-.slideshow-container {
-    width: 100%;
-     position: relative;
-    height: 475px; 
-  }
-  .slideshow-container img{
-  
-      height: 450px;
-      background-color: black;
-  } 
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s; 
-   }
-  /* On smaller screens, decrease text size */
-  @media only screen and (max-width: 300px) {
-    .text {font-size: 11px}
-  } 
-  .imgslide{
-    width: 100%;
-    border: 2px solid red;
-    
-  }
-
-  
-  * payment page */
-  table{
-      font-family: arial,sans-serif;
-      border-collapse: collapse;
-      width: 40%;
-  }
-  tr,td,th{
-      border: 1px solid #ddd;
-      text-align: left;
-      padding: 8px;
-      border:solid red;
-  }
-  /* mybooking table class */
- .tab{
-     margin-top: 30px;
-     margin-left: 200px;
-     border-collapse:collapse ;
- }
-.searchBox{
-    padding: 5px;
-    width: 300px;
-    margin-top: 10px;
-    margin-left: 400px;
+.box1 {
+  margin-top: 20px;
+  padding: 30px;
+  float: left;
+  border: 2px solid red;
 }
-  
+
+#date,
+#nooftickets,
+#time,
+#username,
+#email,
+#password,
+#password-repeat,
+#password1,
+#Email,
+#passwordS,
+#price,
+#movieName,
+#theatreName,
+#availableSeats,
+#noofticketsbooked {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  box-sizing: border-box;
+}
+
+/* about page */
+.aboutPage {
+  padding: 20px;
+  text-align: center;
+}
+.feedBack {
+  margin-left: 90px;
+}
+
+/* bookPage */
+.bookPage {
+  padding: 16px;
+  width: 30%;
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 400px;
+
+  float: left;
+  border: 2px solid red;
+}
+/* index page */
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  height: 475px;
+}
+.slideshow-container img {
+  height: 450px;
+  background-color: black;
+}
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 11px;
+  }
+}
+.imgslide {
+  width: 100%;
+  border: 2px solid red;
+}
+
+* payment page */ table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+}
+tr,
+td,
+th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+  border: solid red;
+}
+/* mybooking table class */
+.tab {
+  margin-top: 30px;
+  margin-left: 200px;
+  border-collapse: collapse;
+}
+.searchBox {
+  padding: 5px;
+  width: 300px;
+  margin-top: 10px;
+  margin-left: 400px;
+}

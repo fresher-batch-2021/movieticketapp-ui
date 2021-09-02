@@ -1,5 +1,5 @@
 /**
- * This function in used to get the price from database
+ * This function in used to get the moviename from database
  * @param {string} movieId 
  */
 function price(movieId) {
@@ -15,7 +15,7 @@ function price(movieId) {
         });
 }
 /**
- * This function is used to get theatre value from database
+ * This function is used to get theatre value from database and display a value
  */
 function theatre() {
     BookService.theatreService().then(res => {
@@ -42,27 +42,31 @@ function getSeats() {
     let theatres = JSON.parse(localStorage.getItem("THEATRES"));
     let selectedTheatreName = document.querySelector("#theatreName").value;
     let selectedTheatreObj = theatres.find(obj => obj.theatreName == selectedTheatreName);
-    console.log(selectedTheatreObj);
+    let selectedTheatreTime = document.querySelector("#time").value;
+    console.log(selectedTheatreTime, "yes")
+
+    console.log("selectedTheatreTime:", selectedTheatreTime);
+
     let noOfSeats = 0;
     if (selectedTheatreObj != null) {
-        document.querySelector("#price").value = selectedTheatreObj.price;
-        document.querySelector("#time").value = selectedTheatreObj.time;
-        noOfSeats = selectedTheatreObj.noOfTickets;
 
-        //load timings
-        for (let theatre of theatres) {
-            console.log(selectedTheatreName,theatre.theatreName);
-            if (theatre.theatreName == selectedTheatreName) {
-                console.log(theatre.time)
-                content += `<option value="${theatre.time[0]}"> ${theatre.time[0]}</option>
-                <option value="${theatre.time[1]}"> ${theatre.time[1]}</option>`;
-            }
+        if (selectedTheatreTime == '') {
+            displayShowTimings(selectedTheatreObj);
         }
-        document.querySelector("#time").innerHTML = content;
-content='';
+
+        document.querySelector("#price").value = selectedTheatreObj.price;
+
+
+        noOfSeats = selectedTheatreObj.noOfTickets;
+        //load timings
+        let content = '';
+
+
     }
-    console.log("No of seats:", noOfSeats);
+
+
     document.querySelector("#availableSeats").value = noOfSeats;
+
 
     //load timimgs
 
@@ -71,31 +75,52 @@ content='';
 }
 
 /**
+ * Display Theatre Timing Options
+ * @param {string} selectedTheatreObj 
+ */
+function displayShowTimings(theatreObj) {
+
+    for (let showtime of theatreObj.time) {
+        content += `<option  value="${showtime}">${showtime}</option>`;
+    }
+
+    console.log("Insert time options")
+    document.querySelector("#time").innerHTML = content;
+
+}
+
+/**
  * This function is used to choose date
  */
 function chooseDate() {
-  
+
     let selectedTheatre = document.querySelector("#theatreName").value;
     let selectedDate = document.querySelector("#date").value;
-  
-    seatsQuantity(selectedTheatre, selectedDate).then(res => {
+    let selectedTime = document.querySelector("#time").value;
+    console.log(selectedTheatre, selectedDate, selectedTime)
+    seatsQuantity(selectedTheatre, selectedDate, selectedTime).then(res => {
         let totalBookedTickets = res;
         console.log("totalbooked tickets:", totalBookedTickets);
         getSeats();
         document.querySelector("#noofticketsbooked").value = totalBookedTickets;
     })
+
+
+
 }
+
 /**
- * This function is used to 
+ * This function is used to select the date and time criteria
  * @param {} theatreName 
  * @param {*} showDate 
  * @returns 
  */
-async function seatsQuantity(theatreName, showDate) {
+async function seatsQuantity(theatreName, showDate, showTime) {
     let criteria = {
         "selector": {
             "theatreName": theatreName,
             "date": showDate,
+            "time": showTime,
             "status": "Booked"
         },
         "fields": ["ticket"]
@@ -110,10 +135,13 @@ async function seatsQuantity(theatreName, showDate) {
     }
     console.log("TotalBookedTickets", totalBookedTickets);
     return totalBookedTickets;
- 
+
 
 }
-
+/**
+ * This function is used to get the values 
+ * @returns 
+ */
 
 function Book() {
     event.preventDefault();
@@ -126,12 +154,13 @@ function Book() {
     let movieName = document.querySelector("#movieName").value;
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
     let theatreName = document.querySelector("#theatreName").value;
+    let today = new Date().toJSON().substr(0, 10);
     //todo
     //get movie id and movie name
 
     if (noOfTickets > 100) {
         toastr.warning("cant book more than 100");
-      
+
         document.querySelector("#nooftickets").value;
         return;
     }
@@ -145,16 +174,12 @@ function Book() {
             toastr.warning("insuffient seats, No of seats available: " + availableSeats);
             return;
         }
-
-
-
-
-        BookService.bookTable(movieId, movieName, noOfTickets, theatreName, date, time, price, email).then(res => console.log(res.data)).catch(err => console.error(err))
+        BookService.bookTable(movieId, movieName, noOfTickets, theatreName, date, time, price, email, today).then(res => console.log(res.data)).catch(err => console.error(err))
         toastr.success("booked successfully");
         setTimeout(function () {
             window.location.href = "index.html";
-        },1000)
-       
+        }, 1000)
+
     }
 
 
@@ -166,7 +191,7 @@ function Book() {
 const param = new URLSearchParams(window.location.search.substr(1));
 let movie = param.get("movie");
 console.log("select movie +++", movie);
-// let theatre = param.get("theatre");
+
 let selectedMovie = movie;
 console.log("select movie ----", selectedMovie);
 let selectedTheatre = theatre;
@@ -190,6 +215,9 @@ let content = `
 
 console.log(content)
 // booking.html
+/**
+ * this function is used for day js
+ */
 function setData() {
     let today = new Date().toJSON().substr(0, 10);
     let day = dayjs().add(8, 'days').toDate().toJSON().substr(0, 10);
@@ -198,3 +226,5 @@ function setData() {
     document.querySelector("#date").setAttribute("max", day);
 }
 setData();
+
+

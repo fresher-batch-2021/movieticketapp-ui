@@ -79,7 +79,7 @@ class BookService {
  * @param {string} email 
  * @returns 
  */
-    static bookTable( movieId,movieName, noOfTickets, theatreName,date,time,price,email){
+    static bookTable( movieId,movieName, noOfTickets, theatreName,date,time,price,email,today){
         
         let Obj = {
             "movieId": movieId,
@@ -90,7 +90,8 @@ class BookService {
             "time": time,
             "price": price,
             "status": "Booked",
-            "email": email
+            "email": email,
+            "today":today
         }
         
         const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking"

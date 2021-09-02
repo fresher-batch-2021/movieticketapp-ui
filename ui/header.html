@@ -1,59 +1,40 @@
-
-<link rel="stylesheet" href="navigation.css">
+<link rel="stylesheet" href="navigation.css" />
 <!-- css fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet" />
 
 <section class="header">
-    <nav>
-        <div class="navBar">
-            <figure>
-
-                <a href="index.html"><img class="movieLogo" src="images/movie1.jpg" alt="no image"></a>
-                <div class="navRegister" style="display: inline-block;">
-                    <a class="navLog" href="login.html" data-loggedIn="false">Login |</a>
-                    <a  class="navLog" href="signup.html" data-loggedIn="false">| SignUp</a>
-                    <a  class="navLog" onClick="logout()" data-loggedIn="true">Logout</a>
-                </div>
-            </figure>
-            <ul class="navcontent">
-                <li><a href="index.html">Home</a></li>
-                
-                <li><a href="movies.html">Movies</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="myBooking.html" >MyBookings</a></li>
-            </ul>
-
+  <nav>
+    <div class="navBar">
+      <figure>
+        <a href="index.html"><img class="movieLogo" src="images/movie1.jpg" alt="no image" /></a>
+        <div class="navRegister" style="display: inline-block">
+          <a class="navLog" href="login.html" data-loggedIn="false">Login |</a>
+          <a class="navLog" href="signup.html" data-loggedIn="false">| SignUp</a>
+          <a class="navLog" onClick="logout()" data-loggedIn="true">Logout</a>
         </div>
+      </figure>
+      <ul class="navcontent">
+        <li><a href="index.html">Home</a></li>
 
-    </nav>
-
-
-
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="myBooking.html">MyBookings</a></li>
+      </ul>
+    </div>
+  </nav>
 </section>
 <script>
-   let userStatus=JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+  let userStatus = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 
-if (userStatus!=null)
- {
-
+  if (userStatus != null) {
     $(".navLog[data-loggedIn='true']").show();
     $(".navLog[data-loggedIn='false']").hide();
-}
-else
-{
-    
+  } else {
     $(".navLog[data-loggedIn='true']").hide();
     $(".navLog[data-loggedIn='false']").show();
-}
-function logout()
-{
+  }
+  function logout() {
     localStorage.clear();
-    window.location.href="login.html";
-}
-
-
-
-    </script>
-
-
-
+    window.location.href = "login.html";
+  }
+</script>
