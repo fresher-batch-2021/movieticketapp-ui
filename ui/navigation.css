@@ -58,13 +58,17 @@ body {
 }
 /* cancel insign form button class*/
 .cancelButton {
-  background-color: red;
+  background-color: rgb(229,9,20);
   padding: 14px 20px;
+  color: rgb(255,216,164);
+  margin-left: 136px;
+  
 }
 /* sign button class  in signup form*/
 .signUpButton {
   background-color: green;
   padding: 14px 20px;
+  color: rgb(255,216,164);
 }
 /* buttons in sign up form */
 .cancelButton,
@@ -83,8 +87,9 @@ form {
   border: 3px solid #f1f1f1;
 }
 img.avatar {
-  border-radius: 50%;
+  border-radius: 30%;
   height: 90px;
+  margin-left: 120px;
 }
 /* button */
 
@@ -111,7 +116,9 @@ button:hover {
 .login {
   width: 100%;
   height: 5%;
-  background-color: green;
+  background-color: rgb(5, 93, 5);
+  padding: 10px;
+  line-break: 5px;
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
@@ -163,14 +170,17 @@ li {
 .moviesPage {
   padding: 20px;
   text-align: center;
+  /* margin-top: 50px; */
 }
 
 /* This topic head of the movie tab */
 .moviesHead {
   float: right;
   margin-right: 900px;
-  margin-top: 10px;
+  color: rgb(255,255,255);
+ 
 }
+
 /* this class arranges the movies image in proper format */
 
 .productImg {
@@ -186,7 +196,7 @@ li {
   width: 20%;
   position: absolute;
   top: 160px;
-  /* color: rgb(211, 203, 203); */
+  color: rgb(255,255,255);
   left: 10px;
 }
 /*  This class for login and sign up box*/
@@ -195,6 +205,7 @@ li {
   padding: 30px;
   float: left;
   border: 2px solid red;
+  color:rgb(255,255,255);
 }
 
 #date,
@@ -225,9 +236,11 @@ li {
 .aboutPage {
   padding: 20px;
   text-align: center;
+  color:rgb(255,255,255) ;
 }
 .feedBack {
   margin-left: 90px;
+  color:rgb(255,255,255)
 }
 
 /* bookPage */
@@ -240,6 +253,10 @@ li {
 
   float: left;
   border: 2px solid red;
+}
+.bookHead{
+  margin-left: 500px;
+  color: antiquewhite;
 }
 /* index page */
 /* Slideshow container */
@@ -277,6 +294,7 @@ li {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 40%;
+  color:rgb(255,255,255);
 }
 tr,
 td,

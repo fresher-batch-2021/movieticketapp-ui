@@ -110,16 +110,16 @@ td,th,tr{
 /* search box for table values */
 .searchBox{
     margin-top: 20px;
-    margin-left: 400px;
+    margin-left: 450px;
     width: 300px;
     padding: 5px;
 }
 
 /* heading  in  list user and movie tab */
 .head{
-    margin-left: 500px;
+    margin-left: 550px;
     margin-top: 50px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 

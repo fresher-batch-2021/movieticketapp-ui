@@ -19,7 +19,8 @@ class BookService {
                 email: userData.email
 
             },
-            fields: ["_id", "_rev", "movieName", "ticket", "date", "time", "price", "status", "theatreName", "email"]
+            fields: ["_id", "_rev", "movieName", "ticket", "date", "time", "price", "status", "theatreName", "email"],
+            // "sort":[{"bookingDate":"desc"}]
         };
 
         return axios.post(url, requestData, { headers: { Authorization: basicAuth } })
@@ -79,7 +80,7 @@ class BookService {
  * @param {string} email 
  * @returns 
  */
-    static bookTable( movieId,movieName, noOfTickets, theatreName,date,time,price,email,today){
+    static bookTable( movieId,movieName, noOfTickets, theatreName,date,time,price,email,bookingDate,currentTime){
         
         let Obj = {
             "movieId": movieId,
@@ -91,7 +92,8 @@ class BookService {
             "price": price,
             "status": "Booked",
             "email": email,
-            "today":today
+            "bookingDate":bookingDate,
+            // "currentTime":currentTime
         }
         
         const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking"

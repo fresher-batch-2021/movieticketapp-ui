@@ -24,8 +24,17 @@ class UserService{
      */
     
     static getUsers(){
-    const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking/_all_docs?include_docs=true";
-    return axios.get(url,  {headers:{Authorization:basicAuth}})
+
+        const sortData = 
+            {
+                "selector":{
+                
+                },
+               "sort":[{"bookingDate":"desc"}]
+             
+            }
+    const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking/_find";
+    return axios.post(url,sortData,  {headers:{Authorization:basicAuth}})
     
     }
 }

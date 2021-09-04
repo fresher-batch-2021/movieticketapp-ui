@@ -23,10 +23,15 @@
     integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <header id="header"></header>
+  
   <main>
+    <h1 class="bookHead">Book Page</h1>
     <div class="tablePage"></div>
+    
     <form onsubmit="Book()" style="border: 1px solid #ccc">
+   
       <div class="bookPage">
+
         <input type="hidden" id="movieId" readonly />
         <label for="movieName">MovieName</label>
         <input type="text" id="movieName" readonly />
@@ -49,12 +54,13 @@
 
         <label for="price">Price per Ticket</label>
         <input type="number" id="price" name="price" required readonly /><br />
+        <input type="hidden" id="bookTime" readonly />
 
         <br />
         <div class="clearfix">
           <br />
           <button type="reset"><a href="theatres.html"> Back</a></button>
-          <button type="submit">Booking status</button>
+          <button type="submit">Book Ticket</button>
         </div>
       </div>
     </form>

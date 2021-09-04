@@ -21,6 +21,7 @@
 
 <body>
     <header id="header"></header>
+    <h3 class="head">UPDATE ADMIN</h3>
    
       
     <div class="box">
@@ -29,16 +30,25 @@
             <input type="hidden" id="rev" readonly />
 
             <tr>
-                <th id="title">title</th>
+                <th id="title">Title</th>
                 <td><input type="text" id="title"></td><br>
 
                 <th id="language">language</th>
-                <td><input type="text" id="language"></td><br>
-                <th id="imageUrl">imageUrl</th>
+                <select id="language" required>
+                    <option>
+                       tamil
+                    </option>
+                    <option>
+                       english
+                    </option>
+                </select><br>
+
+                
+                <th id="imageUrl">ImageUrl</th>
                 <td><input type="file" id="imageUrl"><br></td><br>
 
 
-                <th id="status">status</th>
+                <th id="status">Status</th>
 
                 <select id="status" required>
                     <option>
@@ -53,7 +63,8 @@
 
         </div>
         </form>
-        <input type="submit" onclick="modifyDetails()" id="edit" value="Done">
+        <input type="submit" onclick="modifyDetails()" id="edit" value="Update">
+        <button type="submit"><a href="list-movie.html">Cancel</a> </button>
         <script src="assets/js/jquery.min.js"></script>
         <script>
             $("#header").load("header.html")

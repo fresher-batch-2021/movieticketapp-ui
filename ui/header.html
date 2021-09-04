@@ -10,9 +10,11 @@
         <div class="navRegister" style="display: inline-block">
           <a class="navLog" href="login.html" data-loggedIn="false">Login |</a>
           <a class="navLog" href="signup.html" data-loggedIn="false">| SignUp</a>
-          <a class="navLog" onClick="logout()" data-loggedIn="true">Logout</a>
+          <a  class="navLog" onClick="logout()" data-loggedIn="true">Logout</a>
+          
         </div>
       </figure>
+    
       <ul class="navcontent">
         <li><a href="index.html">Home</a></li>
 
@@ -25,8 +27,8 @@
 </section>
 <script>
   let userStatus = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
-
   if (userStatus != null) {
+    
     $(".navLog[data-loggedIn='true']").show();
     $(".navLog[data-loggedIn='false']").hide();
   } else {

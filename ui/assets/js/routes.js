@@ -2,7 +2,7 @@ const routes = [
     { path: "signup.html" },
     { path: "login.html" },
     { path: "index.html" },
-    { path: "movies.html", roles:["USER"] },
+    { path: "movies.html"},
     { path: "book.html", roles: ["USER"] },
     { path: "myBooking.html", roles: ["USER"] },
     
@@ -38,11 +38,13 @@ function checkAccess(pageName, role) {
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
    
     console.log("LoggedIn User", user);
+    
     let role = user != null ? user.role : null;
+    
     let pathName = window.location.pathname.substr(1);
     console.log(role,pathName)
     let allowedAccess = checkAccess(pathName, role);
-
+   
 
 
     if (!allowedAccess) {

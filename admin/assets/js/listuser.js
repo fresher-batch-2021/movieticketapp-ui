@@ -4,12 +4,16 @@
 function listUser() {
 
     UserService.getUsers().then(res => {
-        const data = res.data.rows.map(obj => obj.doc);
+        console.log(res.data)
+        let x=res.data;
+        console.table(x.docs)
+        // let data= x.map(obj => obj.doc);
+        // console.log(data)
 
-        console.log(data);
-        formRegisterTableData(data);
+        // console.log(data);
+        formRegisterTableData(x.docs);
     }).catch(err => {
-        console.log(err.response.data);
+        console.log(err);
         console.log("Unable to fetch data");
     });
 /**
@@ -23,14 +27,17 @@ function listUser() {
         let content = "";
         let i = 1;
         for (let listUser of users) {
-
+          
+                let orderedDate = new Date(listUser.date).toJSON(); //.substr(0, 10);
+                let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
             content +=
                 `<tr>
             <td> ${i++} </td> 
             <td>${listUser.email}</td>
             <td>${listUser.movieName}</td>
+            <td>${moment(listUser.bookingDate).format("DD-MM-YYYY")}</td>
             <td>${listUser.time}</td>
-            <td>${listUser.date}</td>
+            <td>${date}</td>
             <td>${listUser.status}</td>
             <td>${listUser.ticket}</td>
             <td>${listUser.theatreName}</td>

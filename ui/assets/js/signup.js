@@ -1,9 +1,11 @@
 function Register(){
     
     event.preventDefault();
+    const username = document.querySelector("#username").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     const passwordR = document.querySelector("#password-repeat").value;
+    
     console.log(email+"-"+password+"-"+passwordR);
    
     bussinessValidation(email).then(res => {
@@ -13,7 +15,7 @@ function Register(){
         if (data != "") {
     toastr.warning("email already exist Please enter different email");
     setTimeout(function () {
-        window.location.reload();
+        
         
       }, 1000);
            return
@@ -23,7 +25,7 @@ if(password == null  || password.trim()==""){
     toastr.error("password cannot be empty");
 }
     else if(password != passwordR){
-   toastr.error("password incorrect");
+   toastr.error("Password & ConfirmPassword Should Match");
 }
 else if(password.length < 8)
 {
@@ -38,6 +40,7 @@ toastr.error("password must be greater than 8 characters");
         "email":email,
         "password":password,
         "password-repeat":passwordR,
+        "username":username,
         "role":"USER"
     };
    
@@ -45,7 +48,7 @@ toastr.error("password must be greater than 8 characters");
        toastr.success("registration successful")
        setTimeout(function () {
         window.location.href ="login.html";
-      }, 1000)
+      }, 2000)
        
        
 

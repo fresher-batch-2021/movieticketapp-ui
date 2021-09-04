@@ -54,10 +54,10 @@ function modifyDetails(){
    
    MovieService.editMovie(modifyDetails).then(res=>{
             console.log(modifyDetails)
-            toastr.success("Edited succesfully");
+            toastr.success("Updated Succesfully");
           setTimeout(function () {
             window.location.href = "list-movie.html";
-          }, 1000)
+          }, 2000)
       
     }).catch(err => alert("error "))
 

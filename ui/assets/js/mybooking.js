@@ -26,7 +26,7 @@ function formMovieTableData() {
         <td>${Obj.time}</td>
         
         <td>${abc}</td>
-        <td>${moment(Obj.today).format("DD-MM-YYYY")}</td>
+        <td>${moment(Obj.bookingDate).format("DD-MM-YYYY")}</td>
 
         <td>${Obj.status}</td>
         <td>`;

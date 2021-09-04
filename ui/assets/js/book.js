@@ -145,7 +145,6 @@ async function seatsQuantity(theatreName, showDate, showTime) {
 
 function Book() {
     event.preventDefault();
-
     let noOfTickets = document.querySelector("#nooftickets").value;
     let date = document.querySelector("#date").value;
     let time = document.querySelector("#time").value;
@@ -155,14 +154,18 @@ function Book() {
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
     let theatreName = document.querySelector("#theatreName").value;
     let today = new Date().toJSON().substr(0, 10);
+    // let currentTime = getTime().toJSON().substr(0, 10);
+    
+
+
    
     //get movie id and movie name
 
-    if (noOfTickets > 100) {
-        toastr.warning("cant book more than 100");
-
-        
-       
+    if (noOfTickets > 10) {
+        toastr.error("cant book more than 10");
+    }
+    else if(noOfTickets <= 0){
+        toastr.error("enter valid seat");  
     }
     else {
         let noofticketsbooked = document.querySelector("#noofticketsbooked").value;
@@ -226,5 +229,41 @@ function setData() {
     document.querySelector("#date").setAttribute("max", day);
 }
 setData();
-
+function bookingTime(){
+    var today = new Date();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
+    var prepand = (hour >= 12)? " PM ":" AM ";
+    hour = (hour >= 12)? hour - 12: hour;
+    if (hour===0 && prepand===' PM ') 
+    { 
+    if (minute===0 && second===0)
+    { 
+    hour=12;
+    prepand=' Noon';
+    } 
+    else
+    { 
+    hour=12;
+    prepand=' PM';
+    } 
+    } 
+    if (hour===0 && prepand===' AM ') 
+    { 
+    if (minute===0 && second===0)
+    { 
+    hour=12;
+    prepand=' Midnight';
+    } 
+    else
+    { 
+    hour=12;
+    prepand=' AM';
+    } 
+    } 
+    let now ="Current Time : "+hour + prepand + " : " + minute;
+  console.log(now );
+  document.querySelector("#bookTime").value ;
+}bookingTime();
 

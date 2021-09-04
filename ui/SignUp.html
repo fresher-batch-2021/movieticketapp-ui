@@ -30,28 +30,31 @@
                 <div class="box1">
                     <h1>SignUp</h1><br>
                     <p>Please fill in this form to create an account</p><br>
-                    <hr>
+                    
+                    <label for="username"><strong>Username</strong></label>
+                    <input type="text" placeholder="Enter Username" name="username" id="username" required><br>
                     <label for="email"><strong>Email</strong></label>
                     <input type="email" placeholder="Enter Mail" name="email" id="email" required autocomplete="off"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com"><br>
 
-                    <label for="password"><strong>password</strong></label>
-                    <input type="password" placeholder="Enter password" name="password" id="password" required><br>
+                    <label for="password"><strong>Password</strong></label>
+                    <input type="password" placeholder="Enter Password" name="password" id="password" required><br>
 
-                    <label for="password-repeat"><strong>confirm password</strong></label>
-                    <input type="text" placeholder="Enter confirm password" name="password-repeat" id="password-repeat"
+                    <label for="password-repeat"><strong>Confirm Password</strong></label>
+                    <input type="password" placeholder="Enter Confirm Password" name="password-repeat" id="password-repeat"
                         required autocomplete="off"><br>
 
-                    <label>
+                    <!-- <label>
                         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Remember Me
                     </label>
-                    <hr>
+                    <hr> -->
 
-                    <p>By creating an account you agree to out <a href="#" style="color: dodgerblue;">Terms &
+                    <p>By creating an account you agree to out <a href="terms.html" style="color: dodgerblue;">Terms &
                             Privacy</a></p>
                     <div class="clearfix"><br>
-                        <button type="reset" class="cancelButton">Cancel</button>
                         <button type="submit" class="signUpButton " >SignUp</button>
+                        <button type="reset" class="cancelButton">Cancel</button>
+                      
                     </div>
                 </div>
             </div>
