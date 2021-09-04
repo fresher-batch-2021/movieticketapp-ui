@@ -1,5 +1,5 @@
 /**
- * his function gets language check box value and store it in array
+ * This function gets language check box value and store it in array
  */
 function filterLanguages() {
  
@@ -31,4 +31,9 @@ function filterLanguages() {
 
 
     }
+}
+function filterClear(){
+    var clist = document.getElementsByTagName("input");
+for (var i = 0; i < clist.length; ++i) { clist[i].checked = false; }
+window.location.reload();
 }

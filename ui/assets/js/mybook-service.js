@@ -92,8 +92,8 @@ class BookService {
             "price": price,
             "status": "Booked",
             "email": email,
-            "bookingDate":bookingDate,
-            // "currentTime":currentTime
+            "bookingDate":bookingDate
+            // "currentTime":now
         }
         
         const url = "https://a7e75d33-40d2-47a6-a9b9-f80dbbc41c98-bluemix.cloudantnosqldb.appdomain.cloud/movieapp_booking"

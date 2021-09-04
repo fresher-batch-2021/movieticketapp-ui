@@ -154,7 +154,7 @@ function Book() {
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
     let theatreName = document.querySelector("#theatreName").value;
     let today = new Date().toJSON().substr(0, 10);
-    // let currentTime = getTime().toJSON().substr(0, 10);
+    // let now = JSON.parse(localStorage.getItem("currentTime")).now;
     
 
 
@@ -264,6 +264,9 @@ function bookingTime(){
     } 
     let now ="Current Time : "+hour + prepand + " : " + minute;
   console.log(now );
-  document.querySelector("#bookTime").value ;
+//   localStorage.setItem("currentTime", JSON.stringify(now));
+
+//   let getTime= document.querySelector("#bookTime").value ;
+  
 }bookingTime();
 
