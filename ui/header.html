@@ -11,7 +11,9 @@
      
           <a class="navLog" href="login.html" data-loggedIn="false">Login |</a>
           <a class="navLog" href="signup.html" data-loggedIn="false">| SignUp</a>
+          <a class="navLog" id="profile" data-loggedIn="true">Welcome {{userStatus.username}}</a>
           <a  class="navLog" onClick="logout()" data-loggedIn="true">Logout</a>
+         
           
         </div>
       </figure>
@@ -28,10 +30,12 @@
 </section>
 <script>
   let userStatus = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+  console.log("Header",userStatus);
   if (userStatus != null) {
     
     $(".navLog[data-loggedIn='true']").show();
     $(".navLog[data-loggedIn='false']").hide();
+    $("#profile").html("Welcome " + userStatus.username + "!!!");
 
   } else {
     $(".navLog[data-loggedIn='true']").hide();
