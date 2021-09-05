@@ -31,7 +31,16 @@ function formMovieTableData() {
         <td>${Obj.status}</td>
         <td>`;
             if (Obj.status == 'Booked') {
+                let bookingDate = moment(Obj.date).format("MM-DD-YYYY");
+                let timeArray = Obj.time.split(":");
+                let dateString = bookingDate+" "+ timeArray[0]+":"+timeArray[1];
+                console.log(dateString);
+                if(Date.parse(dateString) < Date.parse(new Date())){
+                    console.log("ok");
+                    content += `Expired`;
+                }else{
                 content += `${cancelBook}`;
+            }
             }
             content += `     
         
