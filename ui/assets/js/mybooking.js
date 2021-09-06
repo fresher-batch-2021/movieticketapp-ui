@@ -97,7 +97,7 @@ function cancelBooking(id, rev, movieId, movieName, theatreName, ticket, date, t
 
 }
 function searchName() {
-    let searchName = document.getElementById("searchBox").value;
+    let searchName = document.getElementById("searchBox").value.toLowerCase();
     let myTable = document.getElementById("myTable");
     let tableRow = myTable.getElementsByTagName("tr");
     for (var i = 0; i < tableRow.length; i++) {

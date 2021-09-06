@@ -7,10 +7,7 @@ function listUser() {
         console.log(res.data)
         let x=res.data;
         console.table(x.docs)
-        // let data= x.map(obj => obj.doc);
-        // console.log(data)
-
-        // console.log(data);
+        
         formRegisterTableData(x.docs);
     }).catch(err => {
         console.log(err);
@@ -59,7 +56,7 @@ listUser();
  * This function is used to search by email
  */
 function searchEmail() {
-    let searchEmail = document.getElementById("searchBox").value;
+    let searchEmail = document.getElementById("searchBox").value.toLowerCase();
     let myTable = document.getElementById("myTable");
     let tableRow = myTable.getElementsByTagName("tr");
     for (var i = 0; i < tableRow.length; i++) {

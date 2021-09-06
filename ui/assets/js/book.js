@@ -50,7 +50,7 @@ function getSeats() {
     let noOfSeats = 0;
     if (selectedTheatreObj != null) {
 
-        if (selectedTheatreTime == '') {
+        if (selectedTheatreTime != '' || selectedTheatreTime == '') {
             displayShowTimings(selectedTheatreObj);
         }
 
@@ -59,7 +59,7 @@ function getSeats() {
 
         noOfSeats = selectedTheatreObj.noOfTickets;
         //load timings
-       
+
 
 
     }
@@ -79,13 +79,46 @@ function getSeats() {
  * @param {string} selectedTheatreObj 
  */
 function displayShowTimings(theatreObj) {
-
+    console.log(theatreObj);
+    let selectedDate = document.querySelector("#date").value;
+    console.log("length : " + theatreObj.time.length)
+    let content1 = "";
     for (let showtime of theatreObj.time) {
-        content += `<option  value="${showtime}">${showtime}</option>`;
+        let datas = showtime.split(":");
+        console.log(showtime);
+
+
+        console.log(datas);
+        let todayDate = new Date();
+        let today = String(todayDate.getDate()).padStart(2, '0');
+        let month = String(todayDate.getMonth() + 1).padStart(2, '0');
+        let year = todayDate.getFullYear();
+        let dateString1 = month + "-" + today + "-" + year + " : " + showtime;
+        console.log("mnlk" + dateString1);
+        console.log("selct date", selectedDate);
+        let dateArray = selectedDate.split("-");
+        let dateString = dateArray[1] + "-" + dateArray[2] + "-" + dateArray[0];
+        console.log("str :" + dateString);
+
+        if (Date.parse(dateString) > Date.parse(new Date())) {
+            content1 += `<option  value="${showtime}">${showtime}</option>`;
+            console.log(showtime);
+
+        } else {
+            if (Date.parse(dateString1) >= Date.parse(new Date())) {
+                content1 += `<option  value="${showtime}">${showtime}</option>`;
+                console.log(content1);
+            }
+            else {
+                console.log("failed");
+            }
+        }
+
     }
 
+
     console.log("Insert time options")
-    document.querySelector("#time").innerHTML = content;
+    document.querySelector("#time").innerHTML = content1;
 
 }
 
@@ -104,7 +137,10 @@ function chooseDate() {
         getSeats();
         document.querySelector("#noofticketsbooked").value = totalBookedTickets;
     })
-
+    let theatres = JSON.parse(localStorage.getItem("THEATRES"));
+    let selectedTheatreName = document.querySelector("#theatreName").value;
+    let selectedTheatreObj = theatres.find(obj => obj.theatreName == selectedTheatreName);
+    displayShowTimings(selectedTheatreObj);
 
 
 }
@@ -116,6 +152,7 @@ function chooseDate() {
  * @returns 
  */
 async function seatsQuantity(theatreName, showDate, showTime) {
+
     let criteria = {
         "selector": {
             "theatreName": theatreName,
@@ -144,7 +181,9 @@ async function seatsQuantity(theatreName, showDate, showTime) {
  */
 
 function Book() {
+
     event.preventDefault();
+
     let noOfTickets = document.querySelector("#nooftickets").value;
     let date = document.querySelector("#date").value;
     let time = document.querySelector("#time").value;
@@ -154,24 +193,23 @@ function Book() {
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
     let theatreName = document.querySelector("#theatreName").value;
     let today = new Date().toJSON().substr(0, 10);
-    // let now = JSON.parse(localStorage.getItem("currentTime")).now;
-    
 
 
-   
+
+
+
     //get movie id and movie name
 
-    if (noOfTickets > 10) {
-        toastr.error("cant book more than 10");
+    if (noOfTickets > 100) {
+        toastr.error("cant book more than 100");
     }
-    else if(noOfTickets <= 0){
-        toastr.error("enter valid seat");  
+    else if (noOfTickets <= 0) {
+        toastr.error("enter valid seat");
     }
     else {
         let noofticketsbooked = document.querySelector("#noofticketsbooked").value;
         let totalSeats = document.querySelector("#availableSeats").value;
         let availableSeats = totalSeats - noofticketsbooked;
-
         console.log(availableSeats);
         if (noOfTickets > availableSeats) {
             toastr.warning("insuffient seats, No of seats available: " + availableSeats);
@@ -229,44 +267,36 @@ function setData() {
     document.querySelector("#date").setAttribute("max", day);
 }
 setData();
-function bookingTime(){
+function bookingTime() {
     var today = new Date();
     var hour = today.getHours();
     var minute = today.getMinutes();
     var second = today.getSeconds();
-    var prepand = (hour >= 12)? " PM ":" AM ";
-    hour = (hour >= 12)? hour - 12: hour;
-    if (hour===0 && prepand===' PM ') 
-    { 
-    if (minute===0 && second===0)
-    { 
-    hour=12;
-    prepand=' Noon';
-    } 
-    else
-    { 
-    hour=12;
-    prepand=' PM';
-    } 
-    } 
-    if (hour===0 && prepand===' AM ') 
-    { 
-    if (minute===0 && second===0)
-    { 
-    hour=12;
-    prepand=' Midnight';
-    } 
-    else
-    { 
-    hour=12;
-    prepand=' AM';
-    } 
-    } 
-    let now ="Current Time : "+hour + prepand + " : " + minute;
-  console.log(now );
-//   localStorage.setItem("currentTime", JSON.stringify(now));
+    var prepand = (hour >= 12) ? " PM " : " AM ";
+    hour = (hour >= 12) ? hour - 12 : hour;
+    if (hour === 0 && prepand === ' PM ') {
+        if (minute === 0 && second === 0) {
+            hour = 12;
+            prepand = ' Noon';
+        }
+        else {
+            hour = 12;
+            prepand = ' PM';
+        }
+    }
+    if (hour === 0 && prepand === ' AM ') {
+        if (minute === 0 && second === 0) {
+            hour = 12;
+            prepand = ' Midnight';
+        }
+        else {
+            hour = 12;
+            prepand = ' AM';
+        }
+    }
+    let now = "Current Time : " + hour + prepand + " : " + minute;
+    console.log(now);
 
-//   let getTime= document.querySelector("#bookTime").value ;
-  
-}bookingTime();
+
+} bookingTime();
 
