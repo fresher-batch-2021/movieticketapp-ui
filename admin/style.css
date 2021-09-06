@@ -121,7 +121,11 @@ td,th,tr{
     margin-top: 50px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+.userHead{
+    margin-left: 450px;
+    margin-top: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .clearfix::after{
     content: "";

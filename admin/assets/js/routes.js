@@ -5,6 +5,7 @@ const routes = [
     { path: "edit.html"},
     { path: "list-movie.html", roles: ["ADMIN"] },
     { path: "listuser.html", roles:["ADMIN"] },
+    { path: "listusers.html", roles:["ADMIN"] },
     
 
 ];
