@@ -200,8 +200,8 @@ function Book() {
 
     //get movie id and movie name
 
-    if (noOfTickets > 100) {
-        toastr.error("cant book more than 100");
+    if (noOfTickets > 10) {
+        toastr.error("cant book more than 10");
     }
     else if (noOfTickets <= 0) {
         toastr.error("enter valid seat");
