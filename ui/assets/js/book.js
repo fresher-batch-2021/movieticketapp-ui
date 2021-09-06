@@ -58,7 +58,7 @@ function getSeats() {
 
 
         noOfSeats = selectedTheatreObj.noOfTickets;
-        //load timings
+       
 
 
 
