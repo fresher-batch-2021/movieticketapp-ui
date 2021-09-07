@@ -19,8 +19,8 @@ class BookService {
                 email: userData.email
 
             },
-            fields: ["_id", "_rev", "movieName", "ticket", "date", "time", "price", "status", "theatreName", "email"],
-            "sort":[{"bookingDate":"desc"}]
+            fields: ["_id", "_rev", "movieName", "noOfTickets", "movieDate", "movieTime", "ticketPrice", "status", "theatreName", "email"],
+            // "sort":[{"bookingDate":"desc"}]
         };
         
 
@@ -42,17 +42,17 @@ class BookService {
      * @param {string} email 
      * @returns 
      */
-    static cancel(id, rev, movieId, movieName, theatreName, ticket, date, time, price, status, email) {
+    static cancel(id, rev, movieId, movieName, theatreName, noOfTickets, movieDate, movieTime, ticketPrice, status, email) {
         console.log(id);
         console.log(rev);
         const cancel = {
             "movieId": movieId,
             "movieName": movieName,
             "theatreName": theatreName,
-            "ticket": ticket,
-            "date": date,
-            "time": time,
-            "price": price,
+            "noOfTickets": noOfTickets,
+            "movieDate": movieDate,
+            "movieTime": movieTime,
+            "moviePrice": ticketPrice,
             "status": status,
             "email": email
         }
@@ -81,16 +81,16 @@ class BookService {
  * @param {string} email 
  * @returns 
  */
-    static bookTable( movieId,movieName, noOfTickets, theatreName,date,time,price,email,bookingDate){
+    static bookTable( movieId,movieName, noOfTickets, theatreName,movieDate,movieTime,ticketPrice,email,bookingDate){
         
         let Obj = {
             "movieId": movieId,
             "movieName": movieName,
-            "ticket": noOfTickets,
+            "noOfTickets": noOfTickets,
             "theatreName": theatreName,
-            "date": date,
-            "time": time,
-            "price": price,
+            "movieDate": movieDate,
+            "movieTime": movieTime,
+            "ticketPrice": ticketPrice,
             "status": "Booked",
             "email": email,
             "bookingDate":bookingDate

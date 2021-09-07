@@ -58,7 +58,7 @@ function getSeats() {
 
 
         noOfSeats = selectedTheatreObj.noOfTickets;
-       
+     
 
 
 
@@ -185,14 +185,14 @@ function Book() {
     event.preventDefault();
 
     let noOfTickets = document.querySelector("#nooftickets").value;
-    let date = document.querySelector("#date").value;
-    let time = document.querySelector("#time").value;
-    let price = document.querySelector("#price").value;
+    let movieDate = document.querySelector("#date").value;
+    let movieTime = document.querySelector("#time").value;
+    let ticketPrice = document.querySelector("#price").value;
     let movieId = document.querySelector("#movieId").value;
     let movieName = document.querySelector("#movieName").value;
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
     let theatreName = document.querySelector("#theatreName").value;
-    let today = new Date().toJSON().substr(0, 10);
+    let today = new Date().toJSON();
 
 
 
@@ -200,11 +200,11 @@ function Book() {
 
     //get movie id and movie name
 
-    if (noOfTickets > 10) {
-        toastr.error("cant book more than 10");
+    if (noOfTickets > 100) {
+        toastr.error(ErrorMessage.CANT_BOOK_MORE_THAN_10);
     }
     else if (noOfTickets <= 0) {
-        toastr.error("enter valid seat");
+        toastr.error(ErrorMessage.ENTER_VALID_SEAT);
     }
     else {
         let noofticketsbooked = document.querySelector("#noofticketsbooked").value;
@@ -212,10 +212,10 @@ function Book() {
         let availableSeats = totalSeats - noofticketsbooked;
         console.log(availableSeats);
         if (noOfTickets > availableSeats) {
-            toastr.warning("insuffient seats, No of seats available: " + availableSeats);
+            toastr.error(ErrorMessage.INSUFFICIENT_SEATS + availableSeats);
             return;
         }
-        BookService.bookTable(movieId, movieName, noOfTickets, theatreName, date, time, price, email, today).then(res => console.log(res.data)).catch(err => console.error(err))
+        BookService.bookTable( movieId,movieName, noOfTickets, theatreName,movieDate,movieTime,ticketPrice,email,today).then(res => console.log(res.data)).catch(err => console.error(err))
         toastr.success("booked successfully");
         setTimeout(function () {
             window.location.href = "index.html";
@@ -260,43 +260,12 @@ console.log(content)
  * this function is used for day js
  */
 function setData() {
-    let today = new Date().toJSON().substr(0, 10);
+    let today = new Date().toJSON();
     let day = dayjs().add(8, 'days').toDate().toJSON().substr(0, 10);
     console.log(day);
     document.querySelector("#date").setAttribute("min", today);
     document.querySelector("#date").setAttribute("max", day);
 }
 setData();
-function bookingTime() {
-    var today = new Date();
-    var hour = today.getHours();
-    var minute = today.getMinutes();
-    var second = today.getSeconds();
-    var prepand = (hour >= 12) ? " PM " : " AM ";
-    hour = (hour >= 12) ? hour - 12 : hour;
-    if (hour === 0 && prepand === ' PM ') {
-        if (minute === 0 && second === 0) {
-            hour = 12;
-            prepand = ' Noon';
-        }
-        else {
-            hour = 12;
-            prepand = ' PM';
-        }
-    }
-    if (hour === 0 && prepand === ' AM ') {
-        if (minute === 0 && second === 0) {
-            hour = 12;
-            prepand = ' Midnight';
-        }
-        else {
-            hour = 12;
-            prepand = ' AM';
-        }
-    }
-    let now = "Current Time : " + hour + prepand + " : " + minute;
-    console.log(now);
 
-
-} bookingTime();
 

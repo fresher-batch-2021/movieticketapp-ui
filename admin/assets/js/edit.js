@@ -16,7 +16,6 @@ function editDetails(id) {
         document.querySelector("#id").value = movieDetail._id;
         document.querySelector("#rev").value = movieDetail._rev;
         document.querySelector("#title").value = movieDetail.title;
-       
         document.querySelector("#status").value = movieDetail.status;
         document.querySelector("#language").value = movieDetail.language;
        
@@ -33,7 +32,7 @@ function modifyDetails(){
     let rev = document.querySelector("#rev").value;
     let title = document.querySelector("#title").value;
     let imageUrlFullPath = document.querySelector("#imageUrl").value;
- const imageUrl =imageUrlFullPath.substring(imageUrlFullPath.lastIndexOf("\\")+1);
+    const imageUrl =imageUrlFullPath.substring(imageUrlFullPath.lastIndexOf("\\")+1);
     
    
     let status = document.querySelector("#status").value;

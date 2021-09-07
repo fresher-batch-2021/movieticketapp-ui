@@ -10,20 +10,20 @@ function formMovieTableData() {
         let details = res.data.docs;
         console.log(details);
         for (let Obj of details) {
-            let orderedDate = new Date(Obj.date).toJSON(); //.substr(0, 10);
+            let orderedDate = new Date(Obj.movieDate).toJSON(); //.substr(0, 10);
             let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
 
-            let cancelBook = `<button type='button'  onclick = "cancelBooking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.theatreName}','${Obj.ticket}','${Obj.date}','${Obj.time}','${Obj.price}','cancel','${Obj.email}');"> Cancel </button>`;
+            let cancelBook = `<button type='button'  onclick = "cancelBooking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.theatreName}','${Obj.noOfTickets}','${Obj.movieDate}','${Obj.movieTime}','${Obj.ticketPrice}','cancel','${Obj.email}');"> Cancel </button>`;
 
-            const abc = (Obj.ticket) * (Obj.price);
+            const abc = (Obj.noOfTickets) * (Obj.ticketPrice);
 
             content += `<tr>
         <td>${i++}</td>
         <td>${Obj.movieName}</td>
-        <td>${Obj.ticket}</td>
+        <td>${Obj.noOfTickets}</td>
         <td>${Obj.theatreName}</td>
         <td>${date}</td>
-        <td>${Obj.time}</td>
+        <td>${Obj.movieTime}</td>
         
         <td>${abc}</td>
         <td>${moment(Obj.bookingDate).format("DD-MM-YYYY")}</td>
@@ -31,8 +31,8 @@ function formMovieTableData() {
         <td>${Obj.status}</td>
         <td>`;
             if (Obj.status == 'Booked') {
-                let bookingDate = moment(Obj.date).format("MM-DD-YYYY");
-                let timeArray = Obj.time.split(":");
+                let bookingDate = moment(Obj.movieDate).format("MM-DD-YYYY");
+                let timeArray = Obj.movieTime.split(":");
                 let dateString = bookingDate+" "+ timeArray[0]+":"+timeArray[1];
                 console.log(dateString);
                 if(Date.parse(dateString) < Date.parse(new Date())){
@@ -63,7 +63,7 @@ formMovieTableData();
 
 
 
-function cancelBooking(id, rev, movieId, movieName, theatreName, ticket, date, time, price, status, email) {
+function cancelBooking(id, rev, movieId, movieName, theatreName,noOfTickets, movieDate, movieTime, ticketPrice, status, email) {
     Swal.fire({
         title: 'Are you sure?',
         text: "Do You want to cancel this booking",
@@ -75,7 +75,7 @@ function cancelBooking(id, rev, movieId, movieName, theatreName, ticket, date, t
     })
         .then(result => {
             if (result.isConfirmed) {
-                BookService.cancel(id, rev, movieId, movieName, theatreName, ticket, date, time, price, status, email)
+                BookService.cancel(id, rev, movieId, movieName, theatreName, noOfTickets, movieDate, movieTime, ticketPrice, status, email)
                     .then(res => {
                         Swal.fire(
                             'Cancelled!',

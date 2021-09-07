@@ -5,7 +5,7 @@ function Login() {
     const password = document.querySelector("#password").value;
     console.log(username + "-" + password);
     if (password == null || password.trim() == "") {
-      alert("password cannot be blank");
+      toastr.error(ErrorMessage.PASSWORD_CANNOT_BLANK);
     }
     else {
 
@@ -22,7 +22,7 @@ function Login() {
          
         }
         else {
-          toastr.error("login failed");
+          toastr.error(ErrorMessage.LOGIN_FAILED);
         }
       }).catch(err => {
         console.error(err);

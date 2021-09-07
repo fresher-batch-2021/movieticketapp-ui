@@ -14,7 +14,9 @@
                 <a href="index.html"><img class="movieLogo" src="images/movie1.jpg" alt="no image"></a>
                 <div class="navRegister" style="display: inline-block;">
                     <a class="navLog" href="login.html" data-loggedIn="false">Login</a>
+                  
                     <a class="navLog" href="login.html" data-loggedIn="true" onclick="logout()">Logout</a>
+ 
                 </div>
             </figure>
             <ul class="navcontent">
@@ -37,6 +39,7 @@
  
      $(".navLog[data-loggedIn='true']").show();
      $(".navLog[data-loggedIn='false']").hide();
+   
  }
  else
  {

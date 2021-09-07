@@ -13,7 +13,7 @@ function Register(){
         let data = res.data.docs;
         
         if (data != "") {
-    toastr.warning("email already exist Please enter different email");
+    toastr.error(ErrorMessage.MAIL_ALREADY_EXIST);
     setTimeout(function () {
         
         
@@ -22,14 +22,14 @@ function Register(){
         } 
 
 if(password == null  || password.trim()==""){
-    toastr.error("password cannot be empty");
+    toastr.error(ErrorMessage.PASSWORD_CANNOT_EMPTY);
 }
     else if(password != passwordR){
-   toastr.error("Password & ConfirmPassword Should Match");
+   toastr.error(ErrorMessage.PASSWORD_CONFIRMPASSWORD_SHOULD_MATCH);
 }
 else if(password.length < 8)
 {
-toastr.error("password must be greater than 8 characters");
+toastr.error(ErrorMessage.PASSWORD_MUST_BE_GREATER_THAN_8_CHARACTERS);
 
   }
   
