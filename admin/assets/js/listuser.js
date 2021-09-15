@@ -26,7 +26,7 @@ function listUser() {
         $("#list tbody").empty();
         for (let listUser of users) {
           
-                let orderedDate = new Date(listUser.date).toJSON(); //.substr(0, 10);
+                let orderedDate = new Date(listUser.movieDate).toJSON(); //.substr(0, 10);
                 let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
             content +=
                 `<tr>

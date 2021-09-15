@@ -17,8 +17,8 @@ class BookService {
                 email: userData.email
 
             },
-            fields: ["_id", "_rev", "movieName", "noOfTickets", "movieDate", "movieTime", "ticketPrice", "status", "theatreName", "email"],
-            // "sort":[{"bookingDate":"desc"}]
+            fields: ["_id", "_rev", "movieName", "noOfTickets", "movieDate", "movieTime", "ticketPrice", "status", "theatreName", "email", "bookingDate"],
+            "sort":[{"bookingDate":"desc"}]
         };
         
 

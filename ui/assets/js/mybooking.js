@@ -9,10 +9,13 @@ function formMovieTableData() {
     BookService.booking().then(res => {
         let details = res.data.docs;
         console.log(details);
+        
         for (let Obj of details) {
+            $("#list-movie tbody").empty();
             let orderedDate = new Date(Obj.movieDate).toJSON(); //.substr(0, 10);
             let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
-
+            console.log(Obj.bookingDate);
+            let bookingDate  = moment(Obj.bookingDate).format("DD-MM-YYYY");
             let cancelBook = `<button type='button'  onclick = "cancelBooking('${Obj._id}','${Obj._rev}','${Obj.movieId}','${Obj.movieName}','${Obj.theatreName}','${Obj.noOfTickets}','${Obj.movieDate}','${Obj.movieTime}','${Obj.ticketPrice}','cancel','${Obj.email}');"> Cancel </button>`;
 
             const abc = (Obj.noOfTickets) * (Obj.ticketPrice);
@@ -25,8 +28,8 @@ function formMovieTableData() {
         <td>${date}</td>
         <td>${Obj.movieTime}</td>
         
-        <td>${abc}</td>
-        <td>${moment(Obj.bookingDate).format("DD-MM-YYYY")}</td>
+        <td>&#8377;${abc}</td>
+        <td>${bookingDate}</td>
 
         <td>${Obj.status}</td>
         <td>`;
@@ -48,7 +51,8 @@ function formMovieTableData() {
          </td></tr>
         `
 
-            document.querySelector("#list-movie").innerHTML = content;
+        $("#list-movie tbody").append(content);
+
         }
     }).catch(err => {
         console.error(err)
@@ -97,19 +101,12 @@ function cancelBooking(id, rev, movieId, movieName, theatreName,noOfTickets, mov
 
 }
 function searchName() {
-    let searchName = document.getElementById("searchBox").value.toLowerCase();
-    let myTable = document.getElementById("myTable");
-    let tableRow = myTable.getElementsByTagName("tr");
-    for (var i = 0; i < tableRow.length; i++) {
-        let tableDatas = tableRow[i].getElementsByTagName("td")[1];
-        if (tableDatas) {
-            let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
-            if (textValue.indexOf(searchName) > -1) {
-                tableRow[i].style.display = "";
-            } else {
-                tableRow[i].style.display = "none";
-            }
-        }
-    }
+    let searchName = $("#searchBox").val().toLowerCase();
+    let myTable = $("#list-movie");
+   
+  
+    $("#list-movie tbody tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(searchName) > -1)
+    });
 }
 

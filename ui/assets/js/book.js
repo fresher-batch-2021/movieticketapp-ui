@@ -1,3 +1,5 @@
+$("#bookSubmit").submit(Book);
+
 /**
  * This function in used to get the moviename from database
  * @param {string} movieId 
@@ -6,8 +8,8 @@ function price(movieId) {
     BookService.priceService(movieId).then(res => {
         console.log(res.data)
         let movie = res.data;
-        document.querySelector("#movieId").value = movie._id;
-        document.querySelector("#movieName").value = movie.title;
+        $("#movieId").val(movie._id);
+        $("#movieName").val(movie.title);
 
     })
         .catch(err => {
@@ -27,22 +29,23 @@ function theatre() {
         for (let theatre of theatres) {
             content += `<option value="${theatre.theatreName}"> ${theatre.theatreName}</option>`;
         }
-        document.querySelector("#theatreName").innerHTML = content;
+        $("#theatreName").html(content);
         getSeats();
     })
         .catch(err => {
             console.error(err);
         })
 } theatre();
+$("#theatreName").change(getSeats);
 
 /**
  * This function is to get seat value and display from theatre values
  */
 function getSeats() {
-    let theatres = JSON.parse(localStorage.getItem("THEATRES"));
-    let selectedTheatreName = document.querySelector("#theatreName").value;
-    let selectedTheatreObj = theatres.find(obj => obj.theatreName == selectedTheatreName);
-    let selectedTheatreTime = document.querySelector("#time").value;
+    const theatres = JSON.parse(localStorage.getItem("THEATRES"));
+    const selectedTheatreName = $("#theatreName").val();
+    const selectedTheatreObj = theatres.find(obj => obj.theatreName == selectedTheatreName);
+    const selectedTheatreTime = $("#time").val();
     console.log(selectedTheatreTime, "yes")
 
     console.log("selectedTheatreTime:", selectedTheatreTime);
@@ -54,18 +57,18 @@ function getSeats() {
             displayShowTimings(selectedTheatreObj);
         }
 
-        document.querySelector("#price").value = selectedTheatreObj.price;
+        $("#price").val(selectedTheatreObj.price);
 
 
         noOfSeats = selectedTheatreObj.noOfTickets;
-     
+
 
 
 
     }
 
 
-    document.querySelector("#availableSeats").value = noOfSeats;
+    $("#availableSeats").val(noOfSeats);
 
 
     //load timimgs
@@ -73,78 +76,56 @@ function getSeats() {
 
     //return noOfSeats;
 }
-
 /**
  * Display Theatre Timing Options
  * @param {string} selectedTheatreObj 
  */
 function displayShowTimings(theatreObj) {
+    console.group("Display Show Timings");
     console.log(theatreObj);
-    let selectedDate = document.querySelector("#date").value;
-    console.log("length : " + theatreObj.time.length)
-    let content1 = "";
-    for (let showtime of theatreObj.time) {
-        let datas = showtime.split(":");
-        console.log(showtime);
+    let selectedDateStr = $("#date").val();
 
+    let content = "";
 
-        console.log(datas);
-        let todayDate = new Date();
-        let today = String(todayDate.getDate()).padStart(2, '0');
-        let month = String(todayDate.getMonth() + 1).padStart(2, '0');
-        let year = todayDate.getFullYear();
-        let dateString1 = month + "-" + today + "-" + year + " : " + showtime;
-        console.log("mnlk" + dateString1);
-        console.log("selct date", selectedDate);
-        let dateArray = selectedDate.split("-");
-        let dateString = dateArray[1] + "-" + dateArray[2] + "-" + dateArray[0];
-        console.log("str :" + dateString);
+    let theatreObject = new Theatre({ timings: theatreObj.time });
+    let availableTimings = theatreObject.getTimings(selectedDateStr);
 
-        if (Date.parse(dateString) > Date.parse(new Date())) {
-            content1 += `<option  value="${showtime}">${showtime}</option>`;
-            console.log(showtime);
+    console.log("AvailableTimings:", availableTimings);
 
-        } else {
-            if (Date.parse(dateString1) >= Date.parse(new Date())) {
-                content1 += `<option  value="${showtime}">${showtime}</option>`;
-                console.log(content1);
-            }
-            else {
-                console.log("failed");
-            }
-        }
+    for (let showtime of availableTimings) {
 
+        content += `<option  value="${showtime}">${showtime}</option>`;
     }
 
 
-    console.log("Insert time options")
-    document.querySelector("#time").innerHTML = content1;
+    $("#time").html(content);
+    console.groupEnd();
 
 }
+$("#date").change(chooseDate);
 
 /**
  * This function is used to choose date
  */
 function chooseDate() {
 
-    let selectedTheatre = document.querySelector("#theatreName").value;
-    let selectedDate = document.querySelector("#date").value;
-    let selectedTime = document.querySelector("#time").value;
+    console.group("Choose Date");
+    let selectedTheatre = $("#theatreName").val();
+    let selectedDate = $("#date").val();
+    let selectedTime = $("#time").val();
     console.log(selectedTheatre, selectedDate, selectedTime)
     seatsQuantity(selectedTheatre, selectedDate, selectedTime).then(res => {
         let totalBookedTickets = res;
         console.log("totalbooked tickets:", totalBookedTickets);
         getSeats();
-        document.querySelector("#noofticketsbooked").value = totalBookedTickets;
+        $("#noofticketsbooked").val(totalBookedTickets);
     })
     let theatres = JSON.parse(localStorage.getItem("THEATRES"));
-    let selectedTheatreName = document.querySelector("#theatreName").value;
+    let selectedTheatreName = $("#theatreName").val();
     let selectedTheatreObj = theatres.find(obj => obj.theatreName == selectedTheatreName);
-    displayShowTimings(selectedTheatreObj);
-
-
+    //displayShowTimings(selectedTheatreObj);
+    console.groupEnd("Choose Date");
 }
-
 /**
  * This function is used to select the date and time criteria
  * @param {} theatreName 
@@ -184,20 +165,15 @@ function Book() {
 
     event.preventDefault();
 
-    let noOfTickets = document.querySelector("#nooftickets").value;
-    let movieDate = document.querySelector("#date").value;
-    let movieTime = document.querySelector("#time").value;
-    let ticketPrice = document.querySelector("#price").value;
-    let movieId = document.querySelector("#movieId").value;
-    let movieName = document.querySelector("#movieName").value;
+    let noOfTickets = $("#nooftickets").val();
+    let movieDate = $("#date").val();
+    let movieTime = $("#time").val();
+    let ticketPrice = $("#price").val();
+    let movieId = $("#movieId").val();
+    let movieName = $("#movieName").val();
     let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER")).email;
-    let theatreName = document.querySelector("#theatreName").value;
+    let theatreName = $("#theatreName").val();
     let today = new Date().toJSON();
-
-
-
-
-
     //get movie id and movie name
 
     if (noOfTickets > 100) {
@@ -207,15 +183,15 @@ function Book() {
         toastr.error(ErrorMessage.ENTER_VALID_SEAT);
     }
     else {
-        let noofticketsbooked = document.querySelector("#noofticketsbooked").value;
-        let totalSeats = document.querySelector("#availableSeats").value;
+        let noofticketsbooked = $("#noofticketsbooked").val();
+        let totalSeats = $("#availableSeats").val();
         let availableSeats = totalSeats - noofticketsbooked;
         console.log(availableSeats);
         if (noOfTickets > availableSeats) {
             toastr.error(ErrorMessage.INSUFFICIENT_SEATS + availableSeats);
             return;
         }
-        BookService.bookTable( movieId,movieName, noOfTickets, theatreName,movieDate,movieTime,ticketPrice,email,today).then(res => console.log(res.data)).catch(err => console.error(err))
+        BookService.bookTable(movieId, movieName, noOfTickets, theatreName, movieDate, movieTime, ticketPrice, email, today).then(res => console.log(res.data)).catch(err => console.error(err))
         toastr.success("booked successfully");
         setTimeout(function () {
             window.location.href = "index.html";
@@ -260,11 +236,11 @@ console.log(content)
  * this function is used for day js
  */
 function setData() {
-    let today = new Date().toJSON();
+    let today = new Date().toJSON().substr(0,10);
     let day = dayjs().add(8, 'days').toDate().toJSON().substr(0, 10);
     console.log(day);
-    document.querySelector("#date").setAttribute("min", today);
-    document.querySelector("#date").setAttribute("max", day);
+    $("#date").attr("min", today);
+    $("#date").attr("max", day);
 }
 setData();
 

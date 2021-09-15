@@ -13,6 +13,9 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <!-- Moment For Date -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
@@ -28,15 +31,15 @@
     <h1 class="bookHead">Book Page</h1>
     <div class="tablePage"></div>
 
-    <form onsubmit="Book()" style="border: 1px solid #ccc">
+    <form id="bookSubmit" style="border: 1px solid #ccc">
       <div class="bookPage">
         <input type="hidden" id="movieId" readonly />
         <label for="movieName">MovieName</label>
         <input type="text" id="movieName" readonly />
         <label for="theatre"> Theatres</label><br />
-        <select id="theatreName" required onchange="getSeats()"></select><br />
+        <select id="theatreName" required ></select><br />
         <label for="date">Show Date</label>
-        <input type="date" id="date" name="date" max="5" required onchange="chooseDate()" /><br />
+        <input type="date" id="date" name="date" max="5" required  /><br />
         <label for="time">Show Time</label><br />
         <select id="time" required></select>
 
@@ -66,6 +69,9 @@
   <script>
     $("#header").load("header.html");
   </script>
+  <script src="assets/js/env.js"></script>
+  <script src="assets/js/showtime.js"></script>
+  <script src="assets/js/dateutil.js"></script>
 
   <script src="assets/js/mybook-service.js"></script>
   <script src="assets/js/book.js"></script>

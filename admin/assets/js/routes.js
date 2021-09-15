@@ -32,8 +32,11 @@ function checkAccess(pageName, role) {
             }
         }
     }
+    console.log("checkAccess",pageName,  allowed);
     return allowed;
 }
+
+
 (function () {
     console.log("Routes initializing")
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
@@ -46,8 +49,8 @@ function checkAccess(pageName, role) {
 
 
 
-    if (!allowedAccess) {
-       
+    if (!allowedAccess) {       
+
         window.location.href = "login.html?alert= you are not authorized";
         
     }
