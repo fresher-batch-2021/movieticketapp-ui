@@ -23,7 +23,7 @@
       
         <section>
       
-    <form onsubmit="Login()" style="border:1px solid #ccc">
+    <form  id="login" method="POST" style="border:1px solid #ccc">
     
             <div class="box">
         <div>
@@ -31,17 +31,14 @@
           </div>
         
     
-        <label for="Email"><strong>Email</strong></label>
-        <input type="email" placeholder="Enter Email" name="username" id="username" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com" autocomplete="off">
+        <label for="Email"><strong>Email</strong></label>   
+        <input type="email" placeholder="Enter Email" name="username" id="username"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="email must end with @gmail.com" autocomplete="off" autofocus>
 
-        <label for="password"><strong>password</strong></label>
-        <input type="password" placeholder="Enter password" name="password" id="password"required  autocomplete="off">
+        <label for="password"><strong>Password</strong></label>
+        <input type="password" placeholder="Enter Password" name="password" id="password"required  autocomplete="off">
         
-        <button class="loginButton" type="submit">login</button>
-        <label><br>
-        <input type="checkbox" checked="checked" name="remember" 
-        style="margin-bottom: 15px;">Remember Me <br>
-        </label>
+        <button class="loginButton" type="submit">Login</button>
+       
        
     <div class="clearfix" style="background-color:#f1f1f1">
         <button type="reset" class="cancelButton">Cancel</button>
@@ -54,14 +51,17 @@
         </section>
     
       <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/login.js"></script>
-      <script src="assets/js/userservice.js"></script>
-      <script src="assets/js/routes.js"></script>
-      <script src="assets/js/error-message.js"></script>
       <script >
         $("#header").load("header.html")
       </script>
-     
+      
+      <script src="assets/js/routes.js"></script>
+      <script src="assets/js/error-message.js"></script>
+      <script src="assets/js/env.js"></script>
+      <script src="assets/js/login.js"></script>
+      
+      <script src="assets/js/userservice.js"></script>
+      
       
       
 </body>

@@ -23,6 +23,7 @@ function listUser() {
 
         let content = "";
         let i = 1;
+        $("#list tbody").empty();
         for (let listUser of users) {
           
                 let orderedDate = new Date(listUser.date).toJSON(); //.substr(0, 10);
@@ -33,10 +34,10 @@ function listUser() {
             <td>${listUser.email}</td>
             <td>${listUser.movieName}</td>
             <td>${moment(listUser.bookingDate).format("DD-MM-YYYY")}</td>
-            <td>${listUser.time}</td>
+            <td>${listUser.movieTime}</td>
             <td>${date}</td>
             <td>${listUser.status}</td>
-            <td>${listUser.ticket}</td>
+            <td>${listUser.noOfTickets}</td>
             <td>${listUser.theatreName}</td>
 
            `;
@@ -48,7 +49,7 @@ function listUser() {
 
 
 
-        document.querySelector("#list-user").innerHTML = content;
+       $("#list tbody").append(content);
     }
 }
 listUser();
@@ -56,19 +57,10 @@ listUser();
  * This function is used to search by email
  */
 function searchEmail() {
-    let searchEmail = document.getElementById("searchBox").value.toLowerCase();
-    let myTable = document.getElementById("myTable");
-    let tableRow = myTable.getElementsByTagName("tr");
-    for (var i = 0; i < tableRow.length; i++) {
-        let tableDatas = tableRow[i].getElementsByTagName("td")[1];
-        if (tableDatas) {
-            let textValue = tableDatas.textContent.toLowerCase() || tableDatas.innerText.toLowerCase();
-            if (textValue.indexOf(searchEmail) > -1) {
-                tableRow[i].style.display = "";
-            } else {
-                tableRow[i].style.display = "none";
-            }
+    let searchEmail =$("#searchBox").val().toLowerCase();
+    let myTable =$("#list");
+$("#list tbody tr").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(searchEmail) > -1)
 
-        }
-    }
+});
 }

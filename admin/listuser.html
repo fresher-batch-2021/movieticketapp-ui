@@ -25,12 +25,12 @@ Moment For Date
       type="text "
       id="searchBox"
       class="searchBox"
-      placeholder="Search by Email"
+      placeholder="Search by Email, BookedMovies, Date, Time"
       onkeyup="searchEmail()"
       autocomplete="off"
     />
 
-    <table id="myTable">
+    <table  id="list">
       <caption></caption>
       <thead>
         <tr>
@@ -45,15 +45,19 @@ Moment For Date
           <th id="theatreName">Theatre Name</th>
         </tr>
       </thead>
-      <tbody id="list-user"></tbody>
+      <tbody>
+        
+      </tbody>
     </table>
-    <script src="assets/js/login.js"></script>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/userservice.js"></script>
-    <script src="assets/js/listuser.js"></script>
-    <script src="assets/js/routes.js"></script>
     <script>
       $("#header").load("header.html");
     </script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/env.js"></script>
+    <script src="assets/js/userservice.js"></script>
+    <script src="assets/js/listuser.js"></script>
+    <script src="assets/js/routes.js"></script>
+   
   </body>
 </html>

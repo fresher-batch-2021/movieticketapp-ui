@@ -21,14 +21,21 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
       <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+      <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">   -->
+      <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+      
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
 </head>
 
 <body>
     <header id="header"></header>
-    <h3 class="head">ADD MOVIE</h3>
+    <h3 class="head"></h3>
+    <div id="dialog" title="ADD MOVIE">
 
     <div class="box">
-        <form onsubmit="addMovieForm()">
+        <form id="addMovie" method="POST">
             <label for="title"><strong>Title</strong>
                 <input type="text" placeholder="Enter Movie Name" name="title" id="title" required>
             </label><br>
@@ -70,11 +77,18 @@
 
     </div>
     </form>
-    <script src="assets/js/jquery.min.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
     <script>
         $("#header").load("header.html")
 
     </script>
+     <script>
+        $( function() {
+            height: 400,
+        
+          $( "#dialog" ).dialog();
+        } );
+        </script>
     <script src="assets/js/login.js"></script>
     <script src="assets/js/env.js"></script>
     <script src="assets/js/add-movie.js"></script>

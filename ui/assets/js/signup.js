@@ -1,10 +1,15 @@
+$(document).ready(function(){
+  $("#sign").submit(Register)
+})
+
+
 function Register(){
     
     event.preventDefault();
-    const username = document.querySelector("#username").value;
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
-    const passwordR = document.querySelector("#password-repeat").value;
+    const username = $("#username").val();
+    const email =$("#email").val(); 
+    const password =$("#password").val();
+    const passwordR =$("#password-repeat").val();
     
     console.log(email+"-"+password+"-"+passwordR);
    

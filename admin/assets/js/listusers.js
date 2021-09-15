@@ -12,16 +12,20 @@ function user_list(){
     console.log(users);
     let value = "";
     let i = 0;
+    $("#task_table tbody").empty();
     for(let user of users){
             if(user.role == "USER"){
             i++;
-            value = value + `<tr><td>${i}</td><td>${user.username}</td><td>${user.email}</td></tr>` ;
+            value = value + `<tr><td>${i}</td>
+            <td>${user.username}</td>
+            <td>${user.email}</td></tr>` ;
         }
         
-        document.querySelector("#task_table").innerHTML = value;
+       
     }
     
- 
+       
+    $("#task_table tbody").append(value);
     
 })
 }
