@@ -1,11 +1,17 @@
+$(document).ready(function () {
+  $("#login").submit(Login);
+})
+
+
 function Login() {
   console.log("hi");
   event.preventDefault();
-  const username = document.querySelector("#username").value;
-  const password = document.querySelector("#password1").value;
+
+  const username = $("#username").val();
+  const password = $("#password1").val();
   console.log(username + "-" + password);
   if (password == null || password.trim() == "") {
-   toastr.error(ErrorMessage.PASSWORD_CANNOT_BLANK);
+    toastr.error(ErrorMessage.PASSWORD_CANNOT_BLANK);
   }
   else {
 

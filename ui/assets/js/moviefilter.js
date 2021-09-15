@@ -1,9 +1,11 @@
+
+$( "#filter" ).click(filterLanguages);
 /**
  * This function gets language check box value and store it in array
  */
 function filterLanguages() {
  
-    var allLanguages = document.querySelectorAll("#language");
+    var allLanguages = $("#language");
     let selectedLanguages = [];
     for (let language of allLanguages) {
         if (language.checked) {
@@ -12,7 +14,7 @@ function filterLanguages() {
     }
     console.log(selectedLanguages);
     if (selectedLanguages.length == 0) {
-        document.getElementById("error").innerHTML = "please mark only one checkbox either tamil or english";
+        $("error").html("please mark only one checkbox either tamil or english");
 
     }
     else {
@@ -32,8 +34,11 @@ function filterLanguages() {
 
     }
 }
+
+
+$( "#clear" ).click(filterClear);
 function filterClear(){
-    var clist = document.getElementsByTagName("input");
+    var clist =$("input");
 for (var i = 0; i < clist.length; ++i) { clist[i].checked = false; }
 window.location.reload();
 }
