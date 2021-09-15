@@ -37,21 +37,26 @@
                     style="margin-bottom: 15px" />English </label><br />
                     <input type="checkbox" name="language" id="language" value="hindi"
                     style="margin-bottom: 15px" />Hindi</label><br />
-            <button type="button" onclick="filterLanguages()">Apply</button>
-           <button type="button" onclick="filterClear()">Reset</button>
+            <button type="button" id="filter">Apply</button>
+           <button type="button" id="clear">Reset</button>
         </div>
     </main>
 
     <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html");
+    </script>
     <script src="assets/js/movie-service.js"></script>
+    <script src="assets/js/env.js"></script>
+    
+   
+    
     <script src="assets/js/book.js"></script>
     <script src="assets/js/moviefilter.js"></script>
     <script src="assets/js/movies.js"></script>
     <script src="assets/js/routes.js"></script>
 
-    <script>
-        $("#header").load("header.html");
-    </script>
+ 
 </body>
 
 </html>
